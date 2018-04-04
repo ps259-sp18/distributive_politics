@@ -1,0 +1,350 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\setlength{\columnsep}{1cm}
+\usepackage[hyphens]{url}
+%\usepackage{draftwatermark}
+%\SetWatermarkText{DRAFT}
+%\SetWatermarkScale{5}
+\usepackage{enumitem}
+\usepackage{caption}
+\usepackage[pdfusetitle]{hyperref}
+\usepackage{geometry} % to change the page dimensions. Read ftp://ftp.tex.ac.uk/tex-archive/macros/latex/contrib/geometry/geometry.pdf for detailed page layout information 
+\geometry{margin=1in}
+\usepackage[pdftex]{graphicx}
+\usepackage{setspace}
+\usepackage{multirow}
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1em}
+\renewcommand{\baselinestretch}{1.0}
+\usepackage{fancyhdr}
+\usepackage[yyyymmdd,hhmmss]{datetime}
+\pagestyle{fancy}
+\rfoot{\textit{This version \today\ at \currenttime}}
+\cfoot{}
+\lfoot{Page \thepage}
+\usepackage{natbib}
+\usepackage{bibentry}
+
+\begin{document}
+\thispagestyle{plain}
+
+\nobibliography{../../Documents/bibliographies/bureau.bib}
+\bibliographystyle{apalike} % Only a few styles work with bibentry; be careful
+
+\begin{tabular}{ l l }
+  \multirow{5}{*}{\includegraphics[height=1.25in,width=1in]{/mg/Library/texmf/tex/latex/logo_ucla_seal.png}} & \Large PS259 Spring 2018\\\\
+  & \Large Selected Topics in Comparative Politics: \\ 
+& \Large Distributive Politics\\
+& \large \url{https://github.com/ps259-sp18/distributive_politics}\\\\
+  & \Large Wed 2:00--4:50 Bunche 4276\\\\
+\end{tabular}
+\vspace{8mm}
+
+% Instructor information
+\large Professor M. Golden \\
+   \large Email: \texttt{golden@ucla.edu} \\
+   \large Homepage: \url{www.golden.polisci.ucla.edu} \\
+   \large Office: Bunche 3262 \\
+   \large Office hours: By appointment and Tuesday 3:30--5:00 \\
+   \large Tel: 310-206-8166\\
+
+\noindent\rule{6.0in}{0.4pt}	% draws a line
+
+% Course details
+\textbf {\large \\ Course Description:} This course studies how governments allocate goods and services to identifiable localities
+or population subgroups.  We first study the analytic underpinnings of distributive politics and then
+focus on two sets of issues. The first considers the electorally-relevant aspects of taxes and transfers.
+This includes whether taxes and transfers target specific politically-relevant constituencies or
+types of voters and whether incumbent politicians benefit electorally from such distributions. The second area of concern is the
+redistributive and equity consequences of taxes and transfers. This includes whether special interests capture a disproportionate
+share of goods and services coming from government and effective ways to counter elite capture. 
+
+The course is meant as a springboard for you to do your own research into some aspect of distributive politics in a country
+of your choosing. 
+
+
+\textbf {\large Course Prerequisites:}  You will only be able to do the work in this course if you are familiar with 
+statistical methods to analyze quantitative data. First year students in the Political Science Ph.D. 
+program and students from other departments are welcome in the course if they have taken at least 
+one prior course in statistics (covering material through multiple regression). The 
+course might have been at the undergraduate level. If you are not sure if you can do the 
+required work, please feel free to contact me prior to enrolling.
+
+
+\textbf {\large Course Objectives:}  At the completion of this course, you will:
+\begin{enumerate} [noitemsep]
+  \item  Be familiar with important recent studies of distributive politics.
+\item Be aware of a number of different theories relevant to distributive politics.
+\item Have studied some models that provide micro-foundations for the analysis of distributive politics.
+\item Have experience identifying data relevant to a theoretical question.
+\item Be familiar with the process of assemblig a multi-level dataset to analyze distributions to select subnational units.
+\item Have experience writing a pre-analysis plan. 
+\item Have experience serving as a discussant of another scholar's work.
+\item Have experience working on GitHub.
+\end{enumerate}
+
+\textbf{\large Course Format:} The course is designed as a mixture of lecture and discussion. 
+
+\textbf{\large Peer Review:} You will build skills in this course by acting of a peer reviewer of the work of the
+other members of the course. This entails reading drafts of the pre-analysis plans submitted by all members of the
+class and serving as a formal discussant of one PAP.
+
+\textbf {\large Readings:} The reading load is relatively light in order to permit you to do 
+ research on your own project throughout the quarter.
+
+Readings use examples from countries around the world, crossing the 
+distinction between developed
+and less developed countries. 
+
+You might print out a copy of each reading and bring it to class. You will not have access to an electronic version during
+class and we may need to study specific tables. 
+
+I have indicated the URL for articles. Book chapters
+will be available in the course repository.
+
+\textbf {\large Statistical Software(s):}  Instruction in the course will, where relevant, use Stata or R. You may do your own data analysis in either.  
+
+\textbf{\large Course website:} We will use GitHub as the course site, and integrate with Slack for communications. More information appears below.
+
+\textbf {\large Requirement(s):}  To complete the course for a grade, you will write a complete draft of a 
+pre-analysis plan (PAP) that details a project you intend to complete sometime in the future. A memo with your proposed topic is due the fourth week of the quarter and a draft of your PAP is due the seventh week. The draft will be read by the entire class, with a formal discussant assigned. Your final PAP is due \textbf{Friday, June 8 at 5:00pm}.  Please write in LaTeX, and upload .pdf versions of all materials to the course GitHub repo.
+
+% Course Policies. Modify as necessary. 
+\textbf {\large Course Policies:}
+\begin{itemize}
+	\item \textbf {General (for auditors as well as enrolled students)}
+		\begin{itemize}
+			\item Please come to class meetings each week \textbf{already having read} assigned material.
+			\item Please bring written notes to class summarizing each assigned reading and be prepared to discuss every assigned reading. 
+			\item Assume that your computer will be closed during class, and that you will not be able to review assigned
+			readings on your computer during class. 
+			\item You should take handwritten notes during class in order to retain the material covered. 
+			\item If you are auditing the course, please inform me so you are given access to the course site. 
+			\item Please plan to attend all class meetings except in cases of illness. Do not attend class if you have a cold or the flu. 
+		\end{itemize}
+		\item \textbf{Pre-Analysis Plan and Planned Research Project}
+		\begin{itemize}
+		\item Your main writing assignment for the quarter consists of a pre-analysis plan for a research project. In the PAP, you will lay out the research question, hypotheses, and  specific tests you intend to conduct. The purpose of a PAP is to write out
+		the plans for a project prior to data analysis (and in many cases even prior to data collection).
+		\item A pre-analysis plan is a more polished and formal presentation of the proposal for the paper you plan to write than you would normally be asked to submit in a graduate seminar, but is not qualitatively different than any other paper proposal. 
+		\item Your planned research may require you to collect original data in the future. If it is possible for you to collect and assemble your data during the quarter, this will allow you to examine some descriptive characteristics of the data before writing your pre-analysis plan. But make sure not to ``peek'' at the results featured in your pre-analysis plan.  
+		\item Your planned research project should be one that is feasible and, ideally, that you actually intend to undertake over the summer or in the coming academic year. It should not be a project that requires you raise funding that you have not yet secured, for instance. As a result, it is likely that your planned research will use observational (not experimental) data.
+		\item If your proposed project uses observational data, your goal may well be to explore patterns in the data that do not allow causal identification. That is entirely acceptable, but you should state this in your PAP. The goal of the exercise is to write a genuine pre-analysis plan for whatever research you intend to conduct. Your research may consist of preliminary data exploration rather than causal analysis, especially if there is not much known about the phenomenon you are studying. If you are working in an area that has already been extensively studied, you should seek to advance the literature with a stronger research design. 
+	\item You will post the first draft of your pre-analysis plan for the entire class to read in the seventh week of the quarter, when it will be peer-reviewed and
+	formally discussed by one member of the class.  
+		\item A  useful checklist of what to include in a PAP is available at the World Bank's \href{http://blogs.worldbank.org/impactevaluations/analysis-plan-checklist}{Development Impact 
+site}. Your 
+pre-analysis plan will likely omit some of the items on this list. For instance, it is unlikely that 
+you will include a formal model in your project. You should adapt the guidelines as appropriate.
+\item At a minimum, your pre-analysis plan should include a description of the data you will use and how you selected your 
+sample, the hypotheses you will test, how you plan to construct your measures and 
+variables, the equation(-s) you plan to estimate, and a plan for dealing with multiple 
+hypothesis testing. 
+\item For some illustrations of the process, see the work in progress reported under Graeme Blair, \href{https://graemeblair.com/project/declare-design/}{``Improving Research Designs in the Social Sciences.''}				\end{itemize}
+	\item \textbf{Collaborative Work}
+		\begin{itemize}
+	\item You are encouraged to help each other during the course, to share expertise and information, and to work together on the proposed research project if you wish.
+		\item Students who decide to collaborate formally on a research project will co-author their PAP.
+	\item If you collaborate, you are required to set out in writing the nature of the proposed collaboration, 
+specifying who is responsible for what part of the work and how credit will be 
+shared in the near and far term. Although any collaboration is likely to evolve in unexpected ways, and to present unanticipated
+challenges, clarifying your expectations in advance with your collaborators is likely to prove helpful in reducing misunderstandings.
+You should pay particular attention to specifying how you intend to proceed if any part of the work done for the 
+course is eventually used in an article submitted for publication or as a dissertation chapter. Please submit this
+			material even if your co-author is not enrolled in the course.	For guidelines on some aspects of collaboration, see my \href{https://docs.wixstatic.com/ugd/02c1bf_454ad351837e4014b5342e1a54182b54.pdf}{Notes on collaboration}.				
+			\end{itemize}
+			\item \textbf{Grades}
+			\begin{itemize}
+			\item Materials are to be submitted on time to be given full credit. 			
+			\item Final course grades will reflect class participation (25 percent) and the quality of work submitted (75 percent). 
+			\item For your own protection, I do not give Incompletes. Please plan to submit your PAP by the final due date.
+			\end{itemize}
+			\item \textbf{GitHub}
+			\begin{itemize}
+			\item In order to boost your skills, the course will be coordinated using a GitHub repository that I have set up. For instructions on how to use GitHub, see the \href{https://docs.wixstatic.com/ugd/02c1bf_98ecb1e8230249c3bae7f56b6b68bc63.pdf}{GitHub manual}. You will need to adapt the instructions to the current context. The location of the course repository appears at the top of this document. 
+\end{itemize}
+\end{itemize}
+
+\textbf {\large Replication, Transparency, and Research Ethics:} All work you do will be held to the highest ethical and professional standards. 
+
+
+% College Policies
+\textbf {\large UCLA Student Guide to Academic Integrity:} As a student and a member of the University community,
+you are expected to demonstrate integrity in all of your academic
+endeavors. 
+
+Please carefully review the \href{http://www.deanofstudents.ucla.edu/Portals/16/Documents/StudentGuide.pdf}{university guidelines regarding academic dishonesty}. 
+Suspicion of academic dishonesty will be reported to the Dean of Students for evaluation and appropriate action.
+
+
+\newpage
+\centerline{\textbf{SYLLABUS}}
+
+
+\textbf{Week One, April 4: Overview}
+
+\textbf{Week Two, April 11: What is a Pre-analysis Plan and Why Should I Write One?}
+
+This week, we begin with a careful reading of the BITSS \emph{Manual of Best Practices in Transparent Social Science Research} so we
+are aware of the professional and ethical parameters in which we operate.  
+
+
+We then skim three examples of pre-analysis plans to get a sense of the range of information and detail that is included. What do all the examples have in common; that is, what seems to be the minimum requirement for a
+pre-analysis plan? How specific and detailed are the 
+plans? Why do you think there is such a range in the amount of detail provided? How much detail do you think is
+necessary to meet the underlying goals of a pre-analysis plan? What are these goals?
+
+As another way to evaluate PAPs, I have also indicated a subsequent publication that reports results of the data analysis. Please skim.
+
+Finally, we review Ben Olken's discussion of PAPs.
+
+The reading this week is meant to help you begin to think about what you will do for this course this quarter. 
+Many other examples of pre-registered pre-analysis plans in political science are available  
+on the \href{http://egap.org/content/registration}{EGAP website}.
+
+
+\textit{Readings:}
+
+
+Berkeley Initiative for Transparency in the Social Sciences (BITSS),
+\href{http://www.bitss.org/education/manual-of-best-practices/}{\emph{Manual of Best Practices in Transparent Social Science Research}} (November 14, 2016). 
+
+\href{https://www.aeaweb.org/articles?id=10.1257/jep.29.3.61}{\bibentry{olken15}}.
+
+Kate Vyborny and Muhammad Haseeb, \href{http://egap.org/registration/632}{``Patronage in Government Services Delivery: Evidence from Punjab, Pakistan. Pre-Analysis Plan,''} September 21, 2013.
+
+\begin{quote}
+Unpublished report: \href{https://docs.google.com/viewer?a=v&pid=sites&srcid=ZGVmYXVsdGRvbWFpbnxrdnlib3JueXxneDo1ZjRiMmYyNDgxMmJlMzQ4}{``Reforming Institutions: Evidence from Cash Transfers in Pakistan,''} May 2017.
+\end{quote}
+
+Mark Buntaine et al., \href{http://egap.org/registration/1615}{``Repairing Information Underload: The Effects of Vote Choice of Information on Politician Performance and Public Goods in Uganda. Pre-Analysis Plan,''} November 19, 2015.
+
+\begin{quote}
+Forthcoming report: Mark Buntaine et al., ``SMS Texts on Corruption Help Ugandan Voters Hold Elected Councillors Accountable at the Polls,'' \textit{PNAS}, forthcoming. Pay particular attention to the sections in the SI entitled ``Results using Pre-Registered Estimation Strategy'' (p. 4) and ``Pre-registration'' (pp. 5--7). On course website (not GitHub). CONFIDENTIAL MATERIAL. DO NOT CIRCULATE.
+\end{quote}
+
+Andrew Beath, Fotini Christia and Ruben Enikolopov, \href{http://egap.org/registration/603}{``Randomized Impact Evaluation of Afghanistan's National Solidarity Programme --- Village Benefit Distribution Analysis. Pre-Analysis Plan: Hypotheses, Methodology, and Specifications,''} January 7, 2012.
+
+\begin{quote}
+Unpublished report: Andrew Beath, Fotini Christia, and Ruben Enikolopov, ``Do Elected Councils Improve Governance? Experimental Evidence on Local Institutions in Afghanistan,'' March 2018. In course repo. 
+\end{quote}
+
+
+
+\textbf{Week Three, April 18: Overview of Accountability Problems and Distributive Politics}
+
+The readings this week are meant to provide an informal overview of the basic issues that generally animate our thinking on the topic.
+
+
+The Golden-Min review article provides a slightly dated \href{http://www.annualreviews.org/doi/suppl/10.1146/annurev-polisci-052209-121553/suppl_file/pl16_golden_supmat_biblio.pdf}{\textit{Bibliography of Studies on Distributive Politics in Countries
+Other than the United States}} that you may find helpful. 
+
+The first half of class this week will be used to examine the Indian data and dataset assembly process that is analyzed in the Golden-Min article. The
+goal is to familiarize you with the steps involved in collecting and assembling data typically used in observational studies of distributive politics. We will examine how the data was collected, the files that cleaned and assembled the dataset, and the final data matrix, among other things.  This will also be an opportunity to examine how to write and comment clean and reproducible code. 
+
+\textit{Readings:}
+
+\bibentry{manin99}. Course repo. 
+
+\href{DOI: 10.1146/annurev-polisci-052209-121553}{\bibentry{golden12}}.
+
+\textbf{Week Four, April 25: Formalizing Distributive Politics}
+
+\textit{Due before class:}
+
+No later than Tuesday, April 24 at 6:00pm, please push to the course repo
+a one-page memo (in .pdf) presenting basic information about your proposed project. Your memo should include: 
+your name, project title, country (or other) setting, data source(-s), data units and level(-s) of analysis,
+and a one-paragraph statement of the theoretical problem or main
+hypothesis that you intend
+to investigate. In addition, please write one or two sentences about why the problem is important. 
+All this information should fit onto a single sheet of paper
+(without using a font that is too small to read). 
+
+This week's reading provides a formalization of agency problems and distributive politics (called special interest
+politics by Persson and Tabellini). If you have difficulties following the models, keep reading, and write down what
+you understand of the structure of each. This is not a class in formal modeling, and modeling background is not assumed. Just do your best to figure out the importance of each assigned reading.
+
+\textit{Readings:}
+
+Read memos submitted by your colleagues for today's class. 
+
+\bibentry{persson00}, chs. 4 and 7. Course repo.
+
+\href{http://link.springer.com/article/10.1007\%2FBF00124924?LI=true}{\bibentry{ferejohn86}}. 
+
+\href{http://dx.doi.org/10.2307/2960152}{\bibentry{dixit96}}. 
+
+\textbf{Week Five, May 2: Instructor Out of Town}
+
+\textbf{Week Six, May 9: Core and Swing Voters}
+
+When and whether candidates and political parties target core or swing voters remains an on-going debate in political science. 
+Is there a single right answer to this question?
+
+\textit{Readings:}
+
+\href{http://dx.doi.org/10.1017/S0003055405051683}{\bibentry{stokes05}}.
+
+Also, skim:
+\begin{quote}
+\href{http://dx.doi.org/10.1017/S0003055408080106}{\bibentry{nichter08}}. 
+\end{quote}
+
+\href{http://dx.doi.org/10.1017/CBO9780511585869.008}{\bibentry{diazcayeros07}}.
+
+\href{http://journals.sagepub.com/doi/abs/10.1177/0010414012463897}{\bibentry{albertus13}}.
+
+\href{https://onlinelibrary.wiley.com/doi/full/10.1111/ecpo.12070}{\bibentry{marques16}}.
+
+\textbf {Week Seven, May 16: Discussion Day}
+
+No later than Sunday, May 13 at 6:00pm, please make available a .pdf draft of your PAP in the course repository. Each of you will be responsible for serving as the formal discussant of one of your colleague's
+draft PAP. To prepare your ten minutes of remarks, please review \href{http://sites.utexas.edu/ecoadvising/files/2012/05/ESP-Tips-on-being-a-good-discussant1.pdf}{Tips on Being a Good Discussant.}  In addition, please read all the other draft PAPs from your classmates.
+
+\textbf{Week Eight: May 23: Cultural, Ethnic, Regional, and Partisan Favoratism}
+
+\textit{Readings:}
+
+
+\href{DOI: http://dx.doi.org/10.1017/S1537592713001035}{\bibentry{kramon13}}. 
+
+\href{http://dx.doi.org/10.1017/S0003055412000573}{\bibentry{dunning13}}. 
+
+\href{https://www.cambridge.org/core/journals/american-political-science-review/article/presidential-influence-in-an-era-of-congressional-dominance/59CDE5E3659F0A46A48DEC629E801845}{\bibentry{rogowski16}}.
+
+\href{http://journals.sagepub.com/doi/abs/10.1177/0010414017710255}{\bibentry{bueno18}}.
+
+\textbf{Week Nine, May 30: Political Returns of Particularism}
+
+\textit{Readings:}
+
+\href{doi: 10.1177/0010414009332126}{\bibentry{arriola09}}.
+
+\href{http://www.jstor.org/stable/23496658}{\bibentry{zucco13}}.
+
+\href{https://www.cambridge.org/core/journals/british-journal-of-political-science/article/testing-models-of-distributive-politics-using-exit-polls-to-measure-voters-preferences-and-partisanship/1B188A486A0BE90F405E0BD959B7FD47}{\bibentry{larcinese13}}.
+
+\href{https://www.cambridge.org/core/journals/journal-of-modern-african-studies/article/div-classtitlenon-discretionary-resource-allocation-as-political-investment-evidence-from-ghanadiv/4C83D492B7B6296786D629B94BBCBB0E}{\bibentry{asunka17a}}.
+
+\textbf {Week Ten, June 6: Redistribution, Equity and Elite Capture}
+
+\textit{Readings:}
+
+\href{doi:10.1016/j.jdeveco.2006.01.004}{\bibentry{bardhan06a}}.
+
+\href{http://www.jstor.org/stable/40060150}{\bibentry{humphreys06}}.
+
+\href{http://www.nber.org/papers/w18798}{\bibentry{alatas13}}.
+
+\bibentry{min15}, chapters 5--7. Course repo.
+\bigskip
+
+\centerline{************}\\
+
+\bigskip
+\centerline{\textbf{Final Pre-Analysis Plans due Friday, June 8 at 5:00pm}}
+
+
+\end{document}
