@@ -9,7 +9,7 @@ output: pdf_document
 Finished? Not Yet.
 
 ## Theoretical Problem or Main Hypothesis (one paragraph)
-
+stuff
 ## 1-2 sentences about importance
 
 ### Countries (context) studied
