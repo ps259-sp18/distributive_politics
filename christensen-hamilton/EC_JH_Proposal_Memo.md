@@ -4,6 +4,7 @@ title: 'Drivers of Distributive Preferences: Symbolic Politics vs Self-Interest 
 author: "Ethan Christensen & Jenny Hamilton"
 date: "April 23, 2018"
 output: pdf_document
+bibliography: symbolic_politics_africa_bibliography.bib
 ---
 
 **Theoretical Problem**
@@ -24,3 +25,5 @@ This project will make the following contributions to the literature:
 We propose to use individual-level data collected in Afrobarometer's sixth round survey (2014-2015) . We will use two questions to measure our dependent outcome, policy preferences. The first  question asked respondents in all 36 countries about willingness to raise taxes if it results in better access to health care (Q65C). The second question asked respondents in Liberia (Q86F-LIB) and Sierra Leone (Q86G-SRL) about their willingness to allocate resources toward combatting Ebola versus toward other prioirites. We will use other Afrobarometer items to develop measure for material self-interest and symbolic predispositions. For example, for the Ebola question, we will gage self-interest using questions that ask whether respondents knew infected individuals and whether Ebola disrupted their access to other medical treatments. We will gage symbolic predispositions with questions on strength of ethnic identity, party affiliation, and political ideology. We will use a logit regression to differentiate the explanatory potential of self-interest and symbolic predispositions, just as Sears and coauthors did in their original analyses. 
 
 We expect that, overall, symbolic predispositions will explain greater variation in distributive preferences than material self-interest. However, we expect that symbolic predispositions will explain greater variation in preferences for the generalized healthcare question than the Ebola question, as Ebola had concrete and highly observable impacts on people's lives.
+
+### References
