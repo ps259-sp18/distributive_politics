@@ -30,12 +30,7 @@ This project will make the following contributions to the literature:
 
 
 ### Countries (context) studied
-36 african countries contained in Afrobarometer, with an additional focus on Sierra Leone and Liberia.
-## Data
-round 6 of Afrobarometer. Use the questions about healthcare, and the questions about Ebola for Liberia and Sierra Leone. 
-## Data units
-Personal responses to survey data.
-## Levels of analysis
-Persons, but clustered at the country level.
+We propose to use individual-level data collected in the sixth round of the Afrobarometer survey (2014, 2015) to study this topic. We will use two measurements as dependent outcomes. The first outcome is participant response to a question (Q65C) asked to respondents in all 36 countries about willingness to have taxes raised if it results in better access to health care. The second outcome is a question (Q86F-LIB) asking respondents in Liberia and Sierra Leone how much they agree with the statement "The government should devote many more resources to combating Ebola even if this means that less money is spent on things like education." We will measure self-interest through questions that measure exposure to ebola such as having close relatives or friends who contracted Ebola, as well as how ebola disrupted their regular lives.
+
 
 
