@@ -1,0 +1,41 @@
+---
+title: "Pre-Analysis Plan"
+subtitle: "Drivers of Distributive Preferences: Symbolic Politics vs Self-Interest in Africa"
+author: "Jennifer Hamilton & Ethan Christensen"
+date: "May 11, 2018"
+output: pdf_document
+---
+
+#Introduction
+
+In his 1957 classic \textit{An Economic Theory of Democracy}, Anthony Downs adopts as a key assumption of his model that "cititzens act rationally in politics" [@downs_economic_1957 36]. That is, citizens cast votes aimed a maximizing their benefits from government. Downs allows that utility can be derived from altruistic action, not only from their material income or benefits. Nonetheless, research on voting behavior continues to conceptualize voting as a rational and/or self-intersted act. For instance, the oft-cited Meltzer-Richard model posits that voters take into account their position in the income distribution and vote to establish a system of taxation that maximizes their private material self-interest [@meltzer_rational_1981]. 
+
+Mounting evidence suggests this idealized notion of a rational and materially self-interested voter is not representative of reality. Automatic emotional responses are now understood to play an important role in information processing and decision making. For instance, Charles S. Taber and Milton Lodge have collected evidence of "hot cognition," wherein political stimuli automatically and rapidly trigger an affective charge from long-term memory; these affective charges influence subsequent cognition [@lodge_automaticity_2005, @morris_activation_2003]. Such affectively charged cognitions falls short of the idealized rational cognition pervasive in political science models.
+
+Recognizing the role of affect in preference formation, David Sears and coauthors developed a theory of symbolic politics [@sears_self-interest_1980, @sears_whites_1979, @lau_self-interest_1978]. Under this theory, citizens form predispositions toward political objects or symbols early in life that remain relatively stable over a lifetime. Later in life, exposure to stimulus reminiscent of that political symbol triggers an affectively charged response based on longstanding predispositions. The need for cognitive consistency outweights present material self-interest. As a result, "Political attitudes... are formed mainly in congruence with long-standing values about society and the polity, rather than short-term instrumentalities for satisfaction of one's current private needs" [@sears_self-interest_1980 671]. As a classic example, individuals most involed in anti-Vietnam war protest did not have much literal personal skin in game. They came from populations protected from the draft -- young women, as well as young men who received higher education exemptions from the draft. Symbolic predispositions better explain their actions than material self-interest.
+
+In order to gain empirical traction on the theory, Sears and coauthors adopt a limited definition of self-interested attitudes as those that are "directed toward maximizing gains or minimizing losses to the individual's tangible private well-being," excluding other forms of utility such as value expression [@sears_whites_1979 369]. They chose measure of self-interest that are as fine-grained and  direct as possible. Measuring self-interest with demographic variables, for instance, is problematic because it fails to differentiate between current self-interest and pre-adult socialization. Using U.S. polling data, they found that symbolic predispositions (such as racial prejudice, nationalism, ideology, or party identification) explained far greater variation in attitudes toward the Vietnam war, unemployment policy, national health insurance, busing, and law and order than did material self-interest.
+
+Our aim is to apply the symbolic politics theory to a new population. We will do so by leveraging World Values Survey and Afrobarometer questions that appopriately guage policy preference, symbolic predispositions, and material self-interest on five topics: immigration, privatization, education spending, healthcare spending, and ebola prevention spending. We plan to investigate (1) whether symbolic predispositions and private material self-interest each have any explanatory potential over policy preferences, and (2) whether symbolic predispositions has greater explanatory potential than material self-interest. 
+
+Owing to the difficult of manipulating either symbolic predispositions or material self-interest, our investigation will not be causally identified. Nonetheless, we believe this project could make several important contributions to the literature:
+
+\begin{itemize}
+  \item To our knowledge, the theory of symbolic politics has not been applied outside the United States. Applying the theory in sub-Saharan Africa presents a new test for the theory in a new context. In particular, mayn psychological theories have not been adequately tested in non-WEIRD, i.e. non-Western, educated, industrialized, rich, democratic, societies [@henrich_weirdest_2010].
+  \item Should symbolic politics prove resilient to this new context, the findings will allow better insight as to why ethnicity remains salient in African politics. Recent findings suggest that ethnic favoritism may not be as pervasive as once thought [@kasara_tax_2007, @kramon_who_2013, @burgess_value_2015]. Nonetheless, if ethnic group identity is a powerful symbolic attitude, political mobilization along ethnic lines may persist even where ethnic bias in service provision has faded. In addition, it may lead us to question models that assume rational voter behavior. For instance, the recent Metaketa I supposed that information on government performance would alter voter behavior. Expectations of such self-interested behavior may be misinformed if symbolic politics dominate voter preferences.
+  \item Should symbolic politics not prove resilient in this new context, this finding will also be relevant to discussions over the salience of ethnic identity in African politics.
+\end{itemize}
+
+#Description of data
+
+#Selection of the sample
+
+#Hypotheses
+
+#Variable construction
+
+#Estimating equations
+
+
+
+#Multiple hypothesis testing
