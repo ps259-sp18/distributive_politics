@@ -6,6 +6,8 @@ date: "May 11, 2018"
 output: pdf_document
 ---
 
+\textit{Disclaimer}: The Afrobarometer website is technically experiencing technical difficulties, which we expect to be resolved in the near future. However, while we have been able to identify the text of the questions we would like to use, we have not been able to identify the standardized item number at present.
+
 #Introduction
 
 In his 1957 classic \textit{An Economic Theory of Democracy}, Anthony Downs adopts as a key assumption of his model that "cititzens act rationally in politics" [@downs_economic_1957 36]. That is, citizens cast votes aimed a maximizing their benefits from government. Downs allows that utility can be derived from altruistic action, not only from their material income or benefits. Nonetheless, research on voting behavior continues to conceptualize voting as a rational and/or self-intersted act. For instance, the oft-cited Meltzer-Richard model posits that voters take into account their position in the income distribution and vote to establish a system of taxation that maximizes their private material self-interest [@meltzer_rational_1981]. 
@@ -38,13 +40,15 @@ Owing to the difficult of manipulating either symbolic predispositions or materi
 
 For each policy area, we will run an OLS regression with policy preference as the dependent variable and with symbolic attitudes and self-interest indices as the independent variables. We will also control for demographic variables including gender, age, education, and ethnicity. Thus, the model will take the form:
 
-$$y_i = \beta_0 + \textbf{X}_{i1}\beta_1 + \textbf{X}_{i2}\beta_2 +  \textbf{X}_{i3}\beta_3 + \epsilon_i $$
+\begin{equation}
+y_i = \beta_0 + \textbf{X}_{i1}\beta_1 + \textbf{X}_{i2}\beta_2 +  \textbf{X}_{i3}\beta_3 + \epsilon_i 
+\end{equation}
 
 where:
 
 \begin{itemize}
-  \item $\textbf{X}_{1i}$ represents a matrix of symbolic attitudes indicators and $\beta_1$ represents a vector of coefficients for each symbolic attitude indicator.
-  \item $\textbf{X}_{2i}$ represents a matrix of self-interest indicators and $\beta_2$ represents a vector of coefficients for each self-interest indicator.
+  \item $\textbf{X}_{i1}$ represents a matrix of symbolic attitudes indicators and $\beta_1$ represents a vector of coefficients for each symbolic attitude indicator.
+  \item $\textbf{X}_{i2}$ represents a matrix of self-interest indicators and $\beta_2$ represents a vector of coefficients for each self-interest indicator.
   \item $\textbf{X}_{i3}$ represents a matrix of control variables and $\beta_3$ represents a vector of coefficients for each control variable.
 \end{itemize}
 
@@ -56,7 +60,7 @@ For each model, we will conduct the following hypothesis tests:
 
 To test whether symbolic attitudes and material self-interest each contribute to the formation of policy preferences, we will use joint F-tests. These test are NOT drawn from the Sears and coauthors papers, which only consider the statistical significance of each covariate individually.
 
-**Symbolic Attitudes**
+###Symbolic Attitudes
 
 Recalling that $\beta_1$ is a vector of coefficients on all symbolic attitude covariates, the F-test for joint significance of symbolic attitudes indicators has the following hypotheses:
 
@@ -70,7 +74,7 @@ Hence, the restricted model will be
 y_i = \beta_0 + \textbf{X}_{i2}\beta_2 +  \textbf{X}_{i3}\beta_3 + \epsilon_i
 \end{equation}
 
-**Self-interest**
+###Self-interest
 
 Recalling that $\beta_2$ is a vector of coefficients on all self-interest covariates, the F-test for joint significance of self-interest indicators has the following hypotheses:
 
@@ -80,10 +84,97 @@ $H_A$: $\beta_2 \neq \textbf{0}$
 
 Hence, the restricted model will be 
 
-$$y_i = \beta_0 + \textbf{X}_{i1}\beta_1 +  \textbf{X}_{i3}\beta_3 + \epsilon_i$$
+\begin{equation}
+y_i = \beta_0 + \textbf{X}_{i1}\beta_1 +  \textbf{X}_{i3}\beta_3 + \epsilon_i
+\end{equation}
+
+###Standard errors
+
+For both joint F-test, we will use cluster-robust (HC2) standard errors. FIX
 
 ##R-squared comparison test
 
-In the original 
+In the original Sears and coauthors analysis compared the relative contribution of symbolic attitudes and self-interest to policy preferences by comparing the $R^2$ contribution made by each set of covariates. For instance, the contribution of symbolic attitudes will be:
+
+$$R^2_{\text{symbolic}} = R^2_1 - R^2_2$$
+
+where 
+
+\begin{itemize}
+  \item $R^2_{\text{symbolic}}$ represents the explanatory contribution of symbolic attitudes.
+  \item $R^2_1$ represents the coefficent of determination for the full model, including symbolic attitude indicators, self-interest indicators, and control variables (equation 1).
+  \item $R^2_2$ represents the coefficient of determination for the restricted model which excludes symbolic attitude indicators, but includes both self-interest indicators and control variables (equation 2).
+\end{itemize}
+
+Using the same technique, the contribution of self-interest will be:
+
+$$R^2_{\text{self-interest}} = R^2_1 - R^2_3$$
+
+where 
+
+\begin{itemize}
+  \item $R^2_{\text{self-interest}}$ represents the explanatory contribution of self interest.
+  \item $R^2_1$ represents the coefficent of determination for the full model, including symbolic attitude indicators, self-interest indicators, and control variables (equation 1).
+  \item $R^2_2$ represents the coefficient of determination for the restricted model which excludes self-interest indicators, but includes both symbolic attitudes indicators and control variables (equation 2).
+\end{itemize}
+
+We will also use these estimates. However, we will also extend the original analysis by estimating the standard errors of the $R^2$ contributions using bootstrapping, enabling us to assess more rigorously whether contribution of either symbolic attitudes or self-interest clearly outweights the other. Thus, we will test the following hypotheses:
+
+$H_0$: $R^2_{\text{symbolic}} - R^2_{\text{self-interest}} = 0$
+
+$H_A$: $R^2_{\text{symbolic}} - R^2_{\text{self-interest}} \neq 0$
+
+FIX how to bootstrap. We will conduct 10,000 bootstraps to estimate standard errors.
+
+##Sub-group analyses
+
+In their 1980 paper, Sears and coathors also examine results from a series of sub-group analyses on the premise that self-interest may be more prominent in preference formation under certain circumstances. i.e. within certain groups. They developed indices for political sophistication, private-regarding values, perceived government responsiveness, sense of political efficacy, and perceiving the issue as a very important problem. 
+
+FIX within sample or whole sample
+
+###Political Sophistication
+
+This subgroup analysis is of greatest importance for Sears and coauthors, as rationally self-interested behavior presumes the availability of adequate information. In their 1980 analysis, they measure political sophistication using a composite index of education, basic political knowledge, self-reported interest in the ongoing political campaign, and the number of media in which the campaign was followed [@sears_self-interest_1980]. Following the discussion of political sophistication measures by John Zaller [@zaller_nature_1992], we do not replicate Sears and coauthors' composite index and instead use a summary index based solely on political knowledge. These data are available for the Afrobarometer question from Round 3 only (preference on school fees), so this is the only policy on which we complete this sub-group analysis.
+
+To measure political sophistication, we use an additive index based on the following questions:
+
+\begin{itemize}
+  \item Can you tell me the name of: Your deputy name at the National Assembly?
+  \item Can you tell me the name of: Your local government councilor?
+  \item Can you tell me the name of: Your Deputy President?
+  \item Do you happen to know which is the political party with the most seats at the National Assembly?
+  \item Do you happen to know how many times a person can be elected president?
+  \item Do you happen to know who is responsible of determining if a law is constitutional or not?
+\end{itemize}
+
+Please note that Afrobarometer questionnaires for individual countries are customized to include appropriate terms for each country (e.g. MP versus deputy). We code 1 for the correct response, as identified by Afrobarometer enumerators, and 0 for all other responses (including "know but can't remember").
+
+Like Sears and coauthors [-@sears_self-interest_1980], we will split the participant pool at the median and rerun the tests separately on each half (below median and above median). 
+
+###Private-regarding values
+
+Children or Schwartz?
+WVS positive independent, hard work, self-expression?; negative tolerance and respect for other people, unselfishness, obedience
+
+###Perceived government responsiveness
+
+Afrobarometer Round 6 contains several questions which allow us to measure perceived government responsiveness, allowing us to subset our data for policy preferences on healthcare spending and ebola spending.
+
+- How much of the time do you think the following try their best to listen to what people like you have to say? Members of Parliament
+- How much of the time do you think the following try their best to listen to what people like you have to say? Local government councilors
+- Do you think that leaders of political parties in this country are more concerned with serving the interests of the people, or more concerned with advancing their own political ambitions, or haven’t you heard enough to say?
+
+
+###Sense of political efficacy
+
+Afrobarometer Round 3 contains a question on political efficacy, allowing us to conduct this sub-group analysis for question. This question reads: "Do you agree or disagree with the following statements? Politics and government sometimes seem so complicated that you can’t really understand what’s going on." We divide respondents into those who agree (includes both agree and strongly agree) and those who disagree (both disagree and strongly disagree), dropping those who respond with "neither agree or disagree" or "don't know". We replicate our analysis on each sub-group.
+
+###Issue importance
+
+In both rounds of Afrobarometer that we use, respondents were asked to identify up to the three most important problems facing the country that the government should address. For our school fees question from Afrobarometer Round 3, we will divide respondents into those who identified education as an important problem (regardless of whether first, second, or third choice) and those who did not, rerunning our tests on each subset. 
+
+For our healthcare question from Afrobarometer Round 6, we will divide respondents into those who identified health or sickness/disease as an important problem (again, regardless or order stated) and those who did not, rerunning our tests on each subset. Note that we do not include those who identify AIDS as a priority in the former group, as we found this response more ambiguous vis-a-vis the healthcare system: addressing AIDS may involve better healthcare provisions (relevant to the policy preference question), but alternatively may mean addressing social stigma (not directly relevant to the policy preference question).
+
+Round 6: priorities for investment? (Healthcare)
 
 #Multiple hypothesis testing
