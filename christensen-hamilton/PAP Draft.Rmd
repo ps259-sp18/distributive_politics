@@ -34,7 +34,41 @@ Owing to the difficult of manipulating either symbolic predispositions or materi
 
 #Variable construction
 
-#Estimating equations
+#Models and hypothesis testing
+
+For each policy area, we will run an OLS regression with policy preference as the dependent variable and with symbolic attitudes and self-interest indices as the independent variables. We will also control for demographic variables including gender, age, education, and ethnicity. Thus, the model will take the form:
+
+$$y_i = \beta_0 + \textbf{X}_{i1}\beta_1 + \textbf{X}_{i2}\beta_2 +  \textbf{X}_{i3}\beta_3 + \epsilon_i $$
+
+where:
+
+\begin{itemize}
+  \item $\textbf{X}_{1i}$ represents a matrix of symbolic attitudes indicators and $\beta_1$ represents a vector of coefficients for each symbolic attitude indicator.
+  \item $\textbf{X}_{2i}$ represents a matrix of self-interest indicators and $\beta_2$ represents a vector of coefficients for each self-interest indicator.
+  \item $\textbf{X}_{i3}$ represents a matrix of control variables and $\beta_3$ represents a vector of coefficients for each control variable.
+\end{itemize}
+
+For each model, we will conduct the following hypothesis tests:
+
+##Joint F tests
+
+To test whether symbolic attitudes and material self-interest each contribute to the formation of policy preferences, we will use joint F-tests. 
+
+**Symbolic Attitudes**
+
+$H_0$: $\beta_1 = 0$
+
+$H_A$: $\beta_1 \neq 0$
+
+Hence, the restricted model will be $y_i = \beta_0 + \textbf{X}_{i2}\beta_2 +  \textbf{X}_{i3}\beta_3 + \epsilon_i$.
+
+**Self-interest**
+
+$H_0$: $\beta_2 = 0$
+
+$H_A$: $\beta_2 \neq 0$
+
+Hence, the restricted model will be $y_i = \beta_0 + \textbf{X}_{i1}\beta_1 +  \textbf{X}_{i3}\beta_3 + \epsilon_i$.
 
 
 
