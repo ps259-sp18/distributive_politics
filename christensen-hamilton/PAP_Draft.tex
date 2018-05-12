@@ -165,9 +165,9 @@ identified. Nonetheless, we believe this project could make several
 important contributions to the literature:
 
 \begin{itemize}
-  \item To our knowledge, the theory of symbolic politics has not been applied outside the United States. Applying the theory in sub-Saharan Africa presents a new test for the theory in a new context. In particular, mayn psychological theories have not been adequately tested in non-WEIRD, i.e. non-Western, educated, industrialized, rich, democratic, societies 
+  \item To our knowledge, the theory of symbolic politics has not been applied outside the United States. Applying the theory in sub-Saharan Africa presents a new test for the theory in a new context. In particular, mayn psychological theories have not been adequately tested in non-WEIRD, i.e. non-Western, educated, industrialized, rich, democratic, societies [@henrich_weirdest_2010].
   \item Should symbolic politics prove resilient to this new context, the findings will allow better insight as to why ethnicity remains salient in African politics. Recent findings suggest that ethnic favoritism may not be as pervasive as once thought [@kasara_tax_2007, @kramon_who_2013, @burgess_value_2015]. Nonetheless, if ethnic group identity is a powerful symbolic attitude, political mobilization along ethnic lines may persist even where ethnic bias in service provision has faded. In addition, it may lead us to question models that assume rational voter behavior. For instance, the recent Metaketa I supposed that information on government performance would alter voter behavior. Expectations of such self-interested behavior may be misinformed if symbolic politics dominate voter preferences.
-  \item Should symbolic politics not prove resilient in this new context, this finding will also be relevant to discussions over the salience of ethnic identity in African politics, which is often assumed to be widespread.
+  \item Should symbolic politics not prove resilient in this new context, this finding will also be relevant to discussions over the salience of ethnic identity in African politics.
 \end{itemize}
 
 \section{Description of data}\label{description-of-data}
@@ -178,7 +178,74 @@ important contributions to the literature:
 
 \section{Variable construction}\label{variable-construction}
 
-\section{Estimating equations}\label{estimating-equations}
+\section{Models and hypothesis
+testing}\label{models-and-hypothesis-testing}
+
+For each policy area, we will run an OLS regression with policy
+preference as the dependent variable and with symbolic attitudes and
+self-interest indices as the independent variables. We will also control
+for demographic variables including gender, age, education, and
+ethnicity. Thus, the model will take the form:
+
+\[y_i = \beta_0 + \textbf{X}_{i1}\beta_1 + \textbf{X}_{i2}\beta_2 +  \textbf{X}_{i3}\beta_3 + \epsilon_i \]
+
+where:
+
+\begin{itemize}
+  \item $\textbf{X}_{1i}$ represents a matrix of symbolic attitudes indicators and $\beta_1$ represents a vector of coefficients for each symbolic attitude indicator.
+  \item $\textbf{X}_{2i}$ represents a matrix of self-interest indicators and $\beta_2$ represents a vector of coefficients for each self-interest indicator.
+  \item $\textbf{X}_{i3}$ represents a matrix of control variables and $\beta_3$ represents a vector of coefficients for each control variable.
+\end{itemize}
+
+Note that symbolic attitudes and self-interest are thus \emph{not}
+summary indices; rather, each indictor is entered individually into the
+model. This replicates the original methodology used in Sears and
+coauthors' series of symbolic politics papers {[}@sears\_whites\_1979,
+@sears\_self-interest\_1980{]}.
+
+For each model, we will conduct the following hypothesis tests:
+
+\subsection{Joint F tests}\label{joint-f-tests}
+
+To test whether symbolic attitudes and material self-interest each
+contribute to the formation of policy preferences, we will use joint
+F-tests. These test are NOT drawn from the Sears and coauthors papers,
+which only consider the statistical significance of each covariate
+individually.
+
+\textbf{Symbolic Attitudes}
+
+Recalling that \(\beta_1\) is a vector of coefficients on all symbolic
+attitude covariates, the F-test for joint significance of symbolic
+attitudes indicators has the following hypotheses:
+
+\(H_0\): \(\beta_1 = \textbf{0}\)
+
+\(H_A\): \(\beta_1 \neq \textbf{0}\)
+
+Hence, the restricted model will be
+
+\begin{equation}
+y_i = \beta_0 + \textbf{X}_{i2}\beta_2 +  \textbf{X}_{i3}\beta_3 + \epsilon_i
+\end{equation}
+
+\textbf{Self-interest}
+
+Recalling that \(\beta_2\) is a vector of coefficients on all
+self-interest covariates, the F-test for joint significance of
+self-interest indicators has the following hypotheses:
+
+\(H_0\): \(\beta_2 = \textbf{0}\)
+
+\(H_A\): \(\beta_2 \neq \textbf{0}\)
+
+Hence, the restricted model will be
+
+\[y_i = \beta_0 + \textbf{X}_{i1}\beta_1 +  \textbf{X}_{i3}\beta_3 + \epsilon_i\]
+
+\subsection{R-squared comparison test}\label{r-squared-comparison-test}
+
+In the original
 
 \section{Multiple hypothesis testing}\label{multiple-hypothesis-testing}
 
