@@ -18,7 +18,7 @@ Recognizing the role of affect in preference formation, David Sears and coauthor
 
 In order to gain empirical traction on the theory, Sears and coauthors adopt a limited definition of self-interested attitudes as those that are "directed toward maximizing gains or minimizing losses to the individual's tangible private well-being," excluding other forms of utility such as value expression [@sears_whites_1979 369]. They chose measure of self-interest that are as fine-grained and  direct as possible. Measuring self-interest with demographic variables, for instance, is problematic because it fails to differentiate between current self-interest and pre-adult socialization. Using U.S. polling data, they found that symbolic predispositions (such as racial prejudice, nationalism, ideology, or party identification) explained far greater variation in attitudes toward the Vietnam war, unemployment policy, national health insurance, busing, and law and order than did material self-interest.
 
-Our aim is to apply the symbolic politics theory to a new population. We will do so by leveraging World Values Survey and Afrobarometer questions that appopriately guage policy preference, symbolic predispositions, and material self-interest on five topics: immigration, privatization, education spending, healthcare spending, and ebola prevention spending. We plan to investigate (1) whether symbolic predispositions and private material self-interest each have any explanatory potential over policy preferences, and (2) whether symbolic predispositions has greater explanatory potential than material self-interest. 
+Our aim is to apply the symbolic politics theory to a new population. We will do so by leveraging World Values Survey and Afrobarometer questions that appopriately guage policy preference, symbolic predispositions, and material self-interest on five topics: immigration, privatization, education spending, and ebola prevention spending. We plan to investigate (1) whether symbolic predispositions and private material self-interest each have any explanatory potential over policy preferences, and (2) whether symbolic predispositions has greater explanatory potential than material self-interest. 
 
 Owing to the difficult of manipulating either symbolic predispositions or material self-interest, our investigation will not be causally identified. Nonetheless, we believe this project could make several important contributions to the literature:
 
@@ -90,7 +90,7 @@ y_i = \beta_0 + \textbf{X}_{i1}\beta_1 +  \textbf{X}_{i3}\beta_3 + \epsilon_i
 
 ###Standard errors
 
-For both joint F-test, we will use cluster-robust (HC2) standard errors. FIX
+For both joint F-test, we will use cluster-robust standard errors, with primary sampling units as the cluster.
 
 ##R-squared comparison test
 
@@ -124,13 +124,25 @@ $H_0$: $R^2_{\text{symbolic}} - R^2_{\text{self-interest}} = 0$
 
 $H_A$: $R^2_{\text{symbolic}} - R^2_{\text{self-interest}} \neq 0$
 
-FIX how to bootstrap. We will conduct 10,000 bootstraps to estimate standard errors.
+We will conduct 10,000 bootstraps to estimate standard errors. Our goal is to maintain consistency between the original sampling procedure and our bootstrap resampling method. However, we face certain practical limitations.
+
+\textit{Disclaimer: We are not yet settled on our bootstrapping procedure and will seek further advice before finalizing our PAP.}
+
+\begin{itemize}
+  \item Afrobarometer uses consistent sampling policies across countries and across survey rounds. For Afrobaromter questions, we will
+  \subitem Divide the data back into country samples.
+  \subitem Stratify the data by urban and rural PSUs within each country.
+  \subitem Resample PSUs within each strata.
+  \item The World Values Survey does not use consistent sampling methods across countries. As such, we resample according to the lowest common denominator among country sampling procedures:
+  \subitem Divide the data back into country samples.
+  \subitem Resample PSUs within each country.
+\end{itemize}
 
 ##Sub-group analyses
 
 In their 1980 paper, Sears and coathors also examine results from a series of sub-group analyses on the premise that self-interest may be more prominent in preference formation under certain circumstances. i.e. within certain groups. They developed indices for political sophistication, private-regarding values, perceived government responsiveness, sense of political efficacy, and perceiving the issue as a very important problem. 
 
-FIX within sample or whole sample
+\textit{Looking for feedback: Should we subset within each country and then re-aggregate, or should we simply sub-set the merged data?}
 
 ###Political Sophistication
 
@@ -158,11 +170,17 @@ WVS positive independent, hard work, self-expression?; negative tolerance and re
 
 ###Perceived government responsiveness
 
-Afrobarometer Round 6 contains several questions which allow us to measure perceived government responsiveness, allowing us to subset our data for policy preferences on healthcare spending and ebola spending.
+Afrobarometer Round 3 contains several questions which allow us to measure perceived government responsiveness, allowing us to subset our data for policy preferences on school fees. We will create an additive index based on the following questions, with responses to each question normalized on a scale from 0 to 1.
 
-- How much of the time do you think the following try their best to listen to what people like you have to say? Members of Parliament
-- How much of the time do you think the following try their best to listen to what people like you have to say? Local government councilors
-- Do you think that leaders of political parties in this country are more concerned with serving the interests of the people, or more concerned with advancing their own political ambitions, or haven’t you heard enough to say?
+\begin{itemize}
+  \item How much of the time do think the following try their best to listen to what people like you have to say: Members of Parliament? Response options: (0) never, only sometimes, often, always (1)
+  \item How much of the time do think the following try their best to listen to what people like you have to say: Local Government Councillors? Response options: (0) never, only sometimes, often, always (1)
+  \item Taking the Problem you mentioned first [as the highest prioirity problem facing the country], how likely is it that the government will solve your most important problem within the next few years? Reponse options: (0) not at all likely, likely, not very likely, likely, very likely (1)
+\end{itemize}
+
+We will split the sample at the median, rerunning our analysis separately on each half.
+
+\textit{Again, should we split within each country or within the merged sample?}
 
 
 ###Sense of political efficacy
@@ -173,8 +191,16 @@ Afrobarometer Round 3 contains a question on political efficacy, allowing us to 
 
 In both rounds of Afrobarometer that we use, respondents were asked to identify up to the three most important problems facing the country that the government should address. For our school fees question from Afrobarometer Round 3, we will divide respondents into those who identified education as an important problem (regardless of whether first, second, or third choice) and those who did not, rerunning our tests on each subset. 
 
-For our healthcare question from Afrobarometer Round 6, we will divide respondents into those who identified health or sickness/disease as an important problem (again, regardless or order stated) and those who did not, rerunning our tests on each subset. Note that we do not include those who identify AIDS as a priority in the former group, as we found this response more ambiguous vis-a-vis the healthcare system: addressing AIDS may involve better healthcare provisions (relevant to the policy preference question), but alternatively may mean addressing social stigma (not directly relevant to the policy preference question).
+% For our healthcare question from Afrobarometer Round 6, we will divide respondents into those who identified health or sickness/disease as an important problem (again, regardless or order stated) and those who did not, rerunning our tests on each subset. Note that we do not include those who identify AIDS as a priority in the former group, as we found this response more ambiguous vis-a-vis the healthcare system: addressing AIDS may involve better healthcare provisions (relevant to the policy preference question), but alternatively may mean addressing social stigma (not directly relevant to the policy preference question).
 
-Round 6: priorities for investment? (Healthcare)
+%Round 6: priorities for investment? (Healthcare)
 
 #Multiple hypothesis testing
+
+We will use the Benjamimi-Hochberg Procedure to address false discovery through multiple hypothesis testing. In other words, we will:
+
+\begin{itemize}
+  \item Order the p-values for each of $m$ hypothesis tests such that $p_1 \leq p_2 \leq \ldots \leq p_m$.
+  \item Maximize $k$ such that $p_i \leq \frac{\alpha \cdot k}{m}$. This value will be $k^*$.
+  \item Reject all hypotheses $H_k$ for $k \leq k^*$
+\end{itemize}
