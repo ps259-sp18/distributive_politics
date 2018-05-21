@@ -1,0 +1,810 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdftitle={Pre-Analysis Plan},
+            pdfauthor={Jennifer Hamilton \& Ethan Christensen},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\newcommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+  \title{Pre-Analysis Plan}
+  \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+\subtitle{Drivers of Distributive Preferences: Symbolic Politics vs Self-Interest
+in Africa}
+  \author{Jennifer Hamilton \& Ethan Christensen}
+  \preauthor{\centering\large\emph}
+  \postauthor{\par}
+  \predate{\centering\large\emph}
+  \postdate{\par}
+  \date{May 11, 2018}
+
+\usepackage{mathspec}
+\usepackage{amsmath,amsthm}
+\usepackage{dcolumn}
+\usepackage{framed}
+\usepackage[strings]{underscore}
+\usepackage{array}
+
+\begin{document}
+\maketitle
+
+\textit{Disclaimer}: The Afrobarometer website is currently down. While
+we expect it to be resolved in the near future, we have not been able to
+identify the standardized item numbers for Afrobarometer questions at
+present.
+
+\section{Introduction}\label{introduction}
+
+In his 1957 classic \textit{An Economic Theory of Democracy}, Anthony
+Downs adopts as a key assumption of his model that ``cititzens act
+rationally in politics'' (1957, 36). That is, citizens cast votes aimed
+a maximizing their benefits from government. Downs allows that utility
+can be derived from altruistic action, not only from their material
+income or benefits. Nonetheless, research on voting behavior continues
+to conceptualize voting as a rational and self-intersted act. For
+instance, the oft-cited Meltzer-Richard model posits that voters take
+into account their position in the income distribution and vote to
+establish a system of taxation that maximizes their private material
+self-interest (1981).
+
+Mounting evidence suggests this idealized notion of a rational and
+materially self-interested voter is not representative of reality.
+Automatic emotional responses are now understood to play an important
+role in information processing and decision making. For instance,
+Charles S. Taber and Milton Lodge have collected evidence of ``hot
+cognition,'' wherein political stimuli automatically and rapidly trigger
+an affective charge from long-term memory; these affective charges
+influence subsequent cognition (Lodge and Taber 2005; Morris et al.
+2003). Such affectively charged cognitions falls short of the idealized
+rational cognition pervasive in political science models.
+
+Recognizing the role of affect in preference formation, David Sears and
+coauthors developed a theory of symbolic politics (Sears et al. 1980;
+Sears, Hensler, and Speer 1979; Lau, Brown, and Sears 1978). Under this
+theory, citizens form predispositions toward political objects or
+symbols early in life that remain relatively stable over a lifetime.
+Later in life, exposure to stimulus reminiscent of that political symbol
+triggers an affectively charged response based on longstanding
+predispositions. The need for cognitive consistency outweights present
+material self-interest. As a result, ``Political attitudes\ldots{} are
+formed mainly in congruence with long-standing values about society and
+the polity, rather than short-term instrumentalities for satisfaction of
+one's current private needs'' (1980, 671). As a classic example,
+individuals most involed in anti-Vietnam war protest did not have much
+literal personal skin in game. They came from populations protected from
+the draft -- young women, as well as young men who received higher
+education exemptions from the draft. Symbolic predispositions better
+explain their actions than material self-interest.
+
+In order to gain empirical traction on the theory, Sears and coauthors
+adopt a limited definition of self-interested attitudes as those that
+are ``directed toward maximizing gains or minimizing losses to the
+individual's tangible private well-being,'' excluding other forms of
+utility such as value expression (1979, 369). They chose measure of
+self-interest that are as fine-grained and direct as possible. Measuring
+self-interest with demographic variables, for instance, is problematic
+because it fails to differentiate between current self-interest and
+pre-adult socialization. Using U.S. polling data, they found that
+symbolic predispositions (such as racial prejudice, nationalism,
+ideology, or party identification) explained far greater variation in
+attitudes toward the Vietnam war, unemployment policy, national health
+insurance, busing, and law and order than did material self-interest.
+
+Our aim is to apply the symbolic politics theory to a new population. We
+will do so by leveraging World Values Survey and Afrobarometer questions
+that appopriately guage policy preference, symbolic predispositions, and
+material self-interest on four topics: immigration, privatization,
+education spending, and ebola prevention spending. We plan to
+investigate (1) whether symbolic predispositions and private material
+self-interest each have any explanatory potential over policy
+preferences, and (2) whether symbolic predispositions has greater
+explanatory potential than material self-interest.
+
+Owing to the difficult of manipulating either symbolic predispositions
+or material self-interest, our investigation will not be causally
+identified. Moreover, we recognize that some of our item measures are
+less than ideal owing to limitations of using pre-existing data.
+Nonetheless, we believe this project could make several important
+contributions to the literature. First, to our knowledge, the theory of
+symbolic politics has not been applied outside the United States and
+Europe. Applying the theory in sub-Saharan Africa presents a new test
+for the theory in a new context. In particular, mayn psychological
+theories have not been adequately tested in non-WEIRD, i.e.~non-Western,
+educated, industrialized, rich, democratic, societies (Henrich, Heine,
+and Norenzayan 2010); this project will help to rectify this imbalance
+in psychology research.
+
+Second, debate remains over the circumstances in which symbolic
+attitudes dominate policy preferences over self-interest (Hunt et al.
+2010; Weeden and Kurzban 2017; Sears et al. 1980; {\textbf{???}}; Crano
+1997; {\textbf{???}}). Testing symbolic politics in a new arena could
+help resolve this debate.
+
+Third, this project will contribute to the African ethnic voting
+literature. An instrumental explanation suggests that ethnic voting is a
+rational response to competition for scarce resources, wherein voters
+expect elected politicians to preferentially distribute goods to
+coethnics ({\textbf{???}}, ({\textbf{???}})). However, recent research
+has shed light on the limits of this logic. Ethnic voting is neither
+guaranteed nor universal, but rather moderated by political institutions
+({\textbf{???}}), social institutions ({\textbf{???}}), geography
+({\textbf{???}}; {\textbf{???}}), and political performance
+({\textbf{???}}; Carlson 2015; {\textbf{???}}). Moreover, ethnic
+favoritism in the distribution of goods may not be as pervasive as once
+thought (Kasara 2007; Kramon and Posner 2013; Burgess et al. 2015). If
+ethnic group identity is a powerful symbolic attitude, political
+mobilization along ethnic lines may persist \emph{irrationally} even
+where ethnic bias in service provision has faded. This persistence of
+symbolic attitudes may lead us to question models that assume rational
+voter behavior; for instance, it could explain the null results in
+Metaketa I. On the other hand, if ethnic identity is not dominant in
+determining policy preference, we will add to the literature suggesting
+limits to ethnic voting.
+
+\section{Description of data}\label{description-of-data}
+
+In this study we plan to utilize data from the World Values Survey and
+Afrobarometer surveys. The World Values Survey (WVS) is the largest and
+longest-running non-commercial cross-national survey of beliefs and
+values. The most recently completed wave surveyed participants from
+almost 100 countries in 2011-2014. Each country-level survey has a
+minimum of 1,200 respondents (ages 18-85), conducted through
+face-to-face interviews. Depending on the country, sampling occurs
+through either probability or a combination of probability and
+stratified random sampling as noted in the documentation. From these
+countries, we identify the five that are in sub-Saharan Africa: Ghana,
+Nigeria, Rwanda, South Africa, and Zimbabwe.
+
+Afrobarometer is a long running survey designed specifically to
+understand political attitudes and behaviors in sub-Saharan Africa.
+Respondents answer questions on a variety of topics including public
+services, governance, identity, and political participation. There have
+been six completed waves, with the most recent in 2014/2015 also
+covering the most countries (36). Most country surveys have either 1,200
+or 2,400 respondents. Each survey uses a clustered, stratified,
+multi-stage, area probability sample. Occasionally a survey will
+oversample a politically relevant sub-population in order to ensure a
+large-enough subsample.
+
+From these two sources we identify the four policy preference choices
+available to us as listed above. In order for a policy preference
+question to be included in our analysis, the relevant survey also had to
+contain appropriate items to identify the self-interest and symbolic
+attitudes of respondents, hence why so few policy preference items were
+included.
+
+For each topic we use different samples of countries based on the data
+available. The relevant questions on immigration and privatization are
+contained in the WVS and so is limited to those five countries. The
+relevant data on Ebola from the Afrobarometer surveys in Liberia and
+Sierra Leone. We limit our analysis of education preferences to
+countries where there is not compelling evidence of ethnic preference in
+education outcomes. If ethnic preferences exist, then symbolic politics
+(ethnic identity) and self-interest point in the same direction and are
+difficult to disentangle. We select countries for inclusion using Franck
+and Rainer's results on systematic bias in primary education attainment
+and literacy (2012). We limit our analysis to only countries in which no
+more than one of their four indicators attained statistical
+significance. This leaves us with data from five countries.
+
+In early stages of this project, concerns were cited regarding general
+Ebola knowledge and the prevalence of Ebola mythology in Liberia and
+Sierra Leone. If respondents lacked knowledge of Ebola, they might not
+be able to appropriately assess their own self interest and the
+consequences of the policies they advocate. We believe this should not
+be a concern. Mythology and knowledge gaps were common at the outbreak
+of the Ebola epidemic in 2013. However, Afrobarometer's Round 6 survey
+was not administered in Liberia and Sierra Leone until 2015, well after
+a series of public information campaigns aimed at improving knowledge
+and dispelling myths began. We believe there is sufficient evidence of
+sufficient Ebola knowledge for participants to answer the survey
+questions posed (Kobayashi et al. 2015; Jiang et al. 2016; Wilken et al.
+2017).
+
+\section{Hypotheses}\label{hypotheses}
+
+Based on the original findings of the Sears and coauthors' papers, we
+expect that both symbolic attitudes and self-interest will be jointly
+significant in the model for each question considered. Generally
+speaking, we expect that symbolic attitudes go further to explain policy
+preferences than do self-interest.
+
+However, we expect the opposite in the case of Ebola spending. Sears and
+coauthors hypothesized that self-interest will outweigh symbolic
+politics when policy consequences are particularly ``definite, concrete,
+and immediate,'' citing several examples (1980, 680). Recent and
+traumatic personal experiences with Ebola likely fit this mold.
+
+\section{Variable construction}\label{variable-construction}
+
+For all items, ``party in power'' will mean party in control of the
+executive.
+
+\textit{Note: we still have not yet decided how we will treat "don't know" or "not applicable" responses. We will determine this before finalizing our PAP.}
+
+\subsection{Immigration}\label{immigration}
+
+\textit{Source}: World Values Survey Round 6
+
+\textit{Policy preference question}: (V46) When jobs are scarce,
+employers should give priority to people of this country over
+immigrants.
+
+\textit{Scaling}: Agree (1), neither (0.5) or disagree (0)
+
+\textbf{Symbolic Attitudes Items}
+
+\begin{enumerate}
+  \item (V101) Wealth accumulation ideology \textit{Scaling}: People can only get rich at the expense of others (1) to Wealth can grow so there´s enough for everyone (10).  \textit{Expected sign}: negative.
+  \item (V96) Income inequality ideology. \textit{Scaling}: Incomes should be made more equal (1) to We need larger income differences as incentives for individual effort (10). \textit{Expected sign}: negative.
+  \item (V211) How proud of nationality. \textit{Scaling}: (1) Very proud, quite proud, not very proud, not very proud at all (0). \textit{Expected sign}: positive. 
+  \item (V107) How much you trust: People of another nationality. \textit{Scaling}: (1) trust completely, trust somewhat, do not trust very much, do not trust at all (0).\textit{Expected sign}: negative.
+  \item (V214) I see myself as part of the [country] nation. \textit{Scaling}: (1) strongly agree, agree, disagree, strongly disagree (0). \textit{Expected sign}: negative.
+  \item (V29) Party preference. \textit{Scaling}: Recode 1 for part in power, else 0. \textit{Expected sign}: unclear.
+  \item (V16) Important child qualities: tolerance and respect for other people. \textit{Scaling}: mentioned (1) or not mentioned (0). \textit{Expected sign}: negative.
+  \item (V95) Self-positioning on political scale. \textit{Scaling}: Left (1) to Right (10). \textit{Expected sign}: negative.
+  \item (V98) Government responsibility. \textit{Scaling}: Government should take more responsiboity to ensure that everone is provided for (1) to People should take more responsibility to provide for themselves (10). \textit{Expected sign}: negative.
+\end{enumerate}
+
+\textbf{Self-Interest Items}
+
+\begin{enumerate}
+  \item (V243) Mother is an immigrant. \textit{Scaling}: yes (1), no (0) \textit{Expected sign}: positive 
+  \item (V244) Father is an immigrant. \textit{Scaling}: yes (1), no (0) \textit{Expected sign}: positive 
+  \item (V245) Respondent is an immigrant. \textit{Scaling}: yes (1), no (0). \textit{Expected sign}: positive.
+  \item (V191) In the past 12 months, gone without case income. \textit{Scaling}: (1) often, sometimes, rarely, never (0). \textit{Expected sign}: positive.
+  \item (V229) Employment status. \textit{Scaling}: 1 for unemployed, else 0. \textit{Expected sign}: positive.
+  \item (V236) Is the chief wage earner employed now or not, \textit{Scaling}: yes (0), no (1). \textit{Expected sign}:positive.
+  \item (V59) Satisfaction with financial situation of household. \textit{Scaling}: (1) completely dissatisfied to (10) completely satisfied. \textit{Expected sign}: negative.
+  \item (V181) Worries: Losing my job or not finding a job. \textit{Scaling}: (1) very much, a great deal, not much, not much at all (0). \textit{Expected sign}: positive.
+\end{enumerate}
+
+\subsection{Privatization}\label{privatization}
+
+\textit{Source}: World Values Survey Round 6
+
+\textit{Policy preference question}: (V97) Private vs.~state ownership
+of business
+
+\textit{Scaling}: Private ownership of business and industry should be
+increased (1) to Government ownership of business and industry should be
+increased (10).
+
+\textbf{Symbolic Attitudes Items}
+
+\begin{enumerate}
+  \item (V96) Income inequality ideology. \textit{Scaling}: Incomes should be made more equal (1) to We need larger income differences as incentives for individual effort (10). \textit{Expected sign}: negative.
+  \item (V29) Party preference. \textit{Scaling}: Recode 1 for part in power, else 0. \textit{Expected sign}: unclear.
+  \item (V95) Self-positioning on political scale. \textit{Scaling}: Left (1) to Right (10). \textit{Expected sign}: negative.
+  \item (V98) Government responsibility. \textit{Scaling}: Government should take more responsiboity to ensure that everone is provided for (1) to People should take more responsibility to provide for themselves (10). \textit{Expected sign}: negative.
+\end{enumerate}
+
+\textbf{Self-interest Items }
+
+\begin{enumerate}
+ \item (V230) Sector of employment \textit{Scaling}: government or public institution (1), else 0. \textit{Expected sign}: positive. \textit{Note}: this indicator is included on the basis of previous research on preferences over privatization [@battaglio_self-interest_2009].
+\end{enumerate}
+
+\subsection{School fees}\label{school-fees}
+
+\textit{Source}: Afrobarometer Round 3
+
+\textit{Policy preference question}: Which of the following statements
+is closest to your view?. Choose Statement A or Statement B. A: It is
+better to have free schooling for our children, even if the quality of
+education is low. B: It is better to raise educational standards, even
+if we have to pay school fees.
+
+\textit{Scaling}: Strongly agree with A (1) to Strongly agree with B (0)
+
+\textbf{Symbolic Attitudes Items}
+
+\begin{enumerate}
+  \item Think about the condition of [respondent’s identity group]. Do they have less, the same, or more influence in politics than other groups in this country? \textit{Scaling}: (1) much more, more, same, less, much less (0).  \textit{Expected sign}: positive.
+  \item How often are [respondent’s identity group] treated unfairly by the government? \textit{Scaling}: (1) never, sometimes, often, always (0).  \textit{Expected sign}: positive.
+  \item Let us suppose that you had to choose between being a [nationality] and being a [respondent’s identity group]. Which of the following statements best expresses your feelings? \textit{Scaling}: (1) ethnic ID only, ethnic ID more, national and ethnic, national ID more, national ID only (0).  \textit{Expected sign}: negative.
+  \item How much do you trust each of the following types of people: [countrywomen] from other ethnic groups? \textit{Scaling}: (1) Not at all, just a little, somewhat, a lot (0).  \textit{Expected sign}: negative.
+  \item Let’s talk for a moment about the kind of society we would like to have in this country. Which of the following statements is closest to your view?. Choose Statement A or Statement B. A: People should look after themselves and be responsible for their own success in life. B: The government should bear the main responsibility for the well-being of people. \textit{Scaling}: strongly agree with A (1) to strongly agree with B (0).  \textit{Expected sign}: negative.
+  \item Close to which party \textit{Scaling}: recode 1 for party in power, else.  0. \textit{Expected sign}: positive.
+\end{enumerate}
+
+\textbf{Self-interest Items}
+
+\begin{enumerate}
+  \item Over the past year, how often, if ever, have you or your family gone without: School expenses for your children (like fees, uniforms or books)? \textit{Scaling}: (1) never, just once or twice, several times, many times, always (0). \textit{Expected sign}: negative.
+  \item Have you encountered any of these problems with your local public schools during the past 12 months?. Services are too expensive / Unable to pay. \textit{Scaling}: (1) never, once or twice, several times, many times, always (0). \textit{Expected sign}: negative.
+  \item Have you encountered any of these problems with your local public schools during the past 12 months?. Lack of textbooks or other supplies. \textit{Scaling}: (1) never, once or twice, several times, many times, always (0). \textit{Expected sign}: positive.
+  \item Have you encountered any of these problems with your local public schools during the past 12 months?. Poor teaching. \textit{Scaling}: (1) never, once or twice, several times, many times, always (0). \textit{Expected sign}: positive.
+  \item Have you encountered any of these problems with your local public schools during the past 12 months? Absent teachers. \textit{Scaling}: (1) never, once or twice, several times, many times, always (0). \textit{Expected sign}: positive.
+  \item Have you encountered any of these problems with your local public schools during the past 12 months?. Overcrowded classrooms. \textit{Scaling}: (1) never, once or twice, several times, many times, always (0). \textit{Expected sign}: positive.
+  \item Have you encountered any of these problems with your local public schools during the past 12 months? Poor conditions of facilities. \textit{Scaling}: (1) never, once or twice, several times, many times, always (0). \textit{Expected sign}: positive.
+\end{enumerate}
+
+\subsection{Ebola spending}\label{ebola-spending}
+
+\textit{Source}: Afrobarometer Round 6
+
+\textit{Policy preference question}: (Q86g-Lib/Q86g-SRL) Statement 1:
+Government should devote more resources to Ebola vs Statement 2: focus
+on other problems.
+
+\textit{Scaling}: Agree very strongly with 1 (1) to agree very strongly
+with 2 (0)
+
+\textbf{Symbolic Attitudes Items}
+
+\begin{enumerate}
+  \item Attitudes toward Westerners: identify U.S. or former colonial power as model country for development. \textit{Scaling}: recoded from open-ended question, 1 for U.S. or former colonial power, 0 otherwise. \textit{Expected sign}: negative.
+  \item How often are [respondent’s identity group] treated unfairly by the government? \textit{Scaling}: (1) never, sometimes, often, always (0).  \textit{Expected sign}: positive.
+  \item Let us suppose that you had to choose between being a [nationality] and being a [respondent’s identity group]. Which of the following statements best expresses your feelings? \textit{Scaling}: (1) ethnic ID only, ethnic ID more, national and ethnic, national ID more, national ID only (0).  \textit{Expected sign}: negative.
+  \item Close to which party \textit{Scaling}: recode 1 for party in power, else.  0. \textit{Expected sign}: positive.
+  \item 
+\end{enumerate}
+
+\textbf{Self-Interest Items}
+
+\begin{enumerate}
+  \item (Q83a-Lib/Q83a-SRL) Know close friend or relative who was infected with Ebola. \textit{Scaling}: yes (1), no (0). \textit{Expected sign}: positive.
+  \item (Q84a-Lib/Q84a-SRL) Unable to attend school due to Ebola. \textit{Scaling}: (1) never, just once or twice, several times, many times (0). \textit{Expected sign}: positive.
+  \item (Q84b-Lib/Q84b-SRL) Unable to work due to Ebola. \textit{Scaling}: (1) never, just once or twice, several times, many times (0). \textit{Expected sign}: positive.
+  \item (Q84c-Lib/Q84c-SRL) Unable to attend social gatherings due to Ebola. \textit{Scaling}: (1) never, just once or twice, several times, many times (0). \textit{Expected sign}: positive.
+  \item (Q84d-Lib/Q84d-SRL) Unable to get medical care for other health problems due to Ebola. \textit{Scaling}: (1) never, just once or twice, several times, many times (0). \textit{Expected sign}: negative.
+\end{enumerate}
+
+\section{Model}\label{model}
+
+\textit{Note: We are still deciding which model would be most appropriate, as response variables are not binary but they are bounded from 0 to 1. Logit might be better? We will determine this before finalizing our PAP.}
+
+For each policy area, we will run an OLS regression with policy
+preference as the dependent variable and with symbolic attitudes and
+self-interest indices as the independent variables. We will also control
+for demographic variables including gender, age, education, and
+ethnicity. Thus, the model will take the form:
+
+\begin{equation}
+y_i = \beta_0 + \textbf{X}_{i1}\beta_1 + \textbf{X}_{i2}\beta_2 +  \textbf{X}_{i3}\beta_3 + \epsilon_i 
+\end{equation}
+
+where:
+
+\begin{itemize}
+  \item $\textbf{X}_{i1}$ represents a matrix of symbolic attitudes indicators and $\beta_1$ represents a vector of coefficients for each symbolic attitude indicator.
+  \item $\textbf{X}_{i2}$ represents a matrix of self-interest indicators and $\beta_2$ represents a vector of coefficients for each self-interest indicator.
+  \item $\textbf{X}_{i3}$ represents a matrix of control variables and $\beta_3$ represents a vector of coefficients for each control variable.
+\end{itemize}
+
+Note that symbolic attitudes and self-interest are thus \emph{not}
+summary indices; rather, each indictor is entered individually into the
+model. This replicates the original methodology used in Sears and
+coauthors' series of symbolic politics papers (Sears, Hensler, and Speer
+1979; Sears et al. 1980).
+
+\section{Hypothesis tests}\label{hypothesis-tests}
+
+For each model, we will conduct the following hypothesis tests:
+
+\subsection{Joint F tests}\label{joint-f-tests}
+
+To test whether symbolic attitudes and material self-interest each
+contribute to the formation of policy preferences, we will use joint
+F-tests. These test are NOT drawn from the Sears and coauthors papers,
+which only consider the statistical significance of each covariate
+individually.
+
+\paragraph{Symbolic Attitudes}\label{symbolic-attitudes}
+
+Recalling that \(\beta_1\) is a vector of coefficients on all symbolic
+attitude covariates, the F-test for joint significance of symbolic
+attitudes indicators has the following hypotheses:
+
+\[\begin{aligned}
+H_0 \  &: \beta_1 = \textbf{0}\\ H_A&: \beta_1 \neq \textbf{0}
+\end{aligned}\]
+
+Hence, the restricted model will be
+
+\begin{equation}
+y_i = \beta_0 + \textbf{X}_{i2}\beta_2 +  \textbf{X}_{i3}\beta_3 + \epsilon_i
+\end{equation}
+
+\paragraph{Self-interest}\label{self-interest}
+
+Recalling that \(\beta_2\) is a vector of coefficients on all
+self-interest covariates, the F-test for joint significance of
+self-interest indicators has the following hypotheses:
+
+\[\begin{aligned}
+H_0\ &: \beta_2 = \textbf{0}\\ H_A &: \beta_2 \neq \textbf{0}
+\end{aligned}\]
+
+Hence, the restricted model will be
+
+\begin{equation}
+y_i = \beta_0 + \textbf{X}_{i1}\beta_1 +  \textbf{X}_{i3}\beta_3 + \epsilon_i
+\end{equation}
+
+\paragraph{Standard errors}\label{standard-errors}
+
+For both joint F-test, we will use cluster-robust standard errors, with
+primary sampling units as the cluster.
+
+\subsection{R-squared comparison test}\label{r-squared-comparison-test}
+
+In the original Sears and coauthors analysis compared the relative
+contribution of symbolic attitudes and self-interest to policy
+preferences by comparing the \(R^2\) contribution made by each set of
+covariates. For instance, the contribution of symbolic attitudes will
+be:
+
+\[R^2_{\text{symbolic}} = R^2_1 - R^2_2\]
+
+where
+
+\begin{itemize}
+  \item $R^2_{\text{symbolic}}$ represents the explanatory contribution of symbolic attitudes.
+  \item $R^2_1$ represents the coefficent of determination for the full model, including symbolic attitude indicators, self-interest indicators, and control variables (equation 1).
+  \item $R^2_2$ represents the coefficient of determination for the restricted model which excludes symbolic attitude indicators, but includes both self-interest indicators and control variables (equation 2).
+\end{itemize}
+
+Using the same technique, the contribution of self-interest will be:
+
+\[R^2_{\text{self-interest}} = R^2_1 - R^2_3\]
+
+where
+
+\begin{itemize}
+  \item $R^2_{\text{self-interest}}$ represents the explanatory contribution of self interest.
+  \item $R^2_1$ represents the coefficent of determination for the full model, including symbolic attitude indicators, self-interest indicators, and control variables (equation 1).
+  \item $R^2_2$ represents the coefficient of determination for the restricted model which excludes self-interest indicators, but includes both symbolic attitudes indicators and control variables (equation 2).
+\end{itemize}
+
+We will also use these estimates. Because the number of items for
+self-interest and symbolic attitudes varies, we will use adjusted
+\(R^2\) in all analysis; for instance, we would not want to bias our
+results simply because the battery of symbolic attitude items is longer
+than than the battery of self-interest items. In addition, we will
+extend the original analysis by estimating the standard errors of the
+\(R^2\) contributions using bootstrapping, enabling us to assess more
+rigorously whether contribution of either symbolic attitudes or
+self-interest clearly outweights the other. Thus, we will test the
+following hypotheses:
+
+\[\begin{aligned}
+H_0 \ &: R^2_{\text{symbolic}} - R^2_{\text{self-interest}} = 0\\ H_A&: R^2_{\text{symbolic}} - R^2_{\text{self-interest}} \neq 0
+\end{aligned}\]
+
+We will conduct 10,000 bootstraps to estimate standard errors. Our goal
+is to maintain consistency between the original sampling procedure and
+our bootstrap resampling method. However, we face certain practical
+limitations.
+
+\textit{Disclaimer: We are not yet settled on our bootstrapping procedure and will seek further advice before finalizing our PAP.}
+
+Afrobarometer uses consistent sampling policies across countries and
+across survey rounds. For Afrobaromter questions, we will (1) divide the
+data back into country samples, (2) stratify the data by urban and rural
+PSUs within each country, and (3) resample PSUs within each strata. The
+World Values Survey does not use consistent sampling methods across
+countries. As such, we resample according to the lowest common
+denominator among country sampling procedures (1) divide the data back
+into country samples, and (2) resample PSUs within each country.
+
+\subsection{Sub-group analyses}\label{sub-group-analyses}
+
+In their 1980 paper, Sears and coathors also examine results from a
+series of sub-group analyses on the premise that self-interest may be
+more prominent in preference formation under certain circumstances.
+i.e.~within certain groups. They developed indices for political
+sophistication, private-regarding values, perceived government
+responsiveness, sense of political efficacy, and perceiving the issue as
+a very important problem.
+
+\textit{Looking for feedback: Should we subset within each country and then re-aggregate, or should we simply sub-set the merged data?}
+
+\paragraph{Political Sophistication}\label{political-sophistication}
+
+This subgroup analysis is of greatest importance for Sears and
+coauthors, as rationally self-interested behavior presumes the
+availability of adequate information. In their 1980 analysis, they
+measure political sophistication using a composite index of education,
+basic political knowledge, self-reported interest in the ongoing
+political campaign, and the number of media in which the campaign was
+followed (Sears et al. 1980). Following the discussion of political
+sophistication measures by John Zaller (Zaller 1992), we do not
+replicate Sears and coauthors' composite index and instead use a summary
+index based solely on political knowledge. These data are available for
+the Afrobarometer question from Round 3 only (preference on school
+fees), so this is the only policy on which we complete this sub-group
+analysis.
+
+To measure political sophistication, we use an additive index based on
+the following questions:
+
+\begin{enumerate}
+  \item Can you tell me the name of: Your deputy name at the National Assembly?
+  \item Can you tell me the name of: Your local government councilor?
+  \item Can you tell me the name of: Your Deputy President?
+  \item Do you happen to know which is the political party with the most seats at the National Assembly?
+  \item Do you happen to know how many times a person can be elected president?
+  \item Do you happen to know who is responsible of determining if a law is constitutional or not?
+\end{enumerate}
+
+Please note that Afrobarometer questionnaires for individual countries
+are customized to include appropriate terms for each country (e.g.~MP
+versus deputy). We code 1 for the correct response, as identified by
+Afrobarometer enumerators, and 0 for all other responses (including
+``know but can't remember'').
+
+Like Sears and coauthors (1980), we will split the participant pool at
+the median and rerun the tests separately on each half (below median and
+above median).
+
+\paragraph{Private-regarding values}\label{private-regarding-values}
+
+The World Values Survey contains questions that will allow us to measure
+private-regarding values. We assess private-regarding using Schwartz
+values questions which describe traits of a hypothetical person and ask
+the respondent how similar they believe they are to the hypothetical. We
+will create an additive index based on the following questions, with
+responses to each question normalized on a scale from 0 to 1.
+
+\begin{enumerate}
+  \item (V70) It is important to this person to think up new ideas and be creative; to do things one’s own way. Response options: (1) very much like me, like me, somewhat like me, a little like me, not like me, not like me at all (0)
+  \item (V71) It is important to this person to be rich; to have a lot of money and expensive things. Response options: (1) very much like me, like me, somewhat like me, a little like me, not like me, not like me at all (0)
+  \item (V74) It is important to this person to do something for the good of society. Response options: (0) very much like me, like me, somewhat like me, a little like me, not like me, not like me at all (1)
+  \item (V75) It is important to help people living nearby; to care for their needs. Response options: (0) very much like me, like me, somewhat like me, a little like me, not like me, not like me at all (1)
+\end{enumerate}
+
+We will split the sample at the median, rerunning our analysis
+separately on each half.
+
+\textit{Again, should we split within each country or within the merged sample?}
+
+\paragraph{Perceived government
+responsiveness}\label{perceived-government-responsiveness}
+
+Afrobarometer Round 3 contains several questions which allow us to
+measure perceived government responsiveness, allowing us to subset our
+data for policy preferences on school fees. We will create an additive
+index based on the following questions, with responses to each question
+normalized on a scale from 0 to 1.
+
+\begin{enumerate}
+  \item How much of the time do think the following try their best to listen to what people like you have to say: Members of Parliament? Response options: (0) never, only sometimes, often, always (1)
+  \item How much of the time do think the following try their best to listen to what people like you have to say: Local Government Councillors? Response options: (0) never, only sometimes, often, always (1)
+  \item Taking the Problem you mentioned first [as the highest prioirity problem facing the country], how likely is it that the government will solve your most important problem within the next few years? Reponse options: (0) not at all likely, likely, not very likely, likely, very likely (1)
+\end{enumerate}
+
+We will split the sample at the median, rerunning our analysis
+separately on each half.
+
+\textit{Again, should we split within each country or within the merged sample?}
+
+\paragraph{Sense of political
+efficacy}\label{sense-of-political-efficacy}
+
+Afrobarometer Round 3 contains a question on political efficacy,
+allowing us to conduct this sub-group analysis for question. This
+question reads: ``Do you agree or disagree with the following
+statements? Politics and government sometimes seem so complicated that
+you can't really understand what's going on.'' We divide respondents
+into those who agree (includes both agree and strongly agree) and those
+who disagree (both disagree and strongly disagree), dropping those who
+respond with ``neither agree or disagree'' or ``don't know''. We
+replicate our analysis on each sub-group.
+
+\paragraph{Issue importance}\label{issue-importance}
+
+For our school fees question from Afrobarometer Round 3, we will divide
+respondents into those who identified education as an important problem
+(regardless of whether first, second, or third choice) and those who did
+not, rerunning our tests on each subset.
+
+\textit{Note: we are also considering adding analysis specified by Crano in a critique of Sears and coauthors' original work, which examines vested interest as a moderator between symbolic attitudes and policy preference}
+(Crano 1997).
+
+\section{Multiple hypothesis testing}\label{multiple-hypothesis-testing}
+
+We will use the Benjamimi-Hochberg Procedure to address false discovery
+through multiple hypothesis testing. In other words, we will:
+
+\begin{itemize}
+  \item Order the p-values for each of $m$ hypothesis tests such that $p_1 \leq p_2 \leq \ldots \leq p_m$.
+  \item Maximize $k$ such that $p_i \leq \frac{\alpha \cdot k}{m}$. This value will be $k^*$.
+  \item Reject all hypotheses $H_k$ for $k \leq k^*$
+\end{itemize}
+
+\section*{References}\label{references}
+\addcontentsline{toc}{section}{References}
+
+\hypertarget{refs}{}
+\hypertarget{ref-burgess_value_2015}{}
+Burgess, Robin, Remi Jedwab, Edward Miguel, Ameet Morjaria, and Gerard
+Padró i Miquel. 2015. ``The Value of Democracy: Evidence from Road
+Building in Kenya.'' \emph{American Economic Review} 105 (6): 1817--51.
+doi:\href{https://doi.org/10.1257/aer.20131031}{10.1257/aer.20131031}.
+
+\hypertarget{ref-carlson_ethnic_2015}{}
+Carlson, Elizabeth. 2015. ``Ethnic Voting and Accountability in Africa:
+A Choice Experiment in Uganda.'' \emph{World Politics} 67 (2): 353--85.
+\url{https://muse.jhu.edu/article/580659}.
+
+\hypertarget{ref-crano_vested_1997}{}
+Crano, W. D. 1997. ``Vested Interest, Symbolic Politics, and
+Attitude-Behavior Consistency.'' \emph{Journal of Personality and Social
+Psychology} 72 (3): 485--91.
+\url{https://search.proquest.com/docview/209806065?pq-origsite=summon}.
+
+\hypertarget{ref-downs_economic_1957}{}
+Downs, Anthony. 1957. \emph{An Economic Theory of Democracy}. 1st
+edition. Boston: Harper and Row.
+
+\hypertarget{ref-franck_does_2012}{}
+FRANCK, RAPHAËL, and ILIA RAINER. 2012. ``Does the Leader's Ethnicity
+Matter? Ethnic Favoritism, Education, and Health in Sub-Saharan
+Africa.'' \emph{The American Political Science Review} 106 (2):
+294--325.
+
+\hypertarget{ref-henrich_weirdest_2010}{}
+Henrich, Joseph, Steven J. Heine, and Ara Norenzayan. 2010. ``The
+Weirdest People in the World?'' \emph{Behavioral and Brain Sciences} 33
+(2-3): 61--83.
+doi:\href{https://doi.org/10.1017/S0140525X0999152X}{10.1017/S0140525X0999152X}.
+
+\hypertarget{ref-hunt_revisiting_2010}{}
+Hunt, Corrie V., Anita Kim, Eugene Borgida, and Shelly Chaiken. 2010.
+``Revisiting the Self-Interest Versus Values Debate: The Role of
+Temporal Perspective.'' \emph{Journal of Experimental Social Psychology}
+46 (6): 1155--8.
+doi:\href{https://doi.org/10.1016/j.jesp.2010.05.004}{10.1016/j.jesp.2010.05.004}.
+
+\hypertarget{ref-jiang_rapid_2016}{}
+Jiang, Hai, Guo-Qing Shi, Wen-Xiao Tu, Can-Jun Zheng, Xue-Hui Lai,
+Xin-Xu Li, Qiang Wei, et al. 2016. ``Rapid Assessment of Knowledge,
+Attitudes, Practices, and Risk Perception Related to the Prevention and
+Control of Ebola Virus Disease in Three Communities of Sierra Leone.''
+\emph{Infectious Diseases of Poverty} 5 (1): 53.
+doi:\href{https://doi.org/10.1186/s40249-016-0142-9}{10.1186/s40249-016-0142-9}.
+
+\hypertarget{ref-kasara_tax_2007}{}
+Kasara, Kimuli. 2007. ``Tax Me If You Can: Ethnic Geography, Democracy,
+and the Taxation of Agriculture in Africa.'' \emph{American Political
+Science Review} 101 (1): 159--72.
+doi:\href{https://doi.org/10.1017/S0003055407070050}{10.1017/S0003055407070050}.
+
+\hypertarget{ref-kobayashi_community_2015}{}
+Kobayashi, Miwako, Karlyn D. Beer, Adam Bjork, Kevin Chatham-Stephens,
+Cara C. Cherry, Sampson Arzoaquoi, Wilmot Frank, et al. 2015.
+``Community Knowledge, Attitudes, and Practices Regarding Ebola Virus
+Disease - Five Counties, Liberia, September-October, 2014.'' Atlanta,
+United States, Atlanta: U.S. Center for Disease Control.
+\url{https://search.proquest.com/docview/1699263229/abstract/2DEFE55AED1E4790PQ/1}.
+
+\hypertarget{ref-kramon_who_2013}{}
+Kramon, Eric, and Daniel N. Posner. 2013. ``Who Benefits from
+Distributive Politics? How the Outcome One Studies Affects the Answer
+One Gets.'' \emph{Perspectives on Politics} 11 (02): 461--74.
+doi:\href{https://doi.org/10.1017/S1537592713001035}{10.1017/S1537592713001035}.
+
+\hypertarget{ref-lau_self-interest_1978}{}
+Lau, Richard R., Thad A. Brown, and David O. Sears. 1978.
+``Self-Interest and Civilians' Attitudes Toward the Vietnam War.''
+\emph{The Public Opinion Quarterly} 42 (4): 464--83.
+
+\hypertarget{ref-lodge_automaticity_2005}{}
+Lodge, Milton, and Charles S. Taber. 2005. ``The Automaticity of Affect
+for Political Leaders, Groups, and Issues: An Experimental Test of the
+Hot Cognition Hypothesis.'' \emph{Political Psychology} 26 (3): 455--82.
+
+\hypertarget{ref-meltzer_rational_1981}{}
+Meltzer, Allan H., and Scott F. Richard. 1981. ``A Rational Theory of
+the Size of Government.'' \emph{Journal of Political Economy} 89 (5):
+914--27.
+
+\hypertarget{ref-morris_activation_2003}{}
+Morris, James P., Nancy K. Squires, Charles S. Taber, and Milton Lodge.
+2003. ``Activation of Political Attitudes: A Psychophysiological
+Examination of the Hot Cognition Hypothesis.'' \emph{Political
+Psychology} 24 (4): 727--45.
+
+\hypertarget{ref-sears_whites_1979}{}
+Sears, David O., Carl P. Hensler, and Leslie K. Speer. 1979. ``Whites'
+Opposition to `Busing': Self-Interest or Symbolic Politics?'' \emph{The
+American Political Science Review} 73 (2): 369--84.
+doi:\href{https://doi.org/10.2307/1954885}{10.2307/1954885}.
+
+\hypertarget{ref-sears_self-interest_1980}{}
+Sears, David O., Richard R. Lau, Tom R. Tyler, and Harris M. Allen.
+1980. ``Self-Interest Vs. Symbolic Politics in Policy Attitudes and
+Presidential Voting.'' \emph{The American Political Science Review} 74
+(3): 670--84.
+doi:\href{https://doi.org/10.2307/1958149}{10.2307/1958149}.
+
+\hypertarget{ref-weeden_self-interest_2017}{}
+Weeden, Jason, and Robert Kurzban. 2017. ``Self-Interest Is Often a
+Major Determinant of Issue Attitudes.'' \emph{Political Psychology} 38
+(S1): 67--90.
+doi:\href{https://doi.org/10.1111/pops.12392}{10.1111/pops.12392}.
+
+\hypertarget{ref-wilken_knowledge_2017}{}
+Wilken, Jason A., Paran Pordell, Brant Goode, Rachel Jarteh, Zayzay
+Miller, Benjamin G. Saygar, Leroy Maximore, et al. 2017. ``Knowledge,
+Attitudes, and Practices Among Members of Households Actively Monitored
+or Quarantined to Prevent Transmission of Ebola Virus Disease ---
+Margibi County, Liberia: February-March 2015.'' \emph{Prehospital and
+Disaster Medicine} 32 (6): 673--78.
+doi:\href{https://doi.org/10.1017/S1049023X17006720}{10.1017/S1049023X17006720}.
+
+\hypertarget{ref-zaller_nature_1992}{}
+Zaller, John R. 1992. \emph{The Nature and Origins of Mass Opinion}. 1st
+edition. Cambridge: Cambridge University Press.
+
+
+\end{document}
