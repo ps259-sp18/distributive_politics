@@ -1,0 +1,81 @@
+\documentclass{beamer}
+\mode<presentation> {
+\usetheme{Madrid}
+}
+
+\usepackage{graphicx}
+
+\title[Hamel (2018) Discussion]{Affluence and Influence? \\
+A Discussion of Hamel (2018): Pre-Analysis Plan}
+
+\author{Derek Holliday}
+\institute[UCLA]{University of California - Los Angeles}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\frametitle{Overview of Plan}
+\begin{block}{Question}<1->
+Do city governments provide fewer services to the poor (relative to the rich)?
+\end{block}
+
+\begin{block}{Data}<2->
+311 Service Requests from Boston (2015 - Present), geocoded by census tract, coded for request fulfillment and fulfillment time.
+\end{block}
+
+\begin{block}{Empirical Strategy}<3->
+OLS (fulfillment/time on census-tract median income) with neighborhood fixed effects.
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Theoretical Considerations}
+\begin{itemize}
+	\item Are the same people  responsible for policy input versus output? Are their motivations similar?
+	\pause
+	\item Are request fulfillments attributed to elected officials? Are avenues of recourse electoral?
+	\pause
+	\item Story may be less about contemporary distributions of services and more about historical bureaucratic holdovers.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Data Considerations}
+\begin{itemize}
+	\item Have to believe 311 calls are a common avenue through which heterogeneous income levels access similar public services. Is this true?
+	\pause
+	\begin{itemize}
+		\item Potential solution: code calls be topic of request.
+		\item Nature of the request may also be indicative of past service failures.
+	\end{itemize}
+	\pause
+	\item Data on who ends up fulfilling requests?
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Empirical Strategy Considerations}
+\begin{itemize}
+	\item Understandable tension between precise identification and capturing lingering variance between tracts
+	\pause
+	\begin{itemize}
+		\item Fixed effects won't capture anything that varies between census tracts within neighborhoods
+		\pause
+		\item ... but it's unclear whether you want to tie down everything that isn't income.
+	\end{itemize}
+	\pause
+	\item Consider non-OLS model types (Logit for binary, Poisson/Negative Binomial for time data).
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Conclusion}
+Two ways this could go: policy evaluation or underpinnings of service inequities. Empirical strategy will depend on which avenue you choose.
+\end{frame}
+
+\end{document}
