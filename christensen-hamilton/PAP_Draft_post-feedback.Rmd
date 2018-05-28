@@ -1,0 +1,334 @@
+---
+title: "Pre-Analysis Plan"
+subtitle: "Drivers of Distributive Preferences: Symbolic Politics vs Self-Interest in Africa"
+author: "Jennifer Hamilton & Ethan Christensen"
+date: "May 11, 2018"
+bibliography: symbolic_politics_africa_bibliography.bib
+output:
+  pdf_document: 
+    latex_engine: xelatex
+  html_document:
+    df_print: paged
+header-includes:
+- \usepackage{mathspec}
+- \usepackage{amsmath,amsthm}
+- \usepackage{dcolumn}
+- \usepackage{framed}
+- \usepackage[strings]{underscore}
+- \usepackage{array}
+---
+
+#Introduction
+
+Rewrite
+
+# Description of data
+
+In this study we plan to utilize data from the World Values Survey and Afrobarometer surveys. The World Values Survey (WVS) is the largest and longest-running non-commercial cross-national survey of beliefs and values. The most recently completed wave surveyed participants from almost 100 countries in 2011-2014. Each country-level survey has a minimum of 1,200 respondents (ages 18-85), conducted through face-to-face interviews. Depending on the country, sampling occurs through either probability or a combination of probability and stratified random sampling as noted in the documentation. From these countries, we identify the five that are in sub-Saharan Africa: Ghana, Nigeria, Rwanda, South Africa, and Zimbabwe.
+
+Afrobarometer is a long running survey designed specifically to understand political attitudes and behaviors in sub-Saharan Africa. Respondents answer questions on a variety of topics including public services, governance, identity, and political participation. There have been six completed waves, with the most recent in 2014/2015 also covering the most countries (36). Most country surveys have either 1,200 or 2,400 respondents. Each survey uses a clustered, stratified, multi-stage, area probability sample. Occasionally a survey will oversample a politically relevant sub-population in order to ensure a large-enough subsample.
+
+From these two sources we identify the four policy preference choices available to us as listed above. In order for a policy preference question to be included in our analysis, the relevant survey also had to contain appropriate items to identify the self-interest and symbolic attitudes of respondents, hence why so few policy preference items were included.
+
+For each topic we use different samples of countries based on the data available. The relevant questions on immigration and privatization are contained in the WVS and so is limited to those five countries. We limit our analysis of education preferences to countries where there is not compelling evidence of ethnic preference in education outcomes. If ethnic preferences exist, then material self-interest is more difficult to assess, as responses may rationally vary by ethnic group. We select countries for inclusion using Franck and Rainer's results on systematic bias in primary education attainment and literacy [-@franck_does_2012]. We limit our analysis to only countries in which no more than one of their four indicators attained statistical significance. This leaves us with five countries: Benin, Malawi, Mali, Senegal, and Uganda.
+
+#Hypotheses
+
+Based on the original findings of the Sears and coauthors' papers, we expect that both expressive benefits and and self-interest will be jointly significant in the model for each question considered. 
+
+#Variable construction
+
+##Immigration 
+
+\textit{Source}: World Values Survey Round 6 
+
+\textit{Countries included}: Ghana, Nigeria, Rwanda, South Africa, and Zimbabwe
+
+\textit{Policy preference question}: (V46) When jobs are scarce, employers should give priority to people of this country over immigrants. 
+
+\textit{Scaling}: Agree (3), neither (2) or disagree (1)
+
+**Expressive Benefits Items**
+
+\begin{enumerate}
+  \item (V107) How much you trust: People of another nationality. \textit{Scaling}: (1) trust completely, trust somewhat, do not trust very much, do not trust at all (0).\textit{Expected sign}: negative.
+  \item (V16) Important child qualities: tolerance and respect for other people. \textit{Scaling}: mentioned (1) or not mentioned (0). \textit{Expected sign}: negative.
+\end{enumerate}
+
+**Self-Interest Items**
+
+\begin{enumerate}
+  \item We will create a single indicator for personal connection to immigrants using the following items. If any of these items is one, personal connection to immigrant will be coded as one: 
+  \begin{enumerate}
+    \item (V243) Mother is an immigrant. \textit{Scaling}: yes (1), no (0)  
+    \item (V244) Father is an immigrant. \textit{Scaling}: yes (1), no (0) 
+    \item (V245) Respondent is an immigrant. \textit{Scaling}: yes (1), no (0). 
+  \end{enumerate}
+  We chose to fold these items into a single index in order to overcome potential multicollinearity. \textit{Expected sign}: negative. 
+  \item (V236) Is the chief wage earner employed now or not, \textit{Scaling}: yes (0), no (1). \textit{Expected sign}:positive.
+  \item We will include the following items in supplementary anaylsis. However, we exclude them from our prefered model because they are subjective measures of personal well-being, and therefore subject to greater endogeneity concerns. 
+  \begin{enumerate}
+    \item (V59) Satisfaction with financial situation of household. \textit{Scaling}: (1) completely dissatisfied to (10) completely satisfied. \textit{Expected sign}: negative.
+    \item (V181) Worries: Losing my job or not finding a job. \textit{Scaling}: (1) very much, a great deal, not much, not much at all (0). \textit{Expected sign}: positive.
+  \end{enumerate}
+\end{enumerate}
+
+**Controls**
+
+\begin{enumerate}
+  \item (V240) Sex, as coded by interviewer. \\ \textit{Original coding}: 1= male, 2= female. \\ \textit{Recode}: 
+  \item (V242) Age
+  \item (V248) What is the highest educational level that you have attained?\\ \texit{Original coding}: 1= no formal education; 2= incomplete primary school; 3= complete primary school; 4= incomplete secondary school: technical/vocational type; 5= complete secondary school: technical/vocational type; 6= incomplete secondary school: university-preparatory type; 7= complete secondary school: university-preparatory type; 8= some university-level education, without degree; 9= university-level education, with degree. \\ \textit{Recode}: 
+  \item 
+\end{enumerate}
+
+##Privatization 
+
+\textit{Source}: World Values Survey Round 6 
+
+\textit{Countries included}: Ghana, Nigeria, Rwanda, South Africa, and Zimbabwe
+
+\textit{Policy preference question}: (V97) Private vs. state ownership of business
+
+\textit{Scaling}: Private ownership of business and industry should be increased (1) to Government ownership of business and industry should be increased (10).
+
+**Expressive Benefits Items**
+
+\begin{enumerate}
+  \item (V96) Income inequality ideology. \textit{Scaling}: Incomes should be made more equal (1) to We need larger income differences as incentives for individual effort (10). \textit{Expected sign}: negative.
+  \item (V98) Government responsibility. \textit{Scaling}: Government should take more responsiboity to ensure that everone is provided for (1) to People should take more responsibility to provide for themselves (10). \textit{Expected sign}: negative.
+\end{enumerate}
+
+**Self-interest Items **
+
+\begin{enumerate}
+ \item (V230) Sector of employment \textit{Scaling}: government or public institution (1), else 0. \textit{Expected sign}: positive. \textit{Note}: this indicator is included on the basis of previous research on preferences over privatization [@battaglio_self-interest_2009].
+\end{enumerate}
+
+##School fees 
+
+\textit{Source}: Afrobarometer Round 3
+
+\textit{Countries included}: Benin, Malawi, Mali, Senegal, Uganda
+
+\textit{Policy preference question}: (Q10) Which of the following statements is closest to your view?. Choose Statement A or Statement B. A: It is better to have free schooling for our children, even if the quality of education is low. B: It is better to raise educational standards, even if we have to pay school fees.
+
+\textit{Original Scaling}: 1=Agree Very Strongly with A, 2=Agree with A, 3=Agree with B, 4=Agree Very Strongly with B, 5=Agree with Neither, 9=Don’t Know, 98=Refused to Answer, -1=Missing Data
+
+\textit{Recode Scaling}:
+
+**Expressive Benefits Items**
+
+\begin{enumerate}
+  \item (Q19) Let’s talk for a moment about the kind of society we would like to have in this country. Which of the following statements is closest to your view?. Choose Statement A or Statement B. A: People should look after themselves and be responsible for their own success in life. B: The government should bear the main responsibility for the well-being of people. \\ \textit{Original Scaling}: 1=Agree Very Strongly with A, 2=Agree with A, 3=Agree with B, 4=Agree Very Strongly with B, 5=Agree with Neither, 9=Don’t Know, 98=Refused to Answer, -1=Missing Data. \\ \textit{Recode Scaling}:  \\ \textit{Expected sign}: negative.
+\end{enumerate}
+
+**Self-interest Items**
+
+\begin{enumerate}
+  \item (Q8F) Over the past year, how often, if ever, have you or your family gone without: School expenses for your children (like fees, uniforms or books)?\\ \textit{Original Scaling}: 0=Never, 1=Just once or twice, 2=Several times, 3=Many times, 4=Always, 7=No children, 9=Don’t Know, 998=Refused to Answer, -1=Missing Data\\ \textit{Recode Scaling}:  \\ \textit{Expected sign}: negative.
+  \item (Q73A) Have you encountered any of these problems with your local public schools during the past 12 months?. Services are too expensive / Unable to pay.\\ \textit{Original Scaling}: 0=Never, 1=Once or twice, 2=A few times, 3=Often, 7=No experience with public schools in the past twelve months, 9=Don’t Know, 98=Refused to Answer, -1=Missing Data. \\ \textit{Recode Scaling}:  \\ \textit{Expected sign}: negative.
+  \item We will construct an additive index of school quality concerns, based on the following items:
+  \begin{enumerate}
+    \item (Q73B) Have you encountered any of these problems with your local public schools during the past 12 months?. Lack of textbooks or other supplies.\\ \textit{Original Scaling}: 0=Never, 1=Once or twice, 2=A few times, 3=Often, 7=No experience with public schools in the past twelve months, 9=Don’t Know, 98=Refused to Answer, -1=Missing Data. \\ \textit{Recode Scaling}:   
+    \item (Q73C) Have you encountered any of these problems with your local public schools during the past 12 months?. Poor teaching.\\ \textit{Original Scaling}: 0=Never, 1=Once or twice, 2=A few times, 3=Often, 7=No experience with public schools in the past twelve months, 9=Don’t Know, 98=Refused to Answer, -1=Missing Data. \\ \textit{Recode Scaling}:  
+    \item (Q73D) Have you encountered any of these problems with your local public schools during the past 12 months? Absent teachers.\\ \textit{Original Scaling}: 0=Never, 1=Once or twice, 2=A few times, 3=Often, 7=No experience with public schools in the past twelve months, 9=Don’t Know, 98=Refused to Answer, -1=Missing Data. \\ \textit{Recode Scaling}:  
+    \item (Q73E) Have you encountered any of these problems with your local public schools during the past 12 months?. Overcrowded classrooms.\\ \textit{Original Scaling}: 0=Never, 1=Once or twice, 2=A few times, 3=Often, 7=No experience with public schools in the past twelve months, 9=Don’t Know, 98=Refused to Answer, -1=Missing Data. \\ \textit{Recode Scaling}:  
+    \item (Q73F) Have you encountered any of these problems with your local public schools during the past 12 months? Poor conditions of facilities.\\ \textit{Original Scaling}: 0=Never, 1=Once or twice, 2=A few times, 3=Often, 7=No experience with public schools in the past twelve months, 9=Don’t Know, 98=Refused to Answer, -1=Missing Data. \\ \textit{Recode Scaling}:   
+  \end{enumerate}
+  The expected sign of this index is FIX
+\end{enumerate}
+
+**Control Items**
+
+\begin{enumerate}
+  \item (Q90) What is the highest level of education you have completed? \\ \textit{Original Scaling}: 0=No formal schooling, 1=Informal schooling (including Koranic schooling), 2=Some primary schooling, 3=Primary school completed, 4=Some secondary school/ High school, 5=Secondary school completed/High school, 6=Post-secondary qualifications, other than university e.g. a diploma or degree from a technical/polytechnic/college, 7=Some university, 8=University completed, 9=Post-graduate, 98=Refused to Answer, 99=Don’t Know, -1=Missing Data.\\ \textit{Recode Scaling}: 
+  \item (Q101) Respondent's gender, as assessed by interviewer.\\ \textit{Original Scaling}: 1=Male, 2=Female. \\ \textit{Recode Scaling}: 
+  \item (Q116B) Were the following services present in the primary sampling unit/enumeration area: School? \\ \textit{Original Scaling}: 0=No, 1=Yes, 9=Can’t determine, -1=Missing Data.\\ \textit{Recode Scaling}: 
+  \item (Q1) How old are you? \\ \textit{Original Scaling}: 18-110 as indicated, 998=Refused to Answer, 999=Don’t Know, -1=Missing Data. \\ \textit{Recode Scaling}: 
+  \item (Q79) What is your tribe? You know, your ethnic or cultural group. \\ \textit{Original scaling}: : 1=English, 2=Francais, 3=Portugais, 100=Afrikaans/Afrikaner/Boer, 101=Ndebele, 102=Xhosa, 103=Pedi/Spedi/North Sotho, 104=Sesotho/Sotho/South Sotho, 105=Setswana/Tswana, 106=Shangaan, 107=Swazi,  108=Venda, 109=Zulu, 110=Other White/European, 111=Couloured, 112=Indian, 113=English, 120=Fon, 121=Adja, 122=Bariba, 123=Dendi , 124=Yoruba, 125=Ditamari, 126=Peulh, 127=Yoa, 128=Haoussa, 129=Idé, 130=Lamba, 140=Mokgatla, 141=Mokwena, 142=Mongwato, 143=Mongwaketse, 144=Motlokwa, 145=Moherero, 146=Morolong, 147=Mosarwa, 148=Mokalanga, 149=Molete, 150=Mmirwa, 151=Motswapong, 152=Mosobea, 153=Motawana, 154=Mokgalagadi, 155=Moyei, 156=Mohurutshe, 157=Mombukushu, 158=Monajwa, 159=Mokhurutshe, 160=Motalaote, 169=Related to island origin, 170=African, 171=American or European, 172=Related to age, 173=Related to gender, 174=Related to occupation/profession, 175=Related to religion, 176=Related to class, 177=related to race, 178=Related to politics/partisan, 180=Akan, 181=Ewe, 182=Ga/Damgbe, 183= Other northern languages, 184=Gagomba, 185=Dagaati, 200=Kikuyu, 201=Luo, 202=Luhya, 203=Kamba, 204=Meru, 205=Kisii, 206=Kalenjin, 207=Masaai, 208=MijiKenda, 209=Taita, 210=Somali, 211=Pokot, 212=Turkana, 213=Bajuni, 214=Kuria, 215=Teso, 216=Rendille, 217=Embu, 218=Borana, 219=Samburu, 220=Bakoena, 221=Basiea, 222=Bafokeng, 223=Bahlakoana, 224=Batsoeneng, 225=Batloung, 226=Bataung, 227=Baphuthing, 228=Batebele, 229=Bathepu, 230=Batlokoa, 231=Bakhatla, 232=Makholokoe, 233=Makhoakhoa, 234=Barolong, 235=Banareng, 236=Mapele, 237=Bakubung, 238=Maswati, 239=Mchegu, 240=Antakarana, 241=Antambahoaka, 242=Antandroy, 243=Antanosy, 244=Antefasy , 245=Antemoro , 246=Antesaka , 248=Bara, 249=Betsileo, 250=Betsimisaraka , 251=Bezanozano , 252=Mahafaly, 253=Merina, 254=Sakalava , 255=Sihanaka , 256=Tanala, 257=Tsimihety, 258=Vezo, 260=Tumbuka, 261=Nkhonde, 262=Lambya, 263=Chewa, 264=Yao, 265=Ngoni, 266=Lomwe, 267=Mang’anja, 268=Sena, 269=Sukwa, 270=Senga, 271=Tonga, 280=Bambara, 281=Peuhl/Fulfulde, 282=Senufo, 283=Mianka, 284=Mossi, 285=Sonink, 286=Malink, 287=Khasonk, 288=Dogon, 289=Bobo, 290=Bozo, 291=Arabe, 292=Maure, 293=Kakolo, 294=Samoko, 295=Sonrha, 296=Bella, 297=Tamasheq, 298=Dafing, 300=Makua, 301=Sena, 302=Ndau, 303=Nyanja, 304=Changana, 305=Chope, 306=Bitonga, 307=Makonde, 308=Chuabo, 309=Ajua, 320=Oshiwambo, 321=Herero, 322=Caprivian, 323=Rukwangali, 324=German, 325=Afrikaaner, 326=English, 327=Nama, 328=Damara, 329=Lozi, 330=Subia, 331=White, 332=Black, 333=Coloured, 334=Baster, 335=Setswana, 336=Angolan:Portuguese, 337=Angolan:Rumbundu, 338=Ndembele (Zimbabwe), 339=Kavango, 340=Hausa, 341=Igbo, 342=Yoruba, 344=Efik, 345=Ebira, 346=Fulani, 347=Isoko, 348=Ibibio, 349=Kanuri, 350=Tiv, 351=Nupe, 352=Ijaw, 353=Edo, 354=Igala, 355=Urhobo, 356=Idoma, 357=Itsekiri, 358=Ikwere, 360=Wolof, 361=Pular, 362=Serer, 363=Mandinka, 364=Soninke, 365=Diola, 366=Manjack, 367=Bambara, 368=Bainouk, 369=Bassari, 380=Mnyakyusa, 381=Mchaga, 382=Mhaya, 383=Mngoni, 384=Mkwere, 385=Mpare, 386=Mhehe, 387=Mmakonde, 388=Myamwezi, 389=Msukuma, 390=Mmasai, 391=Mmeru, 392=Mkurya, 393=Mgogo, 394=Mluguru, 395=Mfipa, 396=Mmanyema, 397=Mnyiramba, 398=Mnyaturu, 405=Akaramojonj, 406=Alur, 407=Ateso, 408=Japadhola, 409=Jonam, 410=Kakwa, 411=Kumam, 412=Kuksabin, 413=Luo, 414=Lugbara, 415=Mugwere, 416=Madi, 417=Muganda, 418=Mugishu, 419=Musoga, 420=Bemba, 422=Tonga, 423=Lozi, 424=Chewa, 425=Nsenga, 426=Tumbuka, 427=Kaonde, 428=Luvale, 429=Namwanga, 430=Mambwe, 431=Lenje, 432=Lunda, 433=Ngoni, 435=Bisa, 436=Ila, 437=Nkoya, 438=Lala, 439=Mbunda, 500=Munyoli, 501=Mufumbira, 502=Muhororo, 503=Mukiga, 504=Mukonzo, 505=Munyarwanda, 506=Munyoro, 507=Mutagwenda, 508=Mutooro, 509=Mwamba, 510=Munyankole, 511=Samia, 517=Mutagwenda, 550=Awori, 551=Tapa, 553=Kalabari, 554=Birom, 555=Shuwa-Arab, 556=Jukun, 558=Gwari, 559=Anang, 560=Ekoi, 561=Ukwani, 562=Igede, 563=Ekpeye, 564=Taroh, 565=Ogoni, 566=Sayawa, 567=Okpella, 568=Okirika, 570=Bavudie, 571=Mapokwana, 572=Mantsosa, 573=Baropoli, 575=Balafe, 800=Arab, 801=Swahili, 802=Indian, 803=Digo, 804=Giriama, 805=Duruma, 806=Chonyi, 807=Mijikenda, 808=Arab, 809=Gunya, 810=Teso, 811=Wanga, 812=Kabarasi, 813=Bukusu, 814=Ombuya, 815=Nyala, 816=Vatsotso, 817=Tachoni, 818=Nyore, 819=Maragoli, 820=Marama, 821=Sabaot, 822=Nandi, 823=Kipsigis, 824=Tugen, 825=Keiyo, 826=Ethiopian/Kenyan, 827=Burji, 828=Murule, 829=Dagodia, 830=Gari, 831=Mupule, 832=Shabelle, 833=Gabawen, 834=Garmug, 835=Maimai, 860=Senga, 861=Swahili, 862=Nyanja, 863=Soli, 864=Chokwe, 865=Nyika, 866=Luchazi, 867=Lamba, 868=Kunda, 869=Tabwa, 870=Takaleya, 871=Aushi, 872=Kalunda, 873=Kwamashi, 874=Lambia, 875=Chisinga, 990=National identity only, 995=Other, 997=Not Asked, 998=Refused, 999=Don’t know,-1=Missing Data. \\ \textit{Recode scaling}: 
+\end{enumerate}
+
+Also considering
+\begin{enumerate}
+  \item Think about the condition of [respondent’s identity group]. Do they have less, the same, or more influence in politics than other groups in this country? \textit{Scaling}: (1) much more, more, same, less, much less (0).  \textit{Expected sign}: positive.
+  \item How often are [respondent’s identity group] treated unfairly by the government? \textit{Scaling}: (1) never, sometimes, often, always (0).  \textit{Expected sign}: positive.
+  \item Let us suppose that you had to choose between being a [nationality] and being a [respondent’s identity group]. Which of the following statements best expresses your feelings? \textit{Scaling}: (1) ethnic ID only, ethnic ID more, national and ethnic, national ID more, national ID only (0).  \textit{Expected sign}: negative.
+  \item How much do you trust each of the following types of people: [countrywomen] from other ethnic groups? \textit{Scaling}: (1) Not at all, just a little, somewhat, a lot (0).  \textit{Expected sign}: negative.
+\end{enumerate}
+
+
+#Model
+
+\textit{Note: We are still deciding which model would be most appropriate, as response variables are not binary but they are bounded from 0 to 1. Logit might be better? We will determine this before finalizing our PAP.}
+
+For each policy area, we will run an OLS regression with policy preference as the dependent variable and with symbolic attitudes and self-interest indices as the independent variables. We will also control for demographic variables including gender, age, education, and ethnicity. Thus, the model will take the form:
+
+\begin{equation}
+y_i = \beta_0 + \textbf{X}_{i1}\beta_1 + \textbf{X}_{i2}\beta_2 +  \textbf{X}_{i3}\beta_3 + \epsilon_i 
+\end{equation}
+
+where:
+
+\begin{itemize}
+  \item $\textbf{X}_{i1}$ represents a matrix of symbolic attitudes indicators and $\beta_1$ represents a vector of coefficients for each symbolic attitude indicator.
+  \item $\textbf{X}_{i2}$ represents a matrix of self-interest indicators and $\beta_2$ represents a vector of coefficients for each self-interest indicator.
+  \item $\textbf{X}_{i3}$ represents a matrix of control variables and $\beta_3$ represents a vector of coefficients for each control variable.
+\end{itemize}
+
+Note that symbolic attitudes and self-interest are thus *not* summary indices; rather, each indictor is entered individually into the model. This replicates the original methodology used in Sears and coauthors' series of symbolic politics papers [@sears_whites_1979; @sears_self-interest_1980]. 
+
+#Hypothesis tests
+
+For each model, we will conduct the following hypothesis tests:
+
+##Joint F tests
+
+To test whether symbolic attitudes and material self-interest each contribute to the formation of policy preferences, we will use joint F-tests. These test are NOT drawn from the Sears and coauthors papers, which only consider the statistical significance of each covariate individually.
+
+####Symbolic Attitudes
+
+Recalling that $\beta_1$ is a vector of coefficients on all symbolic attitude covariates, the F-test for joint significance of symbolic attitudes indicators has the following hypotheses:
+
+$$\begin{aligned}
+H_0 \  &: \beta_1 = \textbf{0}\\ H_A&: \beta_1 \neq \textbf{0}
+\end{aligned}$$
+
+Hence, the restricted model will be
+
+\begin{equation}
+y_i = \beta_0 + \textbf{X}_{i2}\beta_2 +  \textbf{X}_{i3}\beta_3 + \epsilon_i
+\end{equation}
+
+####Self-interest
+
+Recalling that $\beta_2$ is a vector of coefficients on all self-interest covariates, the F-test for joint significance of self-interest indicators has the following hypotheses:
+
+$$\begin{aligned}
+H_0\ &: \beta_2 = \textbf{0}\\ H_A &: \beta_2 \neq \textbf{0}
+\end{aligned}$$
+
+Hence, the restricted model will be 
+
+\begin{equation}
+y_i = \beta_0 + \textbf{X}_{i1}\beta_1 +  \textbf{X}_{i3}\beta_3 + \epsilon_i
+\end{equation}
+
+####Standard errors
+
+For both joint F-test, we will use cluster-robust standard errors, with primary sampling units as the cluster.
+
+##R-squared comparison test
+
+In the original Sears and coauthors analysis compared the relative contribution of symbolic attitudes and self-interest to policy preferences by comparing the $R^2$ contribution made by each set of covariates. For instance, the contribution of symbolic attitudes will be:
+
+$$R^2_{\text{symbolic}} = R^2_1 - R^2_2$$
+
+where 
+
+\begin{itemize}
+  \item $R^2_{\text{symbolic}}$ represents the explanatory contribution of symbolic attitudes.
+  \item $R^2_1$ represents the coefficent of determination for the full model, including symbolic attitude indicators, self-interest indicators, and control variables (equation 1).
+  \item $R^2_2$ represents the coefficient of determination for the restricted model which excludes symbolic attitude indicators, but includes both self-interest indicators and control variables (equation 2).
+\end{itemize}
+
+Using the same technique, the contribution of self-interest will be:
+
+$$R^2_{\text{self-interest}} = R^2_1 - R^2_3$$
+
+where 
+
+\begin{itemize}
+  \item $R^2_{\text{self-interest}}$ represents the explanatory contribution of self interest.
+  \item $R^2_1$ represents the coefficent of determination for the full model, including symbolic attitude indicators, self-interest indicators, and control variables (equation 1).
+  \item $R^2_2$ represents the coefficient of determination for the restricted model which excludes self-interest indicators, but includes both symbolic attitudes indicators and control variables (equation 2).
+\end{itemize}
+
+We will also use these estimates. Because the number of items for self-interest and symbolic attitudes varies, we will use adjusted $R^2$ in all analysis; for instance, we would not want to bias our results simply because the battery of symbolic attitude items is longer than than the battery of self-interest items. In addition, we will extend the original analysis by estimating the standard errors of the $R^2$ contributions using bootstrapping, enabling us to assess more rigorously whether contribution of either symbolic attitudes or self-interest clearly outweights the other. Thus, we will test the following hypotheses:
+
+$$\begin{aligned}
+H_0 \ &: R^2_{\text{symbolic}} - R^2_{\text{self-interest}} = 0\\ H_A&: R^2_{\text{symbolic}} - R^2_{\text{self-interest}} \neq 0
+\end{aligned}$$
+
+We will conduct 10,000 bootstraps to estimate standard errors. Our goal is to maintain consistency between the original sampling procedure and our bootstrap resampling method. However, we face certain practical limitations.
+
+\textit{Disclaimer: We are not yet settled on our bootstrapping procedure and will seek further advice before finalizing our PAP.}
+
+Afrobarometer uses consistent sampling policies across countries and across survey rounds. For Afrobaromter questions, we will (1) divide the data back into country samples, (2) stratify the data by urban and rural PSUs within each country, and (3) resample PSUs within each strata. The World Values Survey does not use consistent sampling methods across countries. As such, we resample according to the lowest common denominator among country sampling procedures (1) divide the data back into country samples, and (2) resample PSUs within each country.
+
+##Sub-group analyses
+
+In their 1980 paper, Sears and coathors also examine results from a series of sub-group analyses on the premise that self-interest may be more prominent in preference formation under certain circumstances. i.e. within certain groups. They developed indices for political sophistication, private-regarding values, perceived government responsiveness, sense of political efficacy, and perceiving the issue as a very important problem. 
+
+\textit{Looking for feedback: Should we subset within each country and then re-aggregate, or should we simply sub-set the merged data?}
+
+####Political Sophistication
+
+This subgroup analysis is of greatest importance for Sears and coauthors, as rationally self-interested behavior presumes the availability of adequate information. In their 1980 analysis, they measure political sophistication using a composite index of education, basic political knowledge, self-reported interest in the ongoing political campaign, and the number of media in which the campaign was followed [@sears_self-interest_1980]. Following the discussion of political sophistication measures by John Zaller [@zaller_nature_1992], we do not replicate Sears and coauthors' composite index and instead use a summary index based solely on political knowledge. These data are available for the Afrobarometer question from Round 3 only (preference on school fees), so this is the only policy on which we complete this sub-group analysis.
+
+To measure political sophistication, we use an additive index based on the following questions:
+
+\begin{enumerate}
+  \item Can you tell me the name of: Your deputy name at the National Assembly?
+  \item Can you tell me the name of: Your local government councilor?
+  \item Can you tell me the name of: Your Deputy President?
+  \item Do you happen to know which is the political party with the most seats at the National Assembly?
+  \item Do you happen to know how many times a person can be elected president?
+  \item Do you happen to know who is responsible of determining if a law is constitutional or not?
+\end{enumerate}
+
+Please note that Afrobarometer questionnaires for individual countries are customized to include appropriate terms for each country (e.g. MP versus deputy). We code 1 for the correct response, as identified by Afrobarometer enumerators, and 0 for all other responses (including "know but can't remember").
+
+Like Sears and coauthors [-@sears_self-interest_1980], we will split the participant pool at the median and rerun the tests separately on each half (below median and above median). 
+
+####Private-regarding values
+
+The World Values Survey contains questions that will allow us to measure private-regarding values. We assess private-regarding using Schwartz values questions which describe traits of a hypothetical person and ask the respondent how similar they believe they are to the hypothetical. We will create an additive index based on the following questions, with responses to each question normalized on a scale from 0 to 1.
+
+\begin{enumerate}
+  \item (V70) It is important to this person to think up new ideas and be creative; to do things one’s own way. Response options: (1) very much like me, like me, somewhat like me, a little like me, not like me, not like me at all (0)
+  \item (V71) It is important to this person to be rich; to have a lot of money and expensive things. Response options: (1) very much like me, like me, somewhat like me, a little like me, not like me, not like me at all (0)
+  \item (V74) It is important to this person to do something for the good of society. Response options: (0) very much like me, like me, somewhat like me, a little like me, not like me, not like me at all (1)
+  \item (V75) It is important to help people living nearby; to care for their needs. Response options: (0) very much like me, like me, somewhat like me, a little like me, not like me, not like me at all (1)
+\end{enumerate}
+
+We will split the sample at the median, rerunning our analysis separately on each half.
+
+\textit{Again, should we split within each country or within the merged sample?}
+
+####Perceived government responsiveness
+
+Afrobarometer Round 3 contains several questions which allow us to measure perceived government responsiveness, allowing us to subset our data for policy preferences on school fees. We will create an additive index based on the following questions, with responses to each question normalized on a scale from 0 to 1.
+
+\begin{enumerate}
+  \item How much of the time do think the following try their best to listen to what people like you have to say: Members of Parliament? Response options: (0) never, only sometimes, often, always (1)
+  \item How much of the time do think the following try their best to listen to what people like you have to say: Local Government Councillors? Response options: (0) never, only sometimes, often, always (1)
+  \item Taking the Problem you mentioned first [as the highest prioirity problem facing the country], how likely is it that the government will solve your most important problem within the next few years? Reponse options: (0) not at all likely, likely, not very likely, likely, very likely (1)
+\end{enumerate}
+
+We will split the sample at the median, rerunning our analysis separately on each half.
+
+\textit{Again, should we split within each country or within the merged sample?}
+
+
+####Sense of political efficacy
+
+Afrobarometer Round 3 contains a question on political efficacy, allowing us to conduct this sub-group analysis for question. This question reads: "Do you agree or disagree with the following statements? Politics and government sometimes seem so complicated that you can’t really understand what’s going on." We divide respondents into those who agree (includes both agree and strongly agree) and those who disagree (both disagree and strongly disagree), dropping those who respond with "neither agree or disagree" or "don't know". We replicate our analysis on each sub-group.
+
+####Issue importance
+
+For our school fees question from Afrobarometer Round 3, we will divide respondents into those who identified education as an important problem (regardless of whether first, second, or third choice) and those who did not, rerunning our tests on each subset. 
+
+\textit{Note: we are also considering adding analysis specified by Crano in a critique of Sears and coauthors' original work, which examines vested interest as a moderator between symbolic attitudes and policy preference} [@crano_vested_1997].
+
+#Multiple hypothesis testing
+
+We will use the Benjamimi-Hochberg Procedure to address false discovery through multiple hypothesis testing. In other words, we will:
+
+\begin{itemize}
+  \item Order the p-values for each of $m$ hypothesis tests such that $p_1 \leq p_2 \leq \ldots \leq p_m$.
+  \item Maximize $k$ such that $p_i \leq \frac{\alpha \cdot k}{m}$. This value will be $k^*$.
+  \item Reject all hypotheses $H_k$ for $k \leq k^*$
+\end{itemize}
+
+#References
