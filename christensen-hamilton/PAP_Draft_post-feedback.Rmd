@@ -1,7 +1,7 @@
 ---
 title: "Pre-Analysis Plan"
-subtitle: "Drivers of Distributive Preferences: Symbolic Politics vs Self-Interest in Africa"
-author: "Jennifer Hamilton & Ethan Christensen"
+subtitle: "Drivers of Distributive Preferences: Material Self-Interest vs. Expressive Benefit in Africa"
+author: "Ethan Christensen & Jennifer Hamilton"
 date: "May 11, 2018"
 bibliography: symbolic_politics_africa_bibliography.bib
 output:
@@ -44,42 +44,92 @@ Based on the original findings of the Sears and coauthors' papers, we expect tha
 
 \textit{Countries included}: Ghana, Nigeria, Rwanda, South Africa, and Zimbabwe
 
-\textit{Policy preference question}: (V46) When jobs are scarce, employers should give priority to people of this country over immigrants. 
+**Policy Preference**
 
-\textit{Scaling}: Agree (3), neither (2) or disagree (1)
+(V46) When jobs are scarce, employers should give priority to people of this country over immigrants. 
 
-**Expressive Benefits Items**
+\begin{itemize}
+
+\item \textit{Original coding}: 1 = agree, 2 = neither, 3 = disagree, -5 = missing, -4 = not asked, -3 = not applicable, -2 = no answer, -1 = don't know 
+
+\item \textit{Recode}: 1 = agree, 2 = neither, 3 = disagree, else NA
+
+\end{itemize}
+
+**Expressive Benefit**
 
 \begin{enumerate}
-  \item (V107) How much you trust: People of another nationality. \textit{Scaling}: (1) trust completely, trust somewhat, do not trust very much, do not trust at all (0).\textit{Expected sign}: negative.
-  \item (V16) Important child qualities: tolerance and respect for other people. \textit{Scaling}: mentioned (1) or not mentioned (0). \textit{Expected sign}: negative.
+  \item (V107) How much you trust: People of another nationality.
+  \begin{itemize}
+  \item \textit{Original coding}: 1 = trust completely, 2 = trust somewhat, 3 = do not trust very much, 4 = do not trust at all, -5 = missing, -3 = not applicable, -2 = no answer, -1 = don't know.
+  \item \textit{Recode}: 1 = trust completely, 2 = trust somewhat, 3 = do not trust very much, 4 = do not trust at all, else NA.
+  \item \textit{Expected sign}: negative.
+  \end{itemize}
+  \item (V16) Important child qualities: tolerance and respect for other people.
+  \begin{itemize}
+  \item \textit{Original coding}: 1= mentioned, 2 = not mentioned, -4 = not asked, -3 = not applicable, -2 = no answer, -1 = don't know.
+  \item \textit{Recode}: 1= mentioned, 0 = not mentioned, else NA.
+  \item \textit{Expected sign}: negative.
+  \end{itemize}
 \end{enumerate}
 
-**Self-Interest Items**
+**Self-Interest**
 
 \begin{enumerate}
-  \item We will create a single indicator for personal connection to immigrants using the following items. If any of these items is one, personal connection to immigrant will be coded as one: 
+  \item \textit{Personal Connection to Immigrant}: We will create a single indicator for personal connection to immigrants using the following items. If any of these items is answered as yes (1 = immigrant), personal connection to immigrant will be coded as one, else zero:
+  \begin{itemize}
+    \item (V243) Mother is an immigrant.  
+    \item (V244) Father is an immigrant. 
+    \item (V245) Respondent is an immigrant.  
+  \end{itemize}
+  We chose to fold these items into a single index in order to overcome potential multicollinearity. \\ \textit{Expected sign}: negative. 
+  \item \textit{Employment status of primary household breadwinner} This indicator requires use of several WVS items: 
+  \begin{itemize}
+  \item (V229) Employment status \textit{Original coding}: 1 = full time, 2 = part time, 3 = self-employed, 4 = retired, 5 = housewife, 6 = students, 7 = unemployed, 8 = other, -4 = not asked, -3 = not applicable, -2 = no answer, -1 = don't know. 
+  \item (V235) Are you the chief wage earner in your house? \textit{Original coding}: 1 = yes, 2 = no, -4 = not asked, -3 = not applicable, -2 = no answer, -1 = don't know.
+  \item (V236) Is the chief wage earner employed now or not. \textit{Original coding}: 1 = yes, 2 = no, -4 = not asked, -3 = not applicable (Repondent is the chief wage earner), -2 = no answer, -1 = don't know.
+  \end{itemize}
+  We will code 1 if either the primary wage earner of the respondent's household (either respondent or otherwise) is employed in any capacity (full time, part time, or self-employed), else 0. \textit{Expected sign}: 
+  \item \textit{Supplementary analysis}: We will include the following items in supplementary anaylsis. However, we exclude them from our prefered model because they are subjective measures of personal well-being, and therefore subject to endogeneity vis-a-vis value expression. 
   \begin{enumerate}
-    \item (V243) Mother is an immigrant. \textit{Scaling}: yes (1), no (0)  
-    \item (V244) Father is an immigrant. \textit{Scaling}: yes (1), no (0) 
-    \item (V245) Respondent is an immigrant. \textit{Scaling}: yes (1), no (0). 
-  \end{enumerate}
-  We chose to fold these items into a single index in order to overcome potential multicollinearity. \textit{Expected sign}: negative. 
-  \item (V236) Is the chief wage earner employed now or not, \textit{Scaling}: yes (0), no (1). \textit{Expected sign}:positive.
-  \item We will include the following items in supplementary anaylsis. However, we exclude them from our prefered model because they are subjective measures of personal well-being, and therefore subject to greater endogeneity concerns. 
-  \begin{enumerate}
-    \item (V59) Satisfaction with financial situation of household. \textit{Scaling}: (1) completely dissatisfied to (10) completely satisfied. \textit{Expected sign}: negative.
-    \item (V181) Worries: Losing my job or not finding a job. \textit{Scaling}: (1) very much, a great deal, not much, not much at all (0). \textit{Expected sign}: positive.
+    \item (V59) Satisfaction with financial situation of household.
+    \begin{itemize} 
+    \item \textit{Original Coding}: scale from 1 = completely dissatisfied to 10 = completely satisfied, -4 = not asked in survey, -3 = not applicable, -2 = no answer or refused to answer, -1 = don't know.
+    \item \textit{Recode}: scale from 1 to 10 as above, else NA
+    \item \textit{Expected sign}: 
+    \end{itemize}
+    \item (V181) Worries: Losing my job or not finding a job.
+    \begin{itemize}
+    \item \textit{Original Coding}: 1 = very much, 2 = a great deal, 3 = not much,  4 = not much at all, -4 = not asked in survey, -3 = Inapplicable (neither has, nor seeks a job), -2 = no answer, -1 = don't know.
+    \item \textit{Recode}: 1 = very much, 2 = a great deal, 3 = not much,  4 = not much at all, else NA.
+    \item \textit{Expected sign}: positive.
+    \end{itemize}
   \end{enumerate}
 \end{enumerate}
 
 **Controls**
 
 \begin{enumerate}
-  \item (V240) Sex, as coded by interviewer. \\ \textit{Original coding}: 1= male, 2= female. \\ \textit{Recode}: 
-  \item (V242) Age
-  \item (V248) What is the highest educational level that you have attained?\\ \texit{Original coding}: 1= no formal education; 2= incomplete primary school; 3= complete primary school; 4= incomplete secondary school: technical/vocational type; 5= complete secondary school: technical/vocational type; 6= incomplete secondary school: university-preparatory type; 7= complete secondary school: university-preparatory type; 8= some university-level education, without degree; 9= university-level education, with degree. \\ \textit{Recode}: 
-  \item 
+  \item (V240) Sex, as coded by interviewer.
+  \begin{itemize}
+  \item \textit{Original coding}: 1= male, 2= female, -5 = missing/unknown, -4 = not asked in survey, -3 = not applicable, -2 = no answer, -1 = don't know. 
+  \item \textit{Recode}: 1 = male, 0 = female, else NA.
+  \end{itemize}
+  \item (V241) Year of birth
+  \begin{itemize}
+  \item \textit{Original coding}: decade as indicated, -5 = missing/unknown, -4 = not asked in survey, -3 = not applicable, -2 = no answer, -1 = don't know.
+  \item \textit{Recode}: 1 = 1900-1909, 2 = 1910-1919, 3 = 1920-1929, 4 = 1930-1939, 5 = 1940-1949, 6 = 1950-1959, 7 = 1960-1969, 8 = 1970-1979, 9 = 1980-1989, 10 = 1990-1999, 11 = 2000-2010, else NA.
+  \end{itemize}
+  \item (V248) What is the highest educational level that you have attained?
+  \begin{itemize}
+  \item \textit{Original coding}: 1= no formal education; 2= incomplete primary school; 3= complete primary school; 4= incomplete secondary school: technical/vocational type; 5= complete secondary school: technical/vocational type; 6= incomplete secondary school: university-preparatory type; 7= complete secondary school: university-preparatory type; 8= some university-level education, without degree; 9= university-level education, with degree; -5 = refused to answer; -4 = not asked; -3 = not applicable; -2 = no answer; -1 = don't know.
+  \item \textit{Recode}: 1= no formal education; 2= incomplete primary school; 3= complete primary school; 4= incomplete secondary school: technical/vocational type; 5= complete secondary school: technical/vocational type; 6= incomplete secondary school: university-preparatory type; 7= complete secondary school: university-preparatory type; 8= some university-level education, without degree; 9= university-level education, with degree; else NA.
+  \end{itemize}
+  \item (V24) Most people can be trusted.
+  \begin{itemize}
+  \item \textit{Original Coding}: 1 = most people can be trusted, 2 = Need to be very careful, -4 = not asked in survey, -3 = not applicable, -2 = no answer, -1 = don't know.
+  \item \textit{Recode}: 1 = most people can be trusted, 0 = need to be very careful, else NA.
+  \end{itemize}
 \end{enumerate}
 
 ##Privatization 
@@ -88,21 +138,70 @@ Based on the original findings of the Sears and coauthors' papers, we expect tha
 
 \textit{Countries included}: Ghana, Nigeria, Rwanda, South Africa, and Zimbabwe
 
-\textit{Policy preference question}: (V97) Private vs. state ownership of business
+**Policy Preference**
 
-\textit{Scaling}: Private ownership of business and industry should be increased (1) to Government ownership of business and industry should be increased (10).
+(V97) Private vs. state ownership of business
 
-**Expressive Benefits Items**
+\begin{itemize}
+
+\item \textit{Original coding}: scale from 1 = Private ownership of business and industry should be increased to 10 = Government ownership of business and industry should be increased, -5 = missing, -4 = not asked in survey, -3 = not applicable, -2 = no answer, -1 = don't know.
+
+\item \textit{Recode}: scale from 1 = Private ownership of business and industry should be increased to 10 = Government ownership of business and industry should be increased, else NA.
+
+\end{itemize}
+
+**Expressive Benefit**
 
 \begin{enumerate}
-  \item (V96) Income inequality ideology. \textit{Scaling}: Incomes should be made more equal (1) to We need larger income differences as incentives for individual effort (10). \textit{Expected sign}: negative.
-  \item (V98) Government responsibility. \textit{Scaling}: Government should take more responsiboity to ensure that everone is provided for (1) to People should take more responsibility to provide for themselves (10). \textit{Expected sign}: negative.
+  \item (V96) Income inequality ideology. 
+  \begin{itemize}
+  \item \textit{Original coding}: scale from 1 = Incomes should be made more equal to 10 = We need larger income differences as incentives for individual effort, -5 = missing, -4 = not asked in survey, -3 = not applicable, -2 = no answer, -1 = don't know.
+  \item \textit{Recode}: scale from 1 = Incomes should be made more equal to 10 = We need larger income differences as incentives for individual effort, else NA.
+  \item \textit{Expected sign}: negative.
+  \end{itemize}
+  \item (V98) Government responsibility. 
+  \begin{itemize}
+  \item \textit{Original Coding}: scale from 1 = Government should take more responsiboity to ensure that everone is provided for to 10 = People should take more responsibility to provide for themselves, -5 = missing, -4 = not asked in survey, -3 = not applicable, -2 = no answer, -1 = don't know. 
+  \item \textit{Recode}: scale from 1 = Government should take more responsiboity to ensure that everone is provided for to 10 = People should take more responsibility to provide for themselves, else NA.
+  \item \textit{Expected sign}: negative.
+  \end{itemize}
 \end{enumerate}
 
-**Self-interest Items **
+**Self-interest**
 
 \begin{enumerate}
- \item (V230) Sector of employment \textit{Scaling}: government or public institution (1), else 0. \textit{Expected sign}: positive. \textit{Note}: this indicator is included on the basis of previous research on preferences over privatization [@battaglio_self-interest_2009].
+ \item (V230) Sector of employment 
+ \begin{itemize}
+ \item \textit{Original coding}: 1 = government or public institution, 2 = private business or industry, 3 = private non-profit organization, 4 = autonomous/informal sector/other, -4 = not asked in survey, -3 = not applicable, -2 = no answer, -1 = don't know.
+ \item \textit{Recode}: 1 = government or public institution; 0 = private business or industry, private non-profit organization, autonomous/informal sector/other; else NA.
+ \item \textit{Expected sign}: positive. 
+ \item \textit{Note}: this indicator is included on the basis of previous research on preferences over privatization [@battaglio_self-interest_2009].
+ \end{itemize}
+\end{enumerate}
+
+**Controls**
+
+\begin{enumerate}
+  \item (V240) Sex, as coded by interviewer.
+  \begin{itemize}
+  \item \textit{Original coding}: 1= male, 2= female, -5 = missing/unknown, -4 = not asked in survey, -3 = not applicable, -2 = no answer, -1 = don't know. 
+  \item \textit{Recode}: 1 = male, 0 = female, else NA.
+  \end{itemize}
+  \item (V241) Year of birth
+  \begin{itemize}
+  \item \textit{Original coding}: decades as indicated, -5 = missing/unknown, -4 = not asked in survey, -3 = not applicable, -2 = no answer, -1 = don't know.
+  \item \textit{Recode}: 1 = 1900-1909, 2 = 1910-1919, 3 = 1920-1929, 4 = 1930-1939, 5 = 1940-1949, 6 = 1950-1959, 7 = 1960-1969, 8 = 1970-1979, 9 = 1980-1989, 10 = 1990-1999, 11 = 2000-2010, else NA.
+  \end{itemize}
+  \item (V248) What is the highest educational level that you have attained?
+  \begin{itemize}
+  \item \textit{Original coding}: 1= no formal education; 2= incomplete primary school; 3= complete primary school; 4= incomplete secondary school: technical/vocational type; 5= complete secondary school: technical/vocational type; 6= incomplete secondary school: university-preparatory type; 7= complete secondary school: university-preparatory type; 8= some university-level education, without degree; 9= university-level education, with degree; -5 = refused to answer; -4 = not asked; -3 = not applicable; -2 = no answer; -1 = don't know.
+  \item \textit{Recode}: 1= no formal education; 2= incomplete primary school; 3= complete primary school; 4= incomplete secondary school: technical/vocational type; 5= complete secondary school: technical/vocational type; 6= incomplete secondary school: university-preparatory type; 7= complete secondary school: university-preparatory type; 8= some university-level education, without degree; 9= university-level education, with degree; else NA.
+  \end{itemize}
+  \item (V24) Most people can be trusted.
+  \begin{itemize}
+  \item \textit{Original Coding}: 1 = most people can be trusted, 2 = Need to be very careful, -4 = not asked in survey, -3 = not applicable, -2 = no answer, -1 = don't know.
+  \item \textit{Recode}: 1 = most people can be trusted, 0 = need to be very careful, else NA.
+  \end{itemize}
 \end{enumerate}
 
 ##School fees 
@@ -111,42 +210,88 @@ Based on the original findings of the Sears and coauthors' papers, we expect tha
 
 \textit{Countries included}: Benin, Malawi, Mali, Senegal, Uganda
 
-\textit{Policy preference question}: (Q10) Which of the following statements is closest to your view?. Choose Statement A or Statement B. A: It is better to have free schooling for our children, even if the quality of education is low. B: It is better to raise educational standards, even if we have to pay school fees.
+**Policy Preference**
 
-\textit{Original Scaling}: 1=Agree Very Strongly with A, 2=Agree with A, 3=Agree with B, 4=Agree Very Strongly with B, 5=Agree with Neither, 9=Don’t Know, 98=Refused to Answer, -1=Missing Data
+(Q10) Which of the following statements is closest to your view?. Choose Statement A or Statement B. A: It is better to have free schooling for our children, even if the quality of education is low. B: It is better to raise educational standards, even if we have to pay school fees.
 
-\textit{Recode Scaling}:
+\begin{itemize}
 
-**Expressive Benefits Items**
+\item \textit{Original Coding}: 1=Agree Very Strongly with A, 2=Agree with A, 3=Agree with B, 4=Agree Very Strongly with B, 5=Agree with Neither, 9=Don’t Know, 98=Refused to Answer, -1=Missing Data
+
+\item \textit{Recode}: 1=Agree Very Strongly with A, 2=Agree with A, 3=Agree with Neither, 4=Agree with B, 5=Agree Very Strongly with B, else NA.
+
+\end{itemize}
+
+**Expressive Benefit**
 
 \begin{enumerate}
-  \item (Q19) Let’s talk for a moment about the kind of society we would like to have in this country. Which of the following statements is closest to your view?. Choose Statement A or Statement B. A: People should look after themselves and be responsible for their own success in life. B: The government should bear the main responsibility for the well-being of people. \\ \textit{Original Scaling}: 1=Agree Very Strongly with A, 2=Agree with A, 3=Agree with B, 4=Agree Very Strongly with B, 5=Agree with Neither, 9=Don’t Know, 98=Refused to Answer, -1=Missing Data. \\ \textit{Recode Scaling}:  \\ \textit{Expected sign}: negative.
+  \item (Q19) Let’s talk for a moment about the kind of society we would like to have in this country. Which of the following statements is closest to your view?. Choose Statement A or Statement B. A: People should look after themselves and be responsible for their own success in life. B: The government should bear the main responsibility for the well-being of people. 
+  \begin{itemize}
+  \item \textit{Original Coding}: 1=Agree Very Strongly with A, 2=Agree with A, 3=Agree with B, 4=Agree Very Strongly with B, 5=Agree with Neither, 9=Don’t Know, 98=Refused to Answer, -1=Missing Data. 
+  \item \textit{Recode}: 1=Agree Very Strongly with A, 2=Agree with A, 3=Agree with Neither, 4=Agree with B, 5=Agree Very Strongly with B, else NA.
+  \item \textit{Expected sign}: negative.
+  \end{itemize}
 \end{enumerate}
 
-**Self-interest Items**
+**Self-interest**
 
 \begin{enumerate}
-  \item (Q8F) Over the past year, how often, if ever, have you or your family gone without: School expenses for your children (like fees, uniforms or books)?\\ \textit{Original Scaling}: 0=Never, 1=Just once or twice, 2=Several times, 3=Many times, 4=Always, 7=No children, 9=Don’t Know, 998=Refused to Answer, -1=Missing Data\\ \textit{Recode Scaling}:  \\ \textit{Expected sign}: negative.
-  \item (Q73A) Have you encountered any of these problems with your local public schools during the past 12 months?. Services are too expensive / Unable to pay.\\ \textit{Original Scaling}: 0=Never, 1=Once or twice, 2=A few times, 3=Often, 7=No experience with public schools in the past twelve months, 9=Don’t Know, 98=Refused to Answer, -1=Missing Data. \\ \textit{Recode Scaling}:  \\ \textit{Expected sign}: negative.
-  \item We will construct an additive index of school quality concerns, based on the following items:
+  \item (Q8F) Over the past year, how often, if ever, have you or your family gone without: School expenses for your children (like fees, uniforms or books)?
+  \begin{itemize}
+  \item \textit{Original Coding}: 0=Never, 1=Just once or twice, 2=Several times, 3=Many times, 4=Always, 7=No children, 9=Don’t Know, 998=Refused to Answer, -1=Missing Data
+  \item \textit{Recode}:  
+  \item \textit{Expected sign}: negative.
+  \end{itemize}
+  \item (Q73A) Have you encountered any of these problems with your local public schools during the past 12 months?. Services are too expensive / Unable to pay.
+  \begin{itemize}
+  \item \textit{Original Coding}: 0=Never, 1=Once or twice, 2=A few times, 3=Often, 7=No experience with public schools in the past twelve months, 9=Don’t Know, 98=Refused to Answer, -1=Missing Data.
+  \item \textit{Recode}:  
+  \item \textit{Expected sign}: negative.
+  \end{itemize}
+  \item \textit{School quality index} We will construct an additive index of school quality concerns, based on the following items:
   \begin{enumerate}
-    \item (Q73B) Have you encountered any of these problems with your local public schools during the past 12 months?. Lack of textbooks or other supplies.\\ \textit{Original Scaling}: 0=Never, 1=Once or twice, 2=A few times, 3=Often, 7=No experience with public schools in the past twelve months, 9=Don’t Know, 98=Refused to Answer, -1=Missing Data. \\ \textit{Recode Scaling}:   
-    \item (Q73C) Have you encountered any of these problems with your local public schools during the past 12 months?. Poor teaching.\\ \textit{Original Scaling}: 0=Never, 1=Once or twice, 2=A few times, 3=Often, 7=No experience with public schools in the past twelve months, 9=Don’t Know, 98=Refused to Answer, -1=Missing Data. \\ \textit{Recode Scaling}:  
-    \item (Q73D) Have you encountered any of these problems with your local public schools during the past 12 months? Absent teachers.\\ \textit{Original Scaling}: 0=Never, 1=Once or twice, 2=A few times, 3=Often, 7=No experience with public schools in the past twelve months, 9=Don’t Know, 98=Refused to Answer, -1=Missing Data. \\ \textit{Recode Scaling}:  
-    \item (Q73E) Have you encountered any of these problems with your local public schools during the past 12 months?. Overcrowded classrooms.\\ \textit{Original Scaling}: 0=Never, 1=Once or twice, 2=A few times, 3=Often, 7=No experience with public schools in the past twelve months, 9=Don’t Know, 98=Refused to Answer, -1=Missing Data. \\ \textit{Recode Scaling}:  
-    \item (Q73F) Have you encountered any of these problems with your local public schools during the past 12 months? Poor conditions of facilities.\\ \textit{Original Scaling}: 0=Never, 1=Once or twice, 2=A few times, 3=Often, 7=No experience with public schools in the past twelve months, 9=Don’t Know, 98=Refused to Answer, -1=Missing Data. \\ \textit{Recode Scaling}:   
+    \item (Q73B) Have you encountered any of these problems with your local public schools during the past 12 months?. Lack of textbooks or other supplies.
+    \item (Q73C) Have you encountered any of these problems with your local public schools during the past 12 months?. Poor teaching.
+    \item (Q73D) Have you encountered any of these problems with your local public schools during the past 12 months? Absent teachers.
+    \item (Q73E) Have you encountered any of these problems with your local public schools during the past 12 months?. Overcrowded classrooms.
+    \item (Q73F) Have you encountered any of these problems with your local public schools during the past 12 months? Poor conditions of facilities.
   \end{enumerate}
-  The expected sign of this index is FIX
+  Each of these questions has identical response options:
+      \begin{itemize}
+    \item \textit{Original coding}: 0=Never, 1=Once or twice, 2=A few times, 3=Often, 7=No experience with public schools in the past twelve months, 9=Don’t Know, 98=Refused to Answer, -1=Missing Data.
+    \item \textit{Recode}:   
+    \end{itemize}
+  We expect a sdfl;asdfl
 \end{enumerate}
 
-**Control Items**
+**Controls**
 
 \begin{enumerate}
-  \item (Q90) What is the highest level of education you have completed? \\ \textit{Original Scaling}: 0=No formal schooling, 1=Informal schooling (including Koranic schooling), 2=Some primary schooling, 3=Primary school completed, 4=Some secondary school/ High school, 5=Secondary school completed/High school, 6=Post-secondary qualifications, other than university e.g. a diploma or degree from a technical/polytechnic/college, 7=Some university, 8=University completed, 9=Post-graduate, 98=Refused to Answer, 99=Don’t Know, -1=Missing Data.\\ \textit{Recode Scaling}: 
-  \item (Q101) Respondent's gender, as assessed by interviewer.\\ \textit{Original Scaling}: 1=Male, 2=Female. \\ \textit{Recode Scaling}: 
-  \item (Q116B) Were the following services present in the primary sampling unit/enumeration area: School? \\ \textit{Original Scaling}: 0=No, 1=Yes, 9=Can’t determine, -1=Missing Data.\\ \textit{Recode Scaling}: 
-  \item (Q1) How old are you? \\ \textit{Original Scaling}: 18-110 as indicated, 998=Refused to Answer, 999=Don’t Know, -1=Missing Data. \\ \textit{Recode Scaling}: 
-  \item (Q79) What is your tribe? You know, your ethnic or cultural group. \\ \textit{Original scaling}: : 1=English, 2=Francais, 3=Portugais, 100=Afrikaans/Afrikaner/Boer, 101=Ndebele, 102=Xhosa, 103=Pedi/Spedi/North Sotho, 104=Sesotho/Sotho/South Sotho, 105=Setswana/Tswana, 106=Shangaan, 107=Swazi,  108=Venda, 109=Zulu, 110=Other White/European, 111=Couloured, 112=Indian, 113=English, 120=Fon, 121=Adja, 122=Bariba, 123=Dendi , 124=Yoruba, 125=Ditamari, 126=Peulh, 127=Yoa, 128=Haoussa, 129=Idé, 130=Lamba, 140=Mokgatla, 141=Mokwena, 142=Mongwato, 143=Mongwaketse, 144=Motlokwa, 145=Moherero, 146=Morolong, 147=Mosarwa, 148=Mokalanga, 149=Molete, 150=Mmirwa, 151=Motswapong, 152=Mosobea, 153=Motawana, 154=Mokgalagadi, 155=Moyei, 156=Mohurutshe, 157=Mombukushu, 158=Monajwa, 159=Mokhurutshe, 160=Motalaote, 169=Related to island origin, 170=African, 171=American or European, 172=Related to age, 173=Related to gender, 174=Related to occupation/profession, 175=Related to religion, 176=Related to class, 177=related to race, 178=Related to politics/partisan, 180=Akan, 181=Ewe, 182=Ga/Damgbe, 183= Other northern languages, 184=Gagomba, 185=Dagaati, 200=Kikuyu, 201=Luo, 202=Luhya, 203=Kamba, 204=Meru, 205=Kisii, 206=Kalenjin, 207=Masaai, 208=MijiKenda, 209=Taita, 210=Somali, 211=Pokot, 212=Turkana, 213=Bajuni, 214=Kuria, 215=Teso, 216=Rendille, 217=Embu, 218=Borana, 219=Samburu, 220=Bakoena, 221=Basiea, 222=Bafokeng, 223=Bahlakoana, 224=Batsoeneng, 225=Batloung, 226=Bataung, 227=Baphuthing, 228=Batebele, 229=Bathepu, 230=Batlokoa, 231=Bakhatla, 232=Makholokoe, 233=Makhoakhoa, 234=Barolong, 235=Banareng, 236=Mapele, 237=Bakubung, 238=Maswati, 239=Mchegu, 240=Antakarana, 241=Antambahoaka, 242=Antandroy, 243=Antanosy, 244=Antefasy , 245=Antemoro , 246=Antesaka , 248=Bara, 249=Betsileo, 250=Betsimisaraka , 251=Bezanozano , 252=Mahafaly, 253=Merina, 254=Sakalava , 255=Sihanaka , 256=Tanala, 257=Tsimihety, 258=Vezo, 260=Tumbuka, 261=Nkhonde, 262=Lambya, 263=Chewa, 264=Yao, 265=Ngoni, 266=Lomwe, 267=Mang’anja, 268=Sena, 269=Sukwa, 270=Senga, 271=Tonga, 280=Bambara, 281=Peuhl/Fulfulde, 282=Senufo, 283=Mianka, 284=Mossi, 285=Sonink, 286=Malink, 287=Khasonk, 288=Dogon, 289=Bobo, 290=Bozo, 291=Arabe, 292=Maure, 293=Kakolo, 294=Samoko, 295=Sonrha, 296=Bella, 297=Tamasheq, 298=Dafing, 300=Makua, 301=Sena, 302=Ndau, 303=Nyanja, 304=Changana, 305=Chope, 306=Bitonga, 307=Makonde, 308=Chuabo, 309=Ajua, 320=Oshiwambo, 321=Herero, 322=Caprivian, 323=Rukwangali, 324=German, 325=Afrikaaner, 326=English, 327=Nama, 328=Damara, 329=Lozi, 330=Subia, 331=White, 332=Black, 333=Coloured, 334=Baster, 335=Setswana, 336=Angolan:Portuguese, 337=Angolan:Rumbundu, 338=Ndembele (Zimbabwe), 339=Kavango, 340=Hausa, 341=Igbo, 342=Yoruba, 344=Efik, 345=Ebira, 346=Fulani, 347=Isoko, 348=Ibibio, 349=Kanuri, 350=Tiv, 351=Nupe, 352=Ijaw, 353=Edo, 354=Igala, 355=Urhobo, 356=Idoma, 357=Itsekiri, 358=Ikwere, 360=Wolof, 361=Pular, 362=Serer, 363=Mandinka, 364=Soninke, 365=Diola, 366=Manjack, 367=Bambara, 368=Bainouk, 369=Bassari, 380=Mnyakyusa, 381=Mchaga, 382=Mhaya, 383=Mngoni, 384=Mkwere, 385=Mpare, 386=Mhehe, 387=Mmakonde, 388=Myamwezi, 389=Msukuma, 390=Mmasai, 391=Mmeru, 392=Mkurya, 393=Mgogo, 394=Mluguru, 395=Mfipa, 396=Mmanyema, 397=Mnyiramba, 398=Mnyaturu, 405=Akaramojonj, 406=Alur, 407=Ateso, 408=Japadhola, 409=Jonam, 410=Kakwa, 411=Kumam, 412=Kuksabin, 413=Luo, 414=Lugbara, 415=Mugwere, 416=Madi, 417=Muganda, 418=Mugishu, 419=Musoga, 420=Bemba, 422=Tonga, 423=Lozi, 424=Chewa, 425=Nsenga, 426=Tumbuka, 427=Kaonde, 428=Luvale, 429=Namwanga, 430=Mambwe, 431=Lenje, 432=Lunda, 433=Ngoni, 435=Bisa, 436=Ila, 437=Nkoya, 438=Lala, 439=Mbunda, 500=Munyoli, 501=Mufumbira, 502=Muhororo, 503=Mukiga, 504=Mukonzo, 505=Munyarwanda, 506=Munyoro, 507=Mutagwenda, 508=Mutooro, 509=Mwamba, 510=Munyankole, 511=Samia, 517=Mutagwenda, 550=Awori, 551=Tapa, 553=Kalabari, 554=Birom, 555=Shuwa-Arab, 556=Jukun, 558=Gwari, 559=Anang, 560=Ekoi, 561=Ukwani, 562=Igede, 563=Ekpeye, 564=Taroh, 565=Ogoni, 566=Sayawa, 567=Okpella, 568=Okirika, 570=Bavudie, 571=Mapokwana, 572=Mantsosa, 573=Baropoli, 575=Balafe, 800=Arab, 801=Swahili, 802=Indian, 803=Digo, 804=Giriama, 805=Duruma, 806=Chonyi, 807=Mijikenda, 808=Arab, 809=Gunya, 810=Teso, 811=Wanga, 812=Kabarasi, 813=Bukusu, 814=Ombuya, 815=Nyala, 816=Vatsotso, 817=Tachoni, 818=Nyore, 819=Maragoli, 820=Marama, 821=Sabaot, 822=Nandi, 823=Kipsigis, 824=Tugen, 825=Keiyo, 826=Ethiopian/Kenyan, 827=Burji, 828=Murule, 829=Dagodia, 830=Gari, 831=Mupule, 832=Shabelle, 833=Gabawen, 834=Garmug, 835=Maimai, 860=Senga, 861=Swahili, 862=Nyanja, 863=Soli, 864=Chokwe, 865=Nyika, 866=Luchazi, 867=Lamba, 868=Kunda, 869=Tabwa, 870=Takaleya, 871=Aushi, 872=Kalunda, 873=Kwamashi, 874=Lambia, 875=Chisinga, 990=National identity only, 995=Other, 997=Not Asked, 998=Refused, 999=Don’t know,-1=Missing Data. \\ \textit{Recode scaling}: 
+  \item (Q90) What is the highest level of education you have completed?
+  \begin{itemize}
+  \item \textit{Original coding}: 0=No formal schooling, 1=Informal schooling (including Koranic schooling), 2=Some primary schooling, 3=Primary school completed, 4=Some secondary school/ High school, 5=Secondary school completed/High school, 6=Post-secondary qualifications, other than university e.g. a diploma or degree from a technical/polytechnic/college, 7=Some university, 8=University completed, 9=Post-graduate, 98=Refused to Answer, 99=Don’t Know, -1=Missing Data.
+  \item \textit{Recode}: 0=No formal schooling, 1=Informal schooling (including Koranic schooling), 2=Some primary schooling, 3=Primary school completed, 4=Some secondary school/ High school, 5=Secondary school completed/High school, 6=Post-secondary qualifications, other than university e.g. a diploma or degree from a technical/polytechnic/college, 7=Some university, 8=University completed, 9=Post-graduate, else NA.
+  \end{itemize}
+  \item (Q101) Respondent's gender, as assessed by interviewer.
+  \begin{itemize}
+  \item \textit{Original coding}: 1=Male, 2=Female
+  \item \textit{Recode}: 1 = male, 0 = female
+  \end{itemize}
+  \item (Q116B) Were the following services present in the primary sampling unit/enumeration area: School? 
+  \begin{itemize}
+  \item \textit{Original coding}: 0=No, 1=Yes, 9=Can’t determine, -1=Missing Data.\\ 
+  \item \textit{Recode Scaling}: 0=No, 1=Yes, else NA.
+  \end{itemize}
+  \item (Q1) How old are you?
+  \begin{itemize}
+  \item \textit{Original coding}: 18-110 as indicated, 998=Refused to Answer, 999=Don’t Know, -1=Missing Data.
+  \item \textit{Recode}: 18-110 as indicated, else NA
+  \end{itemize}
+  \item (Q79) What is your tribe? You know, your ethnic or cultural group. 
+  \begin{itemize}
+  \item \textit{Original coding}: : see AFB for full list, 990=National identity only, 995=Other, 997=Not Asked, 998=Refused, 999=Don’t know,-1=Missing Data.
+  \item \textit{Recode}:
+  \end{itemize}
 \end{enumerate}
 
 Also considering
@@ -156,7 +301,6 @@ Also considering
   \item Let us suppose that you had to choose between being a [nationality] and being a [respondent’s identity group]. Which of the following statements best expresses your feelings? \textit{Scaling}: (1) ethnic ID only, ethnic ID more, national and ethnic, national ID more, national ID only (0).  \textit{Expected sign}: negative.
   \item How much do you trust each of the following types of people: [countrywomen] from other ethnic groups? \textit{Scaling}: (1) Not at all, just a little, somewhat, a lot (0).  \textit{Expected sign}: negative.
 \end{enumerate}
-
 
 #Model
 
@@ -255,71 +399,6 @@ We will conduct 10,000 bootstraps to estimate standard errors. Our goal is to ma
 \textit{Disclaimer: We are not yet settled on our bootstrapping procedure and will seek further advice before finalizing our PAP.}
 
 Afrobarometer uses consistent sampling policies across countries and across survey rounds. For Afrobaromter questions, we will (1) divide the data back into country samples, (2) stratify the data by urban and rural PSUs within each country, and (3) resample PSUs within each strata. The World Values Survey does not use consistent sampling methods across countries. As such, we resample according to the lowest common denominator among country sampling procedures (1) divide the data back into country samples, and (2) resample PSUs within each country.
-
-##Sub-group analyses
-
-In their 1980 paper, Sears and coathors also examine results from a series of sub-group analyses on the premise that self-interest may be more prominent in preference formation under certain circumstances. i.e. within certain groups. They developed indices for political sophistication, private-regarding values, perceived government responsiveness, sense of political efficacy, and perceiving the issue as a very important problem. 
-
-\textit{Looking for feedback: Should we subset within each country and then re-aggregate, or should we simply sub-set the merged data?}
-
-####Political Sophistication
-
-This subgroup analysis is of greatest importance for Sears and coauthors, as rationally self-interested behavior presumes the availability of adequate information. In their 1980 analysis, they measure political sophistication using a composite index of education, basic political knowledge, self-reported interest in the ongoing political campaign, and the number of media in which the campaign was followed [@sears_self-interest_1980]. Following the discussion of political sophistication measures by John Zaller [@zaller_nature_1992], we do not replicate Sears and coauthors' composite index and instead use a summary index based solely on political knowledge. These data are available for the Afrobarometer question from Round 3 only (preference on school fees), so this is the only policy on which we complete this sub-group analysis.
-
-To measure political sophistication, we use an additive index based on the following questions:
-
-\begin{enumerate}
-  \item Can you tell me the name of: Your deputy name at the National Assembly?
-  \item Can you tell me the name of: Your local government councilor?
-  \item Can you tell me the name of: Your Deputy President?
-  \item Do you happen to know which is the political party with the most seats at the National Assembly?
-  \item Do you happen to know how many times a person can be elected president?
-  \item Do you happen to know who is responsible of determining if a law is constitutional or not?
-\end{enumerate}
-
-Please note that Afrobarometer questionnaires for individual countries are customized to include appropriate terms for each country (e.g. MP versus deputy). We code 1 for the correct response, as identified by Afrobarometer enumerators, and 0 for all other responses (including "know but can't remember").
-
-Like Sears and coauthors [-@sears_self-interest_1980], we will split the participant pool at the median and rerun the tests separately on each half (below median and above median). 
-
-####Private-regarding values
-
-The World Values Survey contains questions that will allow us to measure private-regarding values. We assess private-regarding using Schwartz values questions which describe traits of a hypothetical person and ask the respondent how similar they believe they are to the hypothetical. We will create an additive index based on the following questions, with responses to each question normalized on a scale from 0 to 1.
-
-\begin{enumerate}
-  \item (V70) It is important to this person to think up new ideas and be creative; to do things one’s own way. Response options: (1) very much like me, like me, somewhat like me, a little like me, not like me, not like me at all (0)
-  \item (V71) It is important to this person to be rich; to have a lot of money and expensive things. Response options: (1) very much like me, like me, somewhat like me, a little like me, not like me, not like me at all (0)
-  \item (V74) It is important to this person to do something for the good of society. Response options: (0) very much like me, like me, somewhat like me, a little like me, not like me, not like me at all (1)
-  \item (V75) It is important to help people living nearby; to care for their needs. Response options: (0) very much like me, like me, somewhat like me, a little like me, not like me, not like me at all (1)
-\end{enumerate}
-
-We will split the sample at the median, rerunning our analysis separately on each half.
-
-\textit{Again, should we split within each country or within the merged sample?}
-
-####Perceived government responsiveness
-
-Afrobarometer Round 3 contains several questions which allow us to measure perceived government responsiveness, allowing us to subset our data for policy preferences on school fees. We will create an additive index based on the following questions, with responses to each question normalized on a scale from 0 to 1.
-
-\begin{enumerate}
-  \item How much of the time do think the following try their best to listen to what people like you have to say: Members of Parliament? Response options: (0) never, only sometimes, often, always (1)
-  \item How much of the time do think the following try their best to listen to what people like you have to say: Local Government Councillors? Response options: (0) never, only sometimes, often, always (1)
-  \item Taking the Problem you mentioned first [as the highest prioirity problem facing the country], how likely is it that the government will solve your most important problem within the next few years? Reponse options: (0) not at all likely, likely, not very likely, likely, very likely (1)
-\end{enumerate}
-
-We will split the sample at the median, rerunning our analysis separately on each half.
-
-\textit{Again, should we split within each country or within the merged sample?}
-
-
-####Sense of political efficacy
-
-Afrobarometer Round 3 contains a question on political efficacy, allowing us to conduct this sub-group analysis for question. This question reads: "Do you agree or disagree with the following statements? Politics and government sometimes seem so complicated that you can’t really understand what’s going on." We divide respondents into those who agree (includes both agree and strongly agree) and those who disagree (both disagree and strongly disagree), dropping those who respond with "neither agree or disagree" or "don't know". We replicate our analysis on each sub-group.
-
-####Issue importance
-
-For our school fees question from Afrobarometer Round 3, we will divide respondents into those who identified education as an important problem (regardless of whether first, second, or third choice) and those who did not, rerunning our tests on each subset. 
-
-\textit{Note: we are also considering adding analysis specified by Crano in a critique of Sears and coauthors' original work, which examines vested interest as a moderator between symbolic attitudes and policy preference} [@crano_vested_1997].
 
 #Multiple hypothesis testing
 
