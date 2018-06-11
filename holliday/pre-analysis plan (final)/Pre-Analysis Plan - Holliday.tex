@@ -1,0 +1,108 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{titling}
+\usepackage{geometry}
+\usepackage{hyperref}
+
+\geometry{margin=1in}
+\setlength{\droptitle}{-10em}
+
+\begin{document}
+
+\title{%
+	The Distributive Consequences of Electoral Competition: The Case of Federal Grant Expenditures in U.S. Municipalities \\
+	\large Pre-Analysis Plan}
+
+\author{Derek Holliday}
+
+\maketitle
+
+\section{Introduction}
+\par Theories of distributive politics suggest public officials are highly susceptible to electoral pressures to distribute government funds strategically to maximize vote shares (Cox and McCubbins 1986). However, a common observation of the public administration literature is the relative ``stickiness'' of grant funding (known as the ``flypaper'' effect); both institutional and behavioral pressures result in exogenous grant funding stimulating more government spending in the intended area than an equivalent increase in tax revenue (funds ``stick where they hit'') (Hines, Jr. and Thaler, 1995). These literatures, then, expect divergent actions of block grant recipients; the former expects distributions to vary as a function of temporal proximity to an election, and the latter that distributions remain consistent over time.
+
+\par This project will attempt to mediate the discrepancies between the two literatures by examining the variation of electoral pressures over time with regard to the use of Community Development Block Grants (CDBGs), which are distributed annually to U.S. municipalities by the U.S. Department of Housing and Urban Development (HUD). This project has two main goals: first, to deepen our understanding of the interaction between electoral and institutional pressures, and second, to examine how local governments disperse funds with an intended goal but higher discretion.
+
+\section{Background}
+\par Given the fairly esoteric nature of municipal funding, I include here a brief overview of the topic. Municipality expenditures cover a wide variety of categories, with the largest generally being elementary/secondary education, health/hospitals, police, highways/roads, and public welfare (Urban Institute). Similar to the federal government, municipal governments do not have complete control over expenditures. This is partly because municipalities are required to pay for entitlements to municipal employees, but also because the largest portion of municipal revenue (36.3\% on average) comes from intergovernmental transfers designated to certain funds with specific purposes (Tax Policy Center). It is within this framework that block grants like CDBGs are unique; they are an intergovernmental transfer (the federal government is the grantor and the municipality is the grantee) designated for a particular purpose outside of general-fund allocations, but how exactly the fund is allocated is the subject of major discretion at the municipal level.
+
+\par Because CDBGs constitute a major funding source for development projects that may otherwise be impossible for municipalities, their distributive outcomes have received significant attention from policy evaluation experts (Wong and Peterson 1986; Galster et al 2004). The causes of such distributive outcomes, however, remain fairly murky. Some contend allocations are merely a function of mayoral political preferences, while others are more institutional in their approach, arguing limits on municipal allocative flexibility largely explain distributive outcomes (Wong and Peterson 1986; Brooks and Phillips 2008). What has been lacking is an explanation of how these political and institutional forces interact, which is where this project will make its largest contribution.
+
+\section{Theory and Hypotheses}
+\par The theory of this project is built upon a simple cost-benefit analysis of the distribution of earmarked funds in any given year. The ``default'' state of fund distribution is to keep all the funds within projects approved by the grantor. Moving/distributing funds to other areas of government/projects requires political capital and institutional momentum, each with associated costs. Furthermore, violations of intended funding allocations could be subject to sanction by the grantor. Thus, moving funds only occurs with the prospect of some benefit.
+
+\par The most obvious prospective benefit for politicians is reelection, and the salience of that benefit increases as elections approach. Similarly, voters tend to be rather myopic in their evaluations of official performance, meaning politicians likely have markedly greater incentives to distribute grant funding more strategically as elections approach. Put another way, the expected value of distributing grant funding in ways not directly intended by the grantor only outweighs the associated costs of such distribution when elections are imminent. This leads us to the main hypothesis of the project:
+
+\begin{center}
+	\textit{H1: Distribution of grant funding away from intended funding recipients increases in the year prior to an election}	
+\end{center}
+
+\par This hypothesis requires further specification, however, as the notion of distributing away from intended recipients is rather vague. It assumes some ideal distribution of funds and an intent to distort such a distribution, both of which are unobservable. Therefore, this project will test two associated hypotheses:
+
+\begin{center}
+	\textit{H1a: The distribution of grant-funded projects will benefit higher-propensity voters in the year prior to an election}\\
+	\textit{H1b: A greater proportion of grant funding received will be transfered to the general fund in the year prior to an election}\\	
+\end{center}
+
+\par \textit{H1a} is the weaker of the two associated hypotheses. In practice, it expects the list of ``intended'' grant money recipients to broaden to include groups that are electorally valuable (more specifically, that vote more). This is less about the swing versus core voter debate common in distributive politics literature, as the ideological dimension across which municipal officials exist is difficult to determine/observe. Rather, this hypothesis is related to the relative visibility of funding distributions to high-propensity voters. In the case of CDBGs, for example, one would expect more infrastructure-building projects relative to poverty-alleviating projects as election day approaches, as impoverished voters tend to vote at lower rates than the average citizen benefiting from/witnessing infrastructure-building. \textit{H1b} is the stronger of the two hypotheses, as it predicts money designated for one fund (or ``pot,'' less formally) to be put elsewhere in the government budget, which can subsequently be used for other projects with higher electoral visibility. This action carries the highest risk of sanction and is therefore a stronger test of the expected benefits of such distribution.
+
+\section{Data and Measurement}
+\par This project utilizes publicly available data from HUD on the use of CDBG funds in U.S. municipalities for any given project year from 2002 to 2016. CDBGs are awarded annually with allocations based on demographic formulas to municipal governments. As block grants, they have relatively little oversight or restrictions but do have a general intent of benefiting low/middle income (LMI) residents.
+
+\par Municipalities receiving HUD funding are required to given an itemized expenditure report for CDBG funding use during the project year, which includes the expenditure total and the distribution of funds to certain project types, which are coded with standardized designations. For example, funding under ``public services'' includes substance abuse and mental health services, funding for battered and abused spouses, screening for lead-base paint, food banks, etc., which all generally give particularized benefits to LMI residents. Funding under ``public improvements,'' however, are not as particularized. These projects include parking facilities, sidewalks, water/sewer improvements, and non-residential historic preservation. While these projects certainly do benefit LMI residents, they also benefit non-LMI residents as well.
+
+\par The dataset for this project, therefore, will include observations for all municipalities receiving CDBG funding in a given project year between 2002 and 2016 (these are the years available from HUD), so a single row will be a municipality project year. Variables will be included for the total grant funding received, total dispersement amount, and the amount under each funding category (Acquisition, Administrative and Planning, Economic Development, Housing, Public Improvements, Public Services, Repayments of Section 108 Loans, and Other). These data will also include variables for LMI percentage (from HUD) and a standard battery of demographic control variables from the U.S. Census.
+
+\par From these raw measures, I will construct the two dependent variables of interest; proportion of funds benefiting non-LMI residents and proportion of available CDBG funds used. The latter is a simple proportion, but the former requires the specification of which funds benefit non-LMI residents. I will contend that the most-likely candidates for non-LMI funding are Public Improvements and Administrative and Planning funds, as the other funding sources rather directly target LMI residents. Therefore, the non-LMI proportion will be the sum of disbursements in those two categories over the total disbursement amount.
+
+\section{Empirical Strategy}
+\par Because this project is fundamentally interested in changes of funding allocation over time, the most suitable estimation strategy is a Difference-in-Difference design comparing municipalities with an election at the end of a pre-specified period to those without. However, simply running a Diff-in-Diff in this way would leave us vulnerable to violations of the parallel trends assumption, as the distribution of election timing is not obviously as-if random. 
+
+\par Therefore, I will utilize a Matched Difference-in-Difference approach (for examples, see Ichino et al 2017 and Becker and Hvide 2013). This allows us to strengthen the comparison between ``treated'' (municipalities with elections at the end of the time period) and ``non-treated'' municipalities with regard to both pre-treatment covariates and, more importantly, time. Specifically, the preprocessing matching for this project will exact match on state, start year, and whether the start year is an off- or on-cycle election year. This last condition is particularly important, as changing election dynamics as a function of on-cycle elections are well-documented within the American politics literature (Anzia 2014). I will also incorporate genetic matching on LMI percentage during the start year\footnote{LMI percentage, of course, is not time-invariant, but given a short enough period of time in the Diff-in-Diff, it is also not likely to change dramatically, so it is a good predictor of LMI percentage at the end of the time period.}.
+
+\par Our Diff-in-Diff estimator $\tau$, then, can be found using the following regression comparing treated and matched controls:
+$$ 
+Y = \mu + \gamma \cdot Election_i\ + \delta \cdot T\ + \tau \cdot (Election_i\ \cdot T) + X^\top \beta + \epsilon
+$$
+where $Y$ is either of our two dependent variable proportions, $\mu$ is the pretreatment control value, $\gamma$ is the pretreatment difference in treated/control values, $\delta$ is the difference in controls pre/post treatment, $T$ is a pre/post treatment indicator, and $X^\top \beta$ is a battery of demographic covariates. These covariates will include percentages for racial groups, education levels, and median household income. After matching, these covariates should be balanced in expectation between treated and control groups, but including controls in the final regression will alleviate any lingering concerns about imbalance. 
+
+\par A positive $\tau$ will indicate support for the hypotheses. I will use a two-year period as the time gap, as many municipal elections happen every two to three years, so finding sufficient matches becomes much more difficult after two years (although three will be used for a robustness check, albeit with a significantly reduced number of observations).
+
+\newpage
+
+\begin{thebibliography}{9}
+\bibitem{anzia}
+Anzia, Sarah F. (2014), \textit{Timing \& Turnout: How Off-Cycle Elections Favor Organized Groups.} Chicago, IL: The University of Chicago Press.
+
+\bibitem{becker_hvide}
+Becker, Sascha O. and Hans K. Hvide (2017), ``Do Entrepreneurs Matter?'' Working Paper.
+
+\bibitem{brooks_phillips}
+Brooks, Leah and Justin H. Phillips (2008), ``An Institutional Explanation for the Stickiness of Federal Grants.'' \textit{The Journal of Law, Economics, and Organization} 26:2, 243-264.
+
+\bibitem{cox_mccubbins}
+Cox, Gary and Matthew McCubbins (1986), ``Electoral politics as a redistributive game.'' \textit{Journal of Politics} 48, 370-389.
+
+\bibitem{galster}
+Galster, George, Christopher Walker, Christopher Hayes, Patrick Boxall, and Jennifer Johnson (2004), ``Measuring the impact of community development block grant spending on urban neighborhoods.'' \textit{Housing Policy Debate} 15:4, 903-934.
+
+\bibitem{hines_thaler}
+Hines, Jr., James R. and Richard H. Thaler (1995), ``Anomalies: The Flypaper Effect'' \textit{Journal of Economic Perspectives} 9:4, 217-226.
+
+\bibitem{Ichino}
+Ichino, Andrea, Guido Schwerdt, Rudolf Winter-Ebmer, and Josef Zweim{\"u}ller (2017), ``Too old to work, too young to retire?'' \textit{The Journal of the Economics of Ageing} 9, 14-29.
+
+\bibitem{tpc}
+Tax Policy Center (2016), \href{https://www.taxpolicycenter.org/sites/default/files/briefing-book/tpc-briefing-book_0.pdf}{State (and Local) Taxes} In \textit{Briefing Book}.
+
+\bibitem{urban}
+Urban Institute, ``State and Local Expenditures.'' Retrieved from https://www.urban.org/policy-centers/cross-center-initiatives/state-local-finance-initiative/projects/state-and-local-backgrounders/state-and-local-expenditures.
+
+\bibitem{wong_peterson}
+Wong, Kenneth K. and Paul E. Peterson (1986), ``Urban Response to Federal Program Flexibility: Politics of Community Development Block Grant.'' \textit{Urban Affairs Quarterly} 21:3, 293-309.
+\end{thebibliography}
+
+\end{document}
