@@ -5,7 +5,7 @@ author: "Ethan Christensen & Jennifer Hamilton"
 date: "May 11, 2018"
 bibliography: symbolic_politics_africa_bibliography.bib
 output:
-  pdf_document: 
+  pdf_document:
     latex_engine: xelatex
   html_document:
     df_print: paged
@@ -19,6 +19,17 @@ header-includes:
 ---
 
 #Introduction
+
+** things to say: include the Adida et al meta-keta paper with ferree_explaining_2006. Use the weights from Afrobarometer because they oversample occasionally. We need to be more clear about where we introduce the four policy domains, they are "listed above," but actually aren't, at least for now. Also, I'm pretty sure we just have three policy areas now haha.  Benjamini-Hochberg procedure needs a citation.
+
+Classic works on the motivations of voters such as Downs's 1957 classic \textit{An Economic Theory of Democracy} and the Meltzer-Richard model hold the key assumption that citizens act rationally [-@downs_economic_1957 36; -@meltzer_rational_1981]. That is, citizens cast votes aimed a maximizing their benefits from government. while Downs allows for utility derived from altruistic action, continued research on voting behavior continues to conceptualize voting as a rational and self-interested act. These models usually hold that voters consider their own place in the income distribution and vote to establish a taxation level that maximizes private material self-interest [@meltzer_rational_1981].
+
+Mounting evidence suggests this idealized notion of a rational and materially self-interested voter is not representative of reality. Automatic emotional responses are now understood to play an important role in information processing and decision making. For instance, Charles S. Taber and Milton Lodge have collected evidence of "hot cognition," wherein political stimuli automatically and rapidly trigger an affective charge from long-term memory; these affective charges influence subsequent cognition [@lodge_automaticity_2005; @morris_activation_2003]. Such affectively charged cognitions falls short of the idealized rational cognition pervasive in political science models.
+
+Recognizing the role of affect in preference formation, David Sears and coauthors developed a theory of symbolic politics [@sears_self-interest_1980; @sears_whites_1979; @lau_self-interest_1978]. Under this theory, citizens form predispositions toward political objects or symbols early in life that remain relatively stable over a lifetime. Later in life, exposure to stimulus reminiscent of that political symbol triggers an affectively charged response based on longstanding predispositions. The need for cognitive consistency outweights present material self-interest. As a result, "Political attitudes... are formed mainly in congruence with long-standing values about society and the polity, rather than short-term instrumentalities for satisfaction of one's current private needs" [-@sears_self-interest_1980 671]. As a classic example, individuals most involed in anti-Vietnam war protest did not have much literal personal skin in game. They came from populations protected from the draft -- young women, as well as young men who received higher education exemptions from the draft. Symbolic predispositions better explain their actions than material self-interest.
+
+In order to gain empirical traction on the theory, Sears and coauthors adopt a limited definition of self-interested attitudes as those that are "directed toward maximizing gains or minimizing losses to the individual's tangible private well-being," excluding other forms of utility such as value expression [-@sears_whites_1979 369]. They chose measure of self-interest that are as fine-grained and  direct as possible. Measuring self-interest with demographic variables, for instance, is problematic because it fails to differentiate between current self-interest and pre-adult socialization. Using U.S. polling data, they found that symbolic predispositions (such as racial prejudice, nationalism, ideology, or party identification) explained far greater variation in attitudes toward the Vietnam war, unemployment policy, national health insurance, busing, and law and order than did material self-interest.
+
 
 All the Sears papers: Sears et al. 1980, Sears, Hensler, and Speer (1979), Lau, Brown, and Sears (1978))
 
@@ -44,23 +55,27 @@ $H_2$: Material self-interest indicators will be jointly significant in each mod
 
 #Variable construction
 
-##Immigration 
+##Immigration
 
-\textit{Source}: World Values Survey Round 6 
+\textit{Source}: World Values Survey Round 6
 
 \textit{Countries included}: Ghana, Nigeria, Rwanda, South Africa, and Zimbabwe
 
 **Policy Preference**
 
-(V46) When jobs are scarce, employers should give priority to people of this country over immigrants. 
+(V46) When jobs are scarce, employers should give priority to people of this country over immigrants.
 
 \begin{itemize}
 
-\item \textit{Original coding}: 1 = agree, 2 = neither, 3 = disagree, -5 = missing, -4 = not asked, -3 = not applicable, -2 = no answer, -1 = don't know 
+\item \textit{Original coding}: 1 = agree, 2 = neither, 3 = disagree, -5 = missing, -4 = not asked, -3 = not applicable, -2 = no answer, -1 = don't know
 
 \item \textit{Recode}: 1 = agree, 2 = neither, 3 = disagree, else NA
 
 \end{itemize}
+
+```{r, eval = FALSE}
+wvs$V46[wvs$V46 > 0] <- NA
+```
 
 **Expressive Benefit**
 
@@ -79,30 +94,46 @@ $H_2$: Material self-interest indicators will be jointly significant in each mod
   \end{itemize}
 \end{enumerate}
 
+```{r, eval = FALSE}
+#Edit V107
+wvs$V107[wvs$V107 < 0] <- NA
+
+#Edit V16
+wvs$V16[wvs$V16 < 0] <- NA
+wvs$V16[wvs$V16 == 2] <- 0
+```
+
 **Self-Interest**
 
 \begin{enumerate}
   \item \textit{Personal Connection to Immigrant}: We will create a single indicator for personal connection to immigrants using the following items. If any of these items is answered as yes (1 = immigrant), personal connection to immigrant will be coded as one, else zero:
   \begin{itemize}
     \item (V243) Mother is an immigrant.  
-    \item (V244) Father is an immigrant. 
+    \item (V244) Father is an immigrant.
     \item (V245) Respondent is an immigrant.  
   \end{itemize}
-  We chose to fold these items into a single index in order to overcome potential multicollinearity. \textit{Variable type}: binary. \\ \textit{Expected sign}: negative. 
-  \item \textit{Employment status of primary household breadwinner} This indicator requires use of several WVS items: 
+  We chose to fold these items into a single index in order to overcome potential multicollinearity. \textit{Variable type}: binary. \\ \textit{Expected sign}: negative.
+  ```{r, eval = FALSE}
+  wvs$Immigrantindex <- ifelse(V243 == 1 | V244 == 1 | V245 == 1, 1, 0)
+  ```
+  \item \textit{Employment status of primary household breadwinner} This indicator requires use of several WVS items:
   \begin{itemize}
-  \item (V229) Employment status \textit{Original coding}: 1 = full time, 2 = part time, 3 = self-employed, 4 = retired, 5 = housewife, 6 = students, 7 = unemployed, 8 = other, -4 = not asked, -3 = not applicable, -2 = no answer, -1 = don't know. 
+  \item (V229) Employment status \textit{Original coding}: 1 = full time, 2 = part time, 3 = self-employed, 4 = retired, 5 = housewife, 6 = students, 7 = unemployed, 8 = other, -4 = not asked, -3 = not applicable, -2 = no answer, -1 = don't know.
   \item (V235) Are you the chief wage earner in your house? \textit{Original coding}: 1 = yes, 2 = no, -4 = not asked, -3 = not applicable, -2 = no answer, -1 = don't know.
-  \item (V236) Is the chief wage earner employed now or not. \textit{Original coding}: 1 = yes, 2 = no, -4 = not asked, -3 = not applicable (Repondent is the chief wage earner), -2 = no answer, -1 = don't know.
+  \item (V236) Is the chief wage earner employed now or not. \textit{Original coding}: 1 = yes, 2 = no, -4 = not asked, -3 = not applicable (Respondent is the chief wage earner), -2 = no answer, -1 = don't know.
   \end{itemize}
   We will code 1 if either the primary wage earner of the respondent's household (either respondent or otherwise) is employed (full time, part time, or self-employed), else 0. \textit{Variable type}: binary. \textit{Expected sign}: positive.
-  \item \textit{Supplementary analysis}: We will include the following items in supplementary anaylsis. However, we exclude them from our prefered model because they are subjective measures of personal well-being, and therefore subject to endogeneity vis-a-vis value expression. 
+
+  ```{r, eval = FALSE}
+wvs$Primewageemploy <- ifelse(V229 %in% c(1,2,3) | V236 ==1,1,0)
+  ```
+  \item \textit{Supplementary analysis}: We will include the following items in supplementary analysis. However, we exclude them from our preferred model because they are subjective measures of personal well-being, and therefore subject to endogeneity vis-a-vis value expression.
   \begin{enumerate}
     \item (V59) Satisfaction with financial situation of household.
-    \begin{itemize} 
+    \begin{itemize}
     \item \textit{Original Coding}: scale from 1 = completely dissatisfied to 10 = completely satisfied, -4 = not asked in survey, -3 = not applicable, -2 = no answer or refused to answer, -1 = don't know.
     \item \textit{Recode}: scale from 1 to 10 as above, else NA. \textit{Variable type}: discrete.
-    \item \textit{Expected sign}: positive. 
+    \item \textit{Expected sign}: positive.
     \end{itemize}
     \item (V181) Worries: Losing my job or not finding a job.
     \begin{itemize}
@@ -118,7 +149,7 @@ $H_2$: Material self-interest indicators will be jointly significant in each mod
 \begin{enumerate}
   \item (V240) Sex, as coded by interviewer.
   \begin{itemize}
-  \item \textit{Original coding}: 1= male, 2= female, -5 = missing/unknown, -4 = not asked in survey, -3 = not applicable, -2 = no answer, -1 = don't know. 
+  \item \textit{Original coding}: 1= male, 2= female, -5 = missing/unknown, -4 = not asked in survey, -3 = not applicable, -2 = no answer, -1 = don't know.
   \item \textit{Recode}: 1 = male, 0 = female, else NA. \textit{Variable type}: binary.
   \end{itemize}
   \item (V241) Year of birth
@@ -140,9 +171,9 @@ $H_2$: Material self-interest indicators will be jointly significant in each mod
   \end{itemize}
 \end{enumerate}
 
-##Privatization 
+##Privatization
 
-\textit{Source}: World Values Survey Round 6 
+\textit{Source}: World Values Survey Round 6
 
 \textit{Countries included}: Ghana, Nigeria, Rwanda, South Africa, and Zimbabwe
 
@@ -161,15 +192,15 @@ $H_2$: Material self-interest indicators will be jointly significant in each mod
 **Expressive Benefit**
 
 \begin{enumerate}
-  \item (V96) Income inequality ideology. 
+  \item (V96) Income inequality ideology.
   \begin{itemize}
   \item \textit{Original coding}: scale from 1 = Incomes should be made more equal to 10 = We need larger income differences as incentives for individual effort, -5 = missing, -4 = not asked in survey, -3 = not applicable, -2 = no answer, -1 = don't know.
   \item \textit{Recode}: scale from 1 = Incomes should be made more equal to 10 = We need larger income differences as incentives for individual effort, else NA.\textit{Variable type}: discrete.
   \item \textit{Expected sign}: negative.
   \end{itemize}
-  \item (V98) Government responsibility. 
+  \item (V98) Government responsibility.
   \begin{itemize}
-  \item \textit{Original Coding}: scale from 1 = Government should take more responsiboity to ensure that everone is provided for to 10 = People should take more responsibility to provide for themselves, -5 = missing, -4 = not asked in survey, -3 = not applicable, -2 = no answer, -1 = don't know. 
+  \item \textit{Original Coding}: scale from 1 = Government should take more responsiboity to ensure that everone is provided for to 10 = People should take more responsibility to provide for themselves, -5 = missing, -4 = not asked in survey, -3 = not applicable, -2 = no answer, -1 = don't know.
   \item \textit{Recode}: scale from 1 = Government should take more responsiboity to ensure that everone is provided for to 10 = People should take more responsibility to provide for themselves, else NA. \textit{Variable type}: discrete.
   \item \textit{Expected sign}: negative.
   \end{itemize}
@@ -178,11 +209,11 @@ $H_2$: Material self-interest indicators will be jointly significant in each mod
 **Self-interest**
 
 \begin{enumerate}
- \item (V230) Sector of employment. 
+ \item (V230) Sector of employment.
  \begin{itemize}
  \item \textit{Original coding}: 1 = government or public institution, 2 = private business or industry, 3 = private non-profit organization, 4 = autonomous/informal sector/other, -4 = not asked in survey, -3 = not applicable, -2 = no answer, -1 = don't know.
  \item \textit{Recode}: 1 = government or public institution; 0 = private business or industry, private non-profit organization, autonomous/informal sector/other; else NA. \textit{Variable type}: binary.
- \item \textit{Expected sign}: positive. 
+ \item \textit{Expected sign}: positive.
  \item \textit{Note}: this indicator is included on the basis of previous research on preferences over privatization [@battaglio_self-interest_2009].
  \end{itemize}
 \end{enumerate}
@@ -192,7 +223,7 @@ $H_2$: Material self-interest indicators will be jointly significant in each mod
 \begin{enumerate}
   \item (V240) Sex, as coded by interviewer.
   \begin{itemize}
-  \item \textit{Original coding}: 1= male, 2= female, -5 = missing/unknown, -4 = not asked in survey, -3 = not applicable, -2 = no answer, -1 = don't know. 
+  \item \textit{Original coding}: 1= male, 2= female, -5 = missing/unknown, -4 = not asked in survey, -3 = not applicable, -2 = no answer, -1 = don't know.
   \item \textit{Recode}: 1 = male, 0 = female, else NA. \textit{Variable type}: binary.
   \end{itemize}
   \item (V241) Year of birth
@@ -208,7 +239,7 @@ $H_2$: Material self-interest indicators will be jointly significant in each mod
   \item (V254) Ethnic group, as coded by interviewer. As indicated. \textit{Variable type}: categorical.
 \end{enumerate}
 
-##School fees 
+##School fees
 
 \textit{Source}: Afrobarometer Round 3
 
@@ -222,16 +253,16 @@ $H_2$: Material self-interest indicators will be jointly significant in each mod
 
 \item \textit{Original Coding}: 1=Agree Very Strongly with A, 2=Agree with A, 3=Agree with B, 4=Agree Very Strongly with B, 5=Agree with Neither, 9=Don't Know, 98=Refused to Answer, -1=Missing Data
 
-\item \textit{Recode}: 1=Agree Very Strongly with A, 2=Agree with A, 3=Agree with Neither, 4=Agree with B, 5=Agree Very Strongly with B, else NA. 
+\item \textit{Recode}: 1=Agree Very Strongly with A, 2=Agree with A, 3=Agree with Neither, 4=Agree with B, 5=Agree Very Strongly with B, else NA.
 
 \end{itemize}
 
 **Expressive Benefit**
 
 \begin{enumerate}
-  \item (Q19) Let's talk for a moment about the kind of society we would like to have in this country. Which of the following statements is closest to your view?. Choose Statement A or Statement B. A: People should look after themselves and be responsible for their own success in life. B: The government should bear the main responsibility for the well-being of people. 
+  \item (Q19) Let's talk for a moment about the kind of society we would like to have in this country. Which of the following statements is closest to your view?. Choose Statement A or Statement B. A: People should look after themselves and be responsible for their own success in life. B: The government should bear the main responsibility for the well-being of people.
   \begin{itemize}
-  \item \textit{Original Coding}: 1=Agree Very Strongly with A, 2=Agree with A, 3=Agree with B, 4=Agree Very Strongly with B, 5=Agree with Neither, 9=Don't Know, 98=Refused to Answer, -1=Missing Data. 
+  \item \textit{Original Coding}: 1=Agree Very Strongly with A, 2=Agree with A, 3=Agree with B, 4=Agree Very Strongly with B, 5=Agree with Neither, 9=Don't Know, 98=Refused to Answer, -1=Missing Data.
   \item \textit{Recode}: 1=Agree Very Strongly with A, 2=Agree with A, 3=Agree with Neither, 4=Agree with B, 5=Agree Very Strongly with B, else NA. \textit{Variable type}: discrete.
   \item \textit{Expected sign}: negative.
   \end{itemize}
@@ -242,8 +273,12 @@ $H_2$: Material self-interest indicators will be jointly significant in each mod
 Afrobarometer asks two questions in separate sections regarding the affordability of school expenses and fees. We include the first in our preferred specification. However, we will run models with the second item as well for a robustness check.
 
 \begin{enumerate}
-  \item \textit{Public School Contact} Our self-interest items rely on having direct experience with the public schooling system. As such, we code a term for whether the respondent indicates having contact with the public school system. On each of the items listed below (Q73A-F), resondents have the option to respond "no experience with public schools in the past twelve months" (coded as 7). Our new variable is coded 0 if the respondent indicates "no experience" for ANY of the questions Q73A-F, else 1. We will interact this variable with each of the self interest variables below, effectively turnining it "on" or "off" according to contact.
-  
+  \item \textit{Public School Contact} Our self-interest items rely on having direct experience with the public schooling system. As such, we code a term for whether the respondent indicates having contact with the public school system. On each of the items listed below (Q73A-F), respondents have the option to respond "no experience with public schools in the past twelve months" (coded as 7). Our new variable is coded 0 if the respondent indicates "no experience" for ANY of the questions Q73A-F, else 1. We will interact this variable with each of the self interest variables below, effectively turning it "on" or "off" according to contact.
+
+```{r, eval = FALSE}
+af$school_contact <- ifelse(Q73A == 7 | Q73B == 7 | Q73C == 7 | Q73D == 7 | Q73E == 7 | Q73F == 7, 0, 1)
+```
+
   We do observe that the percentage of respondents choosing "no experience" sometimes vary from question to question. This is concerning, as respondents with any experience with the public school system should answer "don't know" or "never" rather than "no experience" for these questions if they have not encountered the problem listed. Because the responses of those who answer "no experience" for some questions but not others is ambiguous, we include all of these in the no contact category. \textit{Variable type}: binary.
   \item (Q73A) Have you encountered any of these problems with your local public schools during the past 12 months?. Services are too expensive / Unable to pay.
   \begin{itemize}
@@ -276,14 +311,14 @@ Afrobarometer asks two questions in separate sections regarding the affordabilit
   \item \textit{Original coding}: 0=No formal schooling, 1=Informal schooling (including Koranic schooling), 2=Some primary schooling, 3=Primary school completed, 4=Some secondary school/ High school, 5=Secondary school completed/High school, 6=Post-secondary qualifications, other than university e.g. a diploma or degree from a technical/polytechnic/college, 7=Some university, 8=University completed, 9=Post-graduate, 98=Refused to Answer, 99=Don't Know, -1=Missing Data.
   \item \textit{Recode}: 0=No formal schooling, 1=Informal schooling (including Koranic schooling), 2=Some primary schooling, 3=Primary school completed, 4=Some secondary school/ High school, 5=Secondary school completed/High school, 6=Post-secondary qualifications, other than university e.g. a diploma or degree from a technical/polytechnic/college, 7=Some university, 8=University completed, 9=Post-graduate, else NA. \textit{Variable type}: categorical.
   \end{itemize}
-  \item (Q101) Respondent's gender, as assessed by interviewer. 
+  \item (Q101) Respondent's gender, as assessed by interviewer.
   \begin{itemize}
   \item \textit{Original coding}: 1=Male, 2=Female
   \item \textit{Recode}: 1 = male, 0 = female. \textit{Variable type}: binary.
   \end{itemize}
-  \item (Q116B) Were the following services present in the primary sampling unit/enumeration area: School? 
+  \item (Q116B) Were the following services present in the primary sampling unit/enumeration area: School?
   \begin{itemize}
-  \item \textit{Original coding}: 0=No, 1=Yes, 9=Can't determine, -1=Missing Data. 
+  \item \textit{Original coding}: 0=No, 1=Yes, 9=Can't determine, -1=Missing Data.
   \item \textit{Recode Scaling}: 0=No, 1=Yes, else NA. \textit{Variable type}: binary.
   \end{itemize}
   \item (Q1) How old are you?
@@ -291,29 +326,30 @@ Afrobarometer asks two questions in separate sections regarding the affordabilit
   \item \textit{Original coding}: 18-110 as indicated, 998=Refused to Answer, 999=Don't Know, -1=Missing Data.
   \item \textit{Recode}: 18-110 as indicated, else NA. \textit{Variable type}: discrete.
   \end{itemize}
-  \item (Q79) What is your tribe? You know, your ethnic or cultural group. 
+  \item (Q79) What is your tribe? You know, your ethnic or cultural group.
   \begin{itemize}
   \item \textit{Original coding}: : see AFB for full list, 990=National identity only, 995=Other, 997=Not Asked, 998=Refused, 999=Don't know,-1=Missing Data.
   \item \textit{Recode}: As above, except NA for original codes 997, 998, 999, -1. \textit{Variable type}: categorical.
   \end{itemize}
   \item (Q81) How often are [respondent's identity group] treated unfairly by the government?
   \begin{itemize}
-  \item \textit{Original Coding}: 0=Never, 1=Sometimes, 2=Often, 3=Always, 7=Not Applicable, 9=Don't Know, 98=Refused to Answer, -1=Missing Data 
+  \item \textit{Original Coding}: 0=Never, 1=Sometimes, 2=Often, 3=Always, 7=Not Applicable, 9=Don't Know, 98=Refused to Answer, -1=Missing Data
   \item \textit{Recode}: 0=Never, 1=Sometimes, 2=Often, 3=Always, else NA. \textit{Variable type}: discrete.
-  \item \textit{Note}: Although we focus on countries without a history of ethnic bias in education, political preferences may nonetheless be driven by perceived ethnic bias, either in education or in other domains. As such, we include thsi measure to mitigate omitted variable bias vis-a-vis ethnically driven policy preference.
+  \item \textit{Note}: Although we focus on countries without a history of ethnic bias in education, political preferences may nonetheless be driven by perceived ethnic bias, either in education or in other domains. As such, we include this measure to mitigate omitted variable bias vis-a-vis ethnically driven policy preference.
   \end{itemize}
   \end{enumerate}
-  
+
 #Model
 
-For each policy area, we will use an ordered logit model with policy preference as the dependent variable and with symbolic attitudes and self-interest indices as the independent variables. We will also include control variables as indicated above. 
+For each policy area, we will use an ordered logistic model with the policy preference as the dependent variable and with symbolic attitudes and self-interest indices as the independent variables. Our control variables account for respondent age, sex, education, and ethnicity in each model. We also include other control variables as listed above when we feel that they are relevant to the dependent variable.  
 
-##Immigration and Privatization Models 
 
-These model will take the form:
+##Immigration and Privatization Models
+
+These models will take the form:
 
 \begin{equation}
-y_i = \alpha + \textbf{X}_{i1}\beta + \textbf{X}_{i2}\gamma +  \textbf{X}_{i3}\delta + \pi_i + \epsilon_i 
+y_i = \alpha + \textbf{X}_{i1}\beta + \textbf{X}_{i2}\gamma +  \textbf{X}_{i3}\delta + \pi_i + \epsilon_i
 \end{equation}
 
 where:
@@ -325,26 +361,45 @@ where:
   \item $\pi_i$ represents country fixed effects.
 \end{itemize}
 
-Note that symbolic attitudes and self-interest are thus *not* summary indices (except in cases indicated under variable construction); rather, each indictor is entered individually into the model. 
+Note that symbolic attitudes and self-interest are thus *not* summary indices (except in cases indicated under variable construction); rather, each indictor is entered individually into the model.
+
+```{r, eval = FALSE}
+#This is the model for the immigration variable.
+immig_model <- MASS::polr(V46 ~ V107 + V16 + V243 + V244 + V245 + Primewageemploy + V240 + V241 + V248 + V254 + V24 + COUNTRY,
+                  data = wvs,
+                  Hess = TRUE)
+
+#This is the model for the privatization variable.
+privat_model <- MASS::polr(V97 ~ V96 + V98 + V230 + V240 + V241 + V248 + V254,
+                          data = wvs,
+                          Hess = TRUE)
+```
 
 ##School Fees Model
 
 This model will take the form:
 
 \begin{equation}
-y_i = \alpha + \textbf{X}_{i1}\beta + \textbf{X}_{i2} \cdot X_{i4} \gamma + \textbf{X}_{i2} \delta + \textbf{X}_{i4} \zeta + X_{i3} \theta + \pi_i + \epsilon_i 
+y_i = \alpha + \textbf{X}_{i1}\beta + \textbf{X}_{i2} \cdot X_{i4} \gamma + \textbf{X}_{i2} \delta + \textbf{X}_{i4} \zeta + X_{i3} \theta + \pi_i + \epsilon_i
 \end{equation}
 
 where:
 
 \begin{itemize}
   \item $\textbf{X}_{i1}$ represents a matrix of expressive benefit indicators and $\beta$ represents a vector of coefficients for each expressive benefit indicator.
-  \item $\textbf{X}_{i2}$ represents a matrix of self-interest indicators, $X_{i4}$ represents a binary indicator for school contact, and $\textbf{X}_{i2} \cdot X_{i4}$ represents interations between each self-interest indicator and school contact. $\gamma$ represents a vector of coefficients for the interaction terms, $\delta$ represents the vector of coefficients for self interest terms alone, and $\zeta$ represents the coefficient of the school contact indicator alone.
+  \item $\textbf{X}_{i2}$ represents a matrix of self-interest indicators, $X_{i4}$ represents a binary indicator for school contact, and $\textbf{X}_{i2} \cdot X_{i4}$ represents interactions between each self-interest indicator and school contact. $\gamma$ represents a vector of coefficients for the interaction terms, $\delta$ represents the vector of coefficients for self interest terms alone, and $\zeta$ represents the coefficient of the school contact indicator alone.
   \item $\textbf{X}_{i3}$ represents a matrix of control variables, and $\theta$ represents a vector of coefficients for each control variable.
   \item $\pi_i$ represents country fixed effects.
 \end{itemize}
 
-Note that symbolic attitudes and self-interest are thus *not* summary indices (except in cases indicated under variable construction); rather, each indictor is entered individually into the model. 
+Note that symbolic attitudes and self-interest are thus *not* summary indices (except in cases indicated under variable construction); rather, each indictor is entered individually into the model.
+
+```{r, eval = FALSE}
+#here is the model for school fees.
+fees_model<- MASS::polr(Q10 ~ Q19 + Q90 + Q101 + Q116B + Q1 + Q79 + Q81 + Q73A*school_contact + Q73BFIndex*school_contact,
+                              data=af,
+                              Hess = TRUE))
+```
 
 ###Robustness check
 
@@ -352,15 +407,15 @@ As an alternative to the interactive model used above, we will also conduct a ro
 
 #Hypothesis Testing
 
-For each model, we will conduct two joint F-test. The first will consider whether expressive benefits indicators are jointly significant, and the second will consider whether material self-interest indicators are jointly significant. 
+For each model, we will conduct two likelihood-ratio tests. The first will consider whether expressive benefits indicators are jointly significant, and the second will consider whether material self-interest indicators are jointly significant.
 
 ##Expressive Benefits
 
-The F-test for joint significance of expressive benefits indicators has the following hypotheses:
+The likelihood-ratio test of expressive benefits indicators has the following hypotheses:
 
 \begin{enumerate}
 
-\item For Model 1 (immigration, privatization): 
+\item For Model 1 (immigration, privatization):
 
 \begin{itemize}
 
@@ -372,7 +427,7 @@ The F-test for joint significance of expressive benefits indicators has the foll
 
 Hence, the restricted model will be $y_i = \alpha + \textbf{X}_{i1}\beta + \textbf{X}_{i3}\delta + \pi_i + \epsilon_i$.
 
-\item For Model 2 (school fees): 
+\item For Model 2 (school fees):
 
 \begin{itemize}
 
@@ -388,7 +443,7 @@ Hence, the restricted model will be $y_i = \alpha + \textbf{X}_{i1}\beta + \text
 
 ##Self-interest
 
-The F-test for joint significance of self-interest indicators has the following hypotheses:
+The likelihood-ratio test of self-interest indicators has the following hypotheses:
 
 \begin{enumerate}
 
@@ -404,7 +459,7 @@ The F-test for joint significance of self-interest indicators has the following 
 
 Hence, the restricted model will be $y_i = \alpha + \textbf{X}_{i1}\beta + X_{i3} \theta + \pi_i + \epsilon_i$.
 
-\item For Model 2 (school fees): 
+\item For Model 2 (school fees):
 
 \begin{itemize}
 
@@ -418,9 +473,23 @@ Hence, the restricted model will be $y_i = \alpha + \textbf{X}_{i2}\gamma + \tex
 
 \end{enumerate}
 
+Using the privatization model as an example, this test will be coded as:
+
+```{r, eval = FALSE}
+p_red_exp <- MASS::polr(V97 ~ V96 + V98 + V230 + V240 + V241 + V248 + V254,
+                          data = wvs,
+                          Hess = TRUE)
+p_red_self <- MASS::polr(V97 ~ V96 + V98 + V230 + V240 + V241 + V248 + V254,
+                          data = wvs,
+                          Hess = TRUE)
+#Likelihood-ratio tests - pulling out the p-values.
+priv_exp_p <- anova(privat_model, p_red_exp)$`Pr(>F)`[2]
+priv_self_p <- anova(privat_model, p_red_self)$`Pr(>F)`[2]
+```
+
 ##Standard errors
 
-For both joint F-test, we will use cluster-robust standard errors, with primary sampling units as the cluster.
+For each model, we will use cluster-robust standard errors, with primary sampling units as the cluster.
 
 #Procedures for Missing Data
 
@@ -428,34 +497,79 @@ We will consider the problem of missing data separately for each model. Each que
 
 ```{r, eval = FALSE}
 ########List-wise deletion###########
+#Detection for the immigration and privatization models
+mean(apply(wvs[,Immigration_variables], 2, anyNA)) < .05 # If TRUE, engage list-wise deletion. Else, impute as below.
+mean(apply(wvs[,Privatization_variables], 2, anyNA)) < .05 # If TRUE, engage list-wise deletion. Else, impute as below.
 
-
+mean(apply(afdat, 2, anyNA)) < .05 #If TRUE, engage list-wise deletion. Else, impute as below.
 ########Imputation process##########
 set.seed(6102018)
-imputed_data<-amelia::amelia(data,
+#impute World Values Survey (if necessary)
+imputed_wvs<-Amelia::amelia(wvs,
                              m=10, #The number of imputations
-                             cs="country", 
+                             cs="country",
                              p2s=0, #
-                             ords="polity", #specifying ordinal variables
-                             noms="signed", #specifying nominal variables
-                             idvars=c("year","country"))
+                             ords=c("ordinals"), #specifying ordinal variables
+                             noms=c("categoricals"), #specifying nominal variables
+                             idvars=c("country"))
 
-# prep storage bins for coefficients
-b.out<-NULL
-# prep storage bins for standard errors
-se.out<-NULL
+# prep storage bins for Immigration coefficients
+bI.out<-NULL
+# prep storage bins for Immigration standard errors
+seI.out<-NULL
 
-for(i in 1:imputed_data$m) {  # Replicate the model on each imputed dataset
-  ols.out <- lm(y ~ x1 + x2 + x3 + x4,
-                data = imputed_data$imputations[[i]])
-  b.out <- rbind(b.out, ols.out$coef)
-  se.out <- rbind(se.out, coef(summary(ols.out))[,2])
+# prep storage bins for Privatization coefficients
+bP.out<-NULL
+# prep storage bins for Privatization standard errors
+seP.out<-NULL
+
+for(i in 1:imputed_data$m) {  # Replicate the Immigration model on each imputed dataset
+  ols.out <- MASS::polr(y ~ x1 + x2 + x3 + x4,
+                data = imputed_data$imputations[[i]],
+                Hess = TRUE)
+  bI.out <- rbind(bI.out, ols.out$coef)
+  seI.out <- rbind(seI.out, coef(summary(ols.out))[,2])
   }
 
-# Use Rubin's rules for combining results.
-combined.results <- mi.meld(q = b.out, se = se.out)
-```
+for(i in 1:imputed_data$m) {  # Replicate the Privatization model on each imputed dataset
+    ols.out <- MASS::polr(y ~ x1 + x2 + x3 + x4,
+                  data = imputed_data$imputations[[i]],
+                  Hess = TRUE)
+    bP.out <- rbind(bP.out, ols.out$coef)
+    seP.out <- rbind(seP.out, coef(summary(ols.out))[,2])
+    }  
 
+# Use Rubin's rules for combining results.
+combined.resultsI <- mi.meld(q = bI.out, se = seI.out)
+combined.resultsP <- mi.meld(q = bP.out, se = seP.out)
+
+####impute Afrobarometer data
+imputed_afdat<-Amelia::amelia(afrobarometer,
+                             m=10, #The number of imputations
+                             cs="country",
+                             p2s=0, #
+                             ords=c("ordinals"), #specifying ordinal variables
+                             noms=c("categoricals"), #specifying nominal variables
+                             idvars=c("country"))
+
+# prep storage bins for School Fees coefficients
+bF.out<-NULL
+# prep storage bins for School Fees standard errors
+seF.out<-NULL
+
+for(i in 1:imputed_data$m) {  # Replicate the School Fees model on each imputed dataset
+  ols.out <- MASS::polr(y ~ x1 + x2 + x3 + x4,
+                data = imputed_afdat$imputations[[i]],
+                Hess = TRUE)
+  bF.out <- rbind(bF.out, ols.out$coef)
+  seF.out <- rbind(seF.out, coef(summary(ols.out))[,2])
+  }
+
+  # Use Rubin's rules for combining results.
+  combined.resultsF <- mi.meld(q = bF.out, se = seF.out)
+
+#Note that the likelihood-ratio tests will then also be conducted on the imputed data, requiring similar estimation of the reduced models on each imputed dataset and combining the results before running the tests.
+```
 
 #Multiple hypothesis testing
 
@@ -468,9 +582,8 @@ We will use the Benjamini-Hochberg Procedure to address false discovery through 
 \end{itemize}
 
 ```{r, eval = FALSE}
-p <- c(p_1, p_2, p_3) #p is a 
+p <- c(p_1, p_2, p_3) #p is a vector of the p-values for all of our hypothesis tests (namely, the p-values of the likelihood-ratio tests).
 stats::p.adjust(p, method = "BH", n = length(p))
 ```
-
 
 #References
